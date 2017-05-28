@@ -1,36 +1,76 @@
 \chapter{Literature Survey and Trade-off Analysis}
-\label{chp:CHAPTERTITLE}
-INTRODUCTION TEXT TO THIS CHAPTER IN WHICH ALL SECTIONS ARE DESCRIBED ROUGHLY (1 SENTENCE EACH).
+\label{chp:LitSurvey}
+In this chapter, a state-of-the art study will be presented that could assist in design of the lensless imager with specifications mentioned in the previous chapter.
+\section{Trade-off Analysis}
+\label{sec:tradeOff}
+\subsection{Camera Sensor}
+The camera sensor is the core of the Delfi-PQ Imager. The performance of a camera is mainly limited by the image sensor that it uses\cite{cmos}. The camera sensor can be off two types namely, CCD(charge coupled device) or CMOS(Complimentary Metal Oxide Semiconductor). Both the types of CMOS sensors have their own advantages and disadvantages. TO understand the challenges that each type of sensor poses, we must understand how the sensors are designed.
 
-This chapter describes the ... In Section~\ref{sec:SECTIONTITLE}, examples are given of how to use tables and figures in MSc theses.
+The following factors have been chosen to  make a trade-off between the different CMOS sensors:
+\begin{enumerate}
+\item Resolution : When rating a camera, the first thing that comes to the mind is the resolution of the camera. The resolution of a camera is directly dependent on the number of pixels in the image sensor of the camera. 
+\item Power Consumption : In the design of the PQ-Camera, the most important factor is the power consumption of the entire imager. The majority of the power consumption by the imager is dependent on the power consumption of the CMOS sensor. 
+\item Availability : Even though there are innumerable number of CMOS sensors in the world, availability of CMOS sensors is quite low when it comes to small-scale. Many CMOS manufacturers require large scale orders.
+\item Quantum Efficiency(QE) : Quantum Efficiency is the measure of efficiency of the camera sensor to convert incoming photons into electrons. The ratio of electrons generated during the digitization process to photons is called quantum efficiency.
+\item Pixel Size : Pixel size is the size of each pixel unit in the CMOS camera. It is also an important factor considering that the signal produced by the CMOS sensor depends on the pixel size as well.
+$$
+Signal = Light Density * (Pixel Size)^2 * QE
+$$
+\item Electronic Interface : The electronic interface that can be used to retreive data from the CMOS sensor also plays an important role. Since the project uses a low-power microcontroller that has limited communication capabilities, it would be wise to chose an interface that is supported by the microcontroller. Recently available chips use LVDS/MIPI interface to send data. These interfaces are not supported by the microcontroller that is being used as an on-board computer.
+\item Dynamic Range : Dynamic Range and SNR are used interchangeably in CMOS sensors. The only difference is that dynamic range considers only the temporal dark noise while SNR includes the root mean square of the shot noise as well.  
+\item Shutter Type : Camera sensors use different types of shutters namely, global shutter and rolling shutter. Global shutter reduces the distortions due to fast moving artefacts while increasing the dark current. Rolling shutter has more distortions in the case of imaging moving artefacts, but also has lesser dark noise compared to global shutter. 
+\item Voltage Level : Voltage level also has to be taken into account while choosing the sensor because if the CMOS sensor needs a voltage level higher than that of the main satellite bus voltage, then additional circuitry has to be introduced to step up the voltage level which in turn increases the overall system power.  
+\item Operating Temperature : Operating temperature is an important factor to take into account when choosing an imaging sensor. Since the camera is going to operate in space, it is better if the CMOS sensor has a higher operating range of temperature. 
+\item Overall Size and Weight : As the imager has to fit within specific dimensions, the overall size and weight of the CMOS sensor also needs to be taken into account.
+\item Frame Rate: Even though, it is not required to have a camera sensor that is capable of high frame rates, it is an added advantage and higher frame rate camera could help in imaging larger areas of the earth if required. 
+\item Price: While there are no specific cost constraints in the project, price has also been taken into account.
+\end{enumerate}
 
-\section{SECTION TITLE}
-\label{sec:SECTIONTITLE}
-
-Every caption of a table (or figure) should start with a capital letter, and should end with a period. References to tables are given with a capital letter for table, as in ``(see Table~\ref{tab:EXAMPLETABLE})'' or ``in Table~\ref{tab:EXAMPLETABLE}, ...''.
-
-\begin{table}[htb]
-\centering
-\begin{tabular}{|l|c|r|}
-\hline % horizontal line
-left aligned & centred & right aligned \\
-\hline \hline
-12           & 34      & 56            \\
+\begin{table}[ht]
+\caption{Comparison of Different Image Sensor Candidates}
+\label{tbl:TradeoffCMOS}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\diaghead{\theadfont Diag ColumnmnHead II}%
+{Factors}{Candidates}&
+\thead{(a)}&\thead{(b)}&\thead{(c)}&\thead{(d)}&\thead{(e)}&\thead{(f)}&\thead{(g)}&\thead{(h)}&\thead{(i)}&\thead{(j)}\\
+\hline
+\textbf{Optical Parameters} & & & & & & & & & &\\
+\hline
+Resolution & & & & & & & & & & \\
+\hline
+QE & & & & & & & & & & \\
+\hline
+Pixel Size & & & & & & & & & & \\
+\hline
+Shutter type & & & & & & & & & & \\
+\hline
+Frame Rate & & & & & & & & & & \\
+\hline
+\textbf{\makecell{Electrical and \\other parameters}} & & & & & & & & & & \\
+\hline
+Power Consumption & & & & & & & & & & \\
+\hline
+Availability & & & & & & & & & & \\
+\hline
+Electronic Interface & & & & & & & & & & \\
+\hline
+DR and SNR & & & & & & & & & & \\
+\hline
+Voltage & & & & & & & & & & \\
+\hline
+Operating Temperature & & & & & & & & & & \\
+\hline
+Overall Size and Weight & & & & & & & & & & \\
+\hline
+Price & & & & & & & & & & \\
+\hline
+\textbf{Points} & & & & & & & & & & \\
 \hline
 \end{tabular}
-\caption{Complete sentence describing the tabular data.}
-\label{tab:EXAMPLETABLE}
 \end{table}
 
-References to figures are given with a capital letter for figure, as in ``(see Figure~\ref{fig:EXAMPLEFIGURE})'' or ``in Figure~\ref{fig:EXAMPLEFIGURE}, ...''.
+\subsection{Compression Algorithms}
 
-\cite{b}
-\cite{a}
-
-\begin{figure}[htb]
-% most GNUplot figures need to be rotated, width should be the same throughout the complete document, and no extension is needed
-\includegraphics[angle=180,width=\textwidth]{pics/TUD_logo_zw}
-\caption{Complete sentence describing the figure thoroughly.}
-\label{fig:EXAMPLEFIGURE}
-\end{figure}
+\subsection{Reconstruction Algorithms}
 

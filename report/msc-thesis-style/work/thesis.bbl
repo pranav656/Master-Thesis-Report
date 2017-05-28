@@ -1,10 +1,8 @@
 \begin{thebibliography}{1}\setlength{\itemsep}{-1ex}\small
 
-\bibitem{b}
-a.
-\newblock b.
-
-\bibitem{a}
-z.
+\bibitem{cmos}
+A.~El Gamal and H.~Eltoukhy.
+\newblock Cmos image sensors.
+\newblock {\em IEEE Circuits and Devices Magazine}, 21(3):6--20, May 2005.
 
 \end{thebibliography}
