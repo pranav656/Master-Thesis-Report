@@ -15,45 +15,46 @@ The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
 Warning--I didn't find a database entry for "b"
 Warning--I didn't find a database entry for "a"
-You've used 1 entry,
+Warning--to sort, need author or key in ImagingGeo
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            517 strings with 4008 characters,
-and the built_in function-call counts, 318 in all, are:
-= -- 29
-> -- 13
-< -- 0
-+ -- 5
-- -- 4
-* -- 26
-:= -- 60
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 5
+            541 strings with 4620 characters,
+and the built_in function-call counts, 1374 in all, are:
+= -- 131
+> -- 46
+< -- 1
++ -- 20
+- -- 14
+* -- 72
+:= -- 214
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 11
-empty$ -- 25
-format.name$ -- 4
-if$ -- 63
+cite$ -- 6
+duplicate$ -- 55
+empty$ -- 133
+format.name$ -- 14
+if$ -- 307
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 3
+int.to.str$ -- 5
+missing$ -- 2
+newline$ -- 28
+num.names$ -- 8
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 17
 quote$ -- 0
-skip$ -- 8
+skip$ -- 48
 stack$ -- 0
-substring$ -- 17
-swap$ -- 1
-text.length$ -- 0
+substring$ -- 66
+swap$ -- 15
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
-warning$ -- 0
-while$ -- 3
-width$ -- 2
-write$ -- 13
-(There were 2 warnings)
+type$ -- 20
+warning$ -- 1
+while$ -- 11
+width$ -- 6
+write$ -- 52
+(There were 3 warnings)

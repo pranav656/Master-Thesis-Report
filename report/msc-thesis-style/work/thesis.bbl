@@ -1,8 +1,31 @@
 \begin{thebibliography}{1}\setlength{\itemsep}{-1ex}\small
 
+\bibitem{ImagingGeo}
+Imaging geometries.
+\newblock
+  \url{http://www.its.caltech.edu/~ee157/lecture_note/Imaging%20geometries.pdf}.
+\newblock Accessed: 2017-05-20.
+
+\bibitem{CompPipeline}
+Irfan Essa.
+\newblock {Computational Photography Udacity Course}.
+\newblock \url{https://classroom.udacity.com/courses/ud955}.
+
 \bibitem{cmos}
 A.~El Gamal and H.~Eltoukhy.
 \newblock Cmos image sensors.
 \newblock {\em IEEE Circuits and Devices Magazine}, 21(3):6--20, May 2005.
+
+\bibitem{SpInst}
+Ir.~A. Kamp.
+\newblock Instruments and their constituents.
+\newblock Space Instrumentation Engineering Lecture Notes, 2017.
+
+\bibitem{surveyCamMod}
+K.~Khurshid, R.~Mahmood, and Q.~ul~Islam.
+\newblock A survey of camera modules for cubesats - design of imaging payload
+  of icube-1.
+\newblock In {\em 2013 6th International Conference on Recent Advances in Space
+  Technologies (RAST)}, pages 875--879, June 2013.
 
 \end{thebibliography}
