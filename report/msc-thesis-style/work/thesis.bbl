@@ -6,6 +6,11 @@ Imaging geometries.
   \url{http://www.its.caltech.edu/~ee157/lecture_note/Imaging%20geometries.pdf}.
 \newblock Accessed: 2017-05-20.
 
+\bibitem{RollingShutterOV2640}
+Manual exposure for ov2640.
+\newblock \url{http://www.arducam.com/manual-exposure-ov2640/}.
+\newblock Accessed: 2017-06-28.
+
 \bibitem{CompPipeline}
 Irfan Essa.
 \newblock {Computational Photography Udacity Course}.

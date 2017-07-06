@@ -1,36 +1,96 @@
 \chapter{Implementation}
-\label{chp:CHAPTERTITLE}
-INTRODUCTION TEXT TO THIS CHAPTER IN WHICH ALL SECTIONS ARE DESCRIBED ROUGHLY (1 SENTENCE EACH).
+\label{chp:Implementation}
 
-This chapter describes the ... In Section~\ref{sec:SECTIONTITLE}, examples are given of how to use tables and figures in MSc theses.
+\section{Embedded Software of Camera}
+One of the main reasons behind choosing the OV2640 CMOS sensor is that it has a ready electronic interface that can be used t interface with standard 8-bit/16-bit microcontrollers,  The OV2640 is one of the sensors that is available as a part of Arducam hardware. Arducam is an open source camera that comes along with open-source hardware and software that is needed to capture images using the CMOS sensor. However, using the camera comes with its own advantages and disadvantages. The main advantage behind using this platform is that the platform has open-source libraries that could be used to interface with ATMEGA328P, an 8-bit microcontroller. In space-missions, it would not be possible to send high-powered microprocessors, and microcontroller is used as an on-board computer. Arducam has standard software libraries that can be used to interface with Arduino making the cumbersome and lengthy job of writing an interface software to a CMOS sensor way more easier.  A disadvantage of the hardware module is the on-board memory that it has to capture an image. The OV2640 Arducam mini camera module can capture upto 1600*1200 resolution images with or without any form of compression. However due to the limitation of the on-board OV2640 FIFO memory AL422B it would be possible to capture only compressed images and not full resolution RAW images. The AL422B on-board FIFO has only 384KB of memory and that is not enough to obtain a full-resolution RAW image. However, we would like to have the RAW unprocessed image from the sensor. One of the other disadvantages is that custom code needs to be written to obtain various controls that we need for our camera. We have to write our own camera control software if we need to control factors such as exposure time, ISO, etc. as the default software uses automatic exposure control to enhance the image quality. The camera module architecture is shown in Figure \ref{fig:arducam_arch}.
 
-\section{SECTION TITLE}
-\label{sec:SECTIONTITLE}
-
-Every caption of a table (or figure) should start with a capital letter, and should end with a period. References to tables are given with a capital letter for table, as in ``(see Table~\ref{tab:EXAMPLETABLE})'' or ``in Table~\ref{tab:EXAMPLETABLE}, ...''.
-
-\begin{table}[htb]
+ \begin{figure}[!htbp]
 \centering
-\begin{tabular}{|l|c|r|}
-\hline % horizontal line
-left aligned & centred & right aligned \\
-\hline \hline
-12           & 34      & 56            \\
-\hline
-\end{tabular}
-\caption{Complete sentence describing the tabular data.}
-\label{tab:EXAMPLETABLE}
-\end{table}
-
-References to figures are given with a capital letter for figure, as in ``(see Figure~\ref{fig:EXAMPLEFIGURE})'' or ``in Figure~\ref{fig:EXAMPLEFIGURE}, ...''.
-
-\cite{b}
-\cite{a}
-
-\begin{figure}[htb]
-% most GNUplot figures need to be rotated, width should be the same throughout the complete document, and no extension is needed
-\includegraphics[angle=180,width=\textwidth]{pics/TUD_logo_zw}
-\caption{Complete sentence describing the figure thoroughly.}
-\label{fig:EXAMPLEFIGURE}
+\includegraphics[scale=0.75]{pics/arducam_architecture}
+\caption{Camera Architecture of Arducam Mini OV2640 Camera Module}
+\label{fig:arducam_arch}
 \end{figure}
 
+The system for experiments is as shown in Figure \ref{fig:imp_setup}. The Arduino is connected to the camera module through an I2C interface. Using the I2c interface it possible to set registers that control the functioning of the camera such as the output format, digital signal processing, etc. SPI interface is used to transfer the image data from the camera module to the Arduino. The Arduino upon receiving the image data either writes it to an  SD card or sends it to the software on the PC through the USB connection. 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.75]{pics/implementation_setup}
+\caption{Implementation Setup}
+\label{fig:imp_setup}
+\end{figure}
+
+
+\subsection{Exposure Control of OV2640}
+In order to do experiments, it was required to control the exposure of the camera. In the default driver that was provided by the vendor, the exposure was automatically set using the Automatic Exposure Control (AEC) feature in the sensor. So, a modification was needed in the driver software. Fortunately, the driver is open source and the there were libraries that could assist in setting the on-board registers through the I2C interface on the Arduino. First, let us have a look at how exposure control works in an OV2640 camera. All rolling shutter image sensors including OV2640 exposure the sensor one-line at a time i.e. pixels in the same line are exposed at the same time and different pixels in different lines are exposed at a different time. So, the minimum exposure time would be one line time and the maximum exposure time would be the frame time. This is illustrated in Figure \ref{fig:RollingShutterOV2640}. By default the pixel clock is set at 36MHz. We can calculate the minimum line time using the following equation:
+
+$$
+Minimum Exposure Time = 1/Pixel Clock * Pixel Clockes per line 
+$$
+As shown in Figure \ref{fig:ShutterTimingOV2640}, one line consists of 1922 pixel clocks(1600 for pixel data and 322 clocks of horizontal blanking). So the minimum exposure time would be 53.39$\mu$seconds and the maximum exposure time would be the frame time(multiply line time by 1200 + 44 lines of vertical blanking) which would be 66.63ms\cite{RollingShutterOV2640}. In order to control the exposure of the camera it is necessary to modify registers of address 4, 10, 13, 45. So, these registers were modified according the the required exposure time value. The driver software on the Arduino was modified to obtain different exposure times.
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{pics/rolling_shutter}
+\caption{Rolling Shutter Operation on OV2640\cite{RollingShutterOV2640}}
+\label{fig:RollingShutterOV2640}
+\end{figure}
+
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{pics/OV2640timing}
+\caption{Shutter Timing Diagram of OV2640\cite{RollingShutterOV2640}}
+\label{fig:ShutterTimingOV2640}
+\end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/exposure/60us}
+        \caption{60 $\mu$seconds}
+        \label{fig:exp60us}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/exposure/1ms}
+        \caption{1ms}
+        \label{fig:exp1ms}
+    \end{subfigure}
+    
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/exposure/5ms}
+        \caption{5ms}
+        \label{fig:exp5ms}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/exposure/10ms}
+        \caption{10ms}
+        \label{fig:exp10ms}
+    \end{subfigure}
+        
+        \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/exposure/20ms}
+        \caption{20ms}
+        \label{fig:exp20ms}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/exposure/60ms}
+        \caption{60ms}
+        \label{fig:exp60ms}
+        
+    \end{subfigure}    
+    \caption{Images of a laser beam caught in different exposure times(with lens)}
+    \label{fig:exptests}
+    \end{figure}
+
+
+%\section{Spatial Light Modulators}
+%A spatial light modulator (SLM) is an object that imposes some form of spatially varying modulation on a beam of light\cite{SLMWiki}.SLMs can be controlled by computer controlled software and it would be possible to generate patterns on the SLM that could modulate phase or the intensity of the beam or both simultaneously. An advantage of using an SLM over designing a lithographic mask is that it would be possible to test out different designs of masks quickly in order to find out an optimal mask configuration that would be suitable to our setup. In our design of the lensless imager, it must be possible to block and allow light in a certain binary pattern. A transmissive SLM would suit the purpose of simulating different mask patterns. For this purpose, a holoeye LC2012 SLM was used 
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=0.5\textwidth]{pics/slm}
+%\caption{HoloEye LC2012 SLM}
+%\label{fig:slm}
+%\end{figure}

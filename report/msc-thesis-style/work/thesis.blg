@@ -16,45 +16,46 @@ Database file #1: ../bib/mycollection.bib
 Warning--I didn't find a database entry for "b"
 Warning--I didn't find a database entry for "a"
 Warning--to sort, need author or key in ImagingGeo
-You've used 5 entries,
+Warning--to sort, need author or key in RollingShutterOV2640
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            541 strings with 4620 characters,
-and the built_in function-call counts, 1374 in all, are:
-= -- 131
-> -- 46
+            546 strings with 4758 characters,
+and the built_in function-call counts, 1542 in all, are:
+= -- 148
+> -- 47
 < -- 1
-+ -- 20
++ -- 21
 - -- 14
-* -- 72
-:= -- 214
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 22
+* -- 77
+:= -- 233
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 55
-empty$ -- 133
+cite$ -- 8
+duplicate$ -- 62
+empty$ -- 156
 format.name$ -- 14
-if$ -- 307
+if$ -- 349
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 6
 missing$ -- 2
-newline$ -- 28
+newline$ -- 33
 num.names$ -- 8
-pop$ -- 38
+pop$ -- 48
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 19
 quote$ -- 0
-skip$ -- 48
+skip$ -- 53
 stack$ -- 0
-substring$ -- 66
-swap$ -- 15
+substring$ -- 71
+swap$ -- 16
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
-warning$ -- 1
+type$ -- 24
+warning$ -- 2
 while$ -- 11
-width$ -- 6
-write$ -- 52
-(There were 3 warnings)
+width$ -- 7
+write$ -- 61
+(There were 4 warnings)
