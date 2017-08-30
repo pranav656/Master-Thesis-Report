@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}\setlength{\itemsep}{-1ex}\small
+\begin{thebibliography}{10}\setlength{\itemsep}{-1ex}\small
 
 \bibitem{ImagingGeo}
 Imaging geometries.
@@ -6,10 +6,36 @@ Imaging geometries.
   \url{http://www.its.caltech.edu/~ee157/lecture_note/Imaging%20geometries.pdf}.
 \newblock Accessed: 2017-05-20.
 
+\bibitem{imfindcircles}
+imfindcircles.
+\newblock \url{https://nl.mathworks.com/help/images/ref/imfindcircles.html}.
+\newblock Accessed: 2017-08-17.
+
 \bibitem{RollingShutterOV2640}
 Manual exposure for ov2640.
 \newblock \url{http://www.arducam.com/manual-exposure-ov2640/}.
 \newblock Accessed: 2017-06-28.
+
+\bibitem{SLMWiki}
+Spatial light modulators.
+\newblock \url{https://en.wikipedia.org/wiki/Spatial_light_modulator}.
+\newblock Accessed: 2017-06-29.
+
+\bibitem{VBoomi}
+V.~Boominathan, J.~K. Adams, M.~S. Asif, B.~W. Avants, J.~T. Robinson, R.~G.
+  Baraniuk, A.~C. Sankaranarayanan, and A.~Veeraraghavan.
+\newblock Lensless imaging: A computational renaissance.
+\newblock {\em IEEE Signal Processing Magazine}, 33(5):23--35, Sept 2016.
+
+\bibitem{Cannon1}
+T.~M. Cannon and E.~E. Fenimore.
+\newblock Coded aperture imaging: Many holes make light work.
+\newblock {\em Optical Engineering}, 19(3):193283--193283--, 1980.
+
+\bibitem{Toeplitz}
+Michael~J. DeWeert and Brian~P. Farm.
+\newblock Lensless coded-aperture imaging with separable doubly-toeplitz masks.
+\newblock {\em Optical Engineering}, 54(2):023102, 2015.
 
 \bibitem{CompPipeline}
 Irfan Essa.
@@ -32,5 +58,15 @@ K.~Khurshid, R.~Mahmood, and Q.~ul~Islam.
   of icube-1.
 \newblock In {\em 2013 6th International Conference on Recent Advances in Space
   Technologies (RAST)}, pages 875--879, June 2013.
+
+\bibitem{OV2640DS}
+Omnivision Technologies.
+\newblock {\em Preliminary Data Sheet}, 2 2006.
+\newblock V 1.6.
+
+\bibitem{OV2640SoftwareApp}
+Omnivision Technologies.
+\newblock {\em Software Application Notes}, 1 2008.
+\newblock V 1.04.
 
 \end{thebibliography}

@@ -8,12 +8,17 @@
 \BOOKMARK [2][-]{subsection.2.3.2}{Compression Algorithms}{section.2.3}% 8
 \BOOKMARK [2][-]{subsection.2.3.3}{Reconstruction Algorithms}{section.2.3}% 9
 \BOOKMARK [0][-]{chapter.3}{System Modelling and Design}{}% 10
-\BOOKMARK [1][-]{section.3.1}{SECTION TITLE}{chapter.3}% 11
-\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 12
-\BOOKMARK [1][-]{section.4.1}{Embedded Software of Camera}{chapter.4}% 13
-\BOOKMARK [2][-]{subsection.4.1.1}{Exposure Control of OV2640}{section.4.1}% 14
-\BOOKMARK [0][-]{chapter.5}{Experimentation and Validation}{}% 15
-\BOOKMARK [1][-]{section.5.1}{SECTION TITLE}{chapter.5}% 16
-\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 17
-\BOOKMARK [1][-]{section.6.1}{Conclusions}{chapter.6}% 18
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 19
+\BOOKMARK [1][-]{section.3.1}{Simulation of a non-separable mask}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{Simulation of a separable mask}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Embedded Software of Camera}{chapter.4}% 14
+\BOOKMARK [2][-]{subsection.4.1.1}{Exposure Control of OV2640}{section.4.1}% 15
+\BOOKMARK [1][-]{section.4.2}{Testing of Acceptance Cone of Sensor}{chapter.4}% 16
+\BOOKMARK [2][-]{subsection.4.2.1}{Experimental Setup}{section.4.2}% 17
+\BOOKMARK [2][-]{subsection.4.2.2}{Improved experiment}{section.4.2}% 18
+\BOOKMARK [1][-]{section.4.3}{Spatial Light Modulators}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Experimentation and Validation}{}% 20
+\BOOKMARK [1][-]{section.5.1}{SECTION TITLE}{chapter.5}% 21
+\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 22
+\BOOKMARK [1][-]{section.6.1}{Conclusions}{chapter.6}% 23
+\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 24
