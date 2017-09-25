@@ -17,8 +17,10 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Experimental Setup}{section.4.2}% 17
 \BOOKMARK [2][-]{subsection.4.2.2}{Improved experiment}{section.4.2}% 18
 \BOOKMARK [1][-]{section.4.3}{Spatial Light Modulators}{chapter.4}% 19
-\BOOKMARK [0][-]{chapter.5}{Experimentation and Validation}{}% 20
-\BOOKMARK [1][-]{section.5.1}{SECTION TITLE}{chapter.5}% 21
-\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 22
-\BOOKMARK [1][-]{section.6.1}{Conclusions}{chapter.6}% 23
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 24
+\BOOKMARK [0][-]{chapter.5}{Experimentations with SLM}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Initial Experiments to image mask}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{Effect of SLM brightness and contrast on CMOS sensor}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.3}{Effect of gray levels on CMOS sensor}{chapter.5}% 23
+\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 24
+\BOOKMARK [1][-]{section.6.1}{Conclusions}{chapter.6}% 25
+\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 26
