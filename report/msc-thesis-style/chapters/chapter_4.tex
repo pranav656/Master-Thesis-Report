@@ -184,21 +184,68 @@ As mentioned in the previous experiment, the stage was calibrated such that the 
 \label{fig:center_calib}
 \end{figure}
 
-In the first step of the experiment, the rotational stage is rotated from -45 to +45 degrees with pinhole, and the coordinates of the central diffraction pattern is stored in a variable. In the second step of the experiment, the pinhole is removed and the signal is taken for different angle from the coordinates mentioned in the previous step. After this, the signal is taken with different offset(from the central diffraction pattern) in the X-direction to make sure that all the pixels behave in the same manner. The graphs for 100 different pixel positions from the central position is shown in Figure \ref{fig:offset_calib}. From this graph,it can be seen that all the pixels in the same line exhibit the same behaviour.
+In the first step of the experiment, the rotational stage is rotated from -45 to +45 degrees with pinhole, and the coordinates of the central diffraction pattern is stored in a variable. In the second step of the experiment, the pinhole is removed and the signal is taken for different angle from the coordinates mentioned in the previous step. After this, the signal is taken with different offset(from the central diffraction pattern) in the X-direction to make sure that all the pixels behave in the same manner. The graphs for 100 different pixel positions from the central position is shown in Figure \ref{fig:offset_calib}. From this graph,it can be seen that all the pixels in the same line exhibit the same behaviour with a slight shift in angular position peak. In figure \ref{fig:offset_calibY}, the response for different pixels in the Y-direction is shown. It can  be seen that there is a wider variation in the curve peak position. It can also be seen that all the pixels follow the same pattern with a slight shift in the peaks.
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.275]{pics/ResponseOffset.jpg}
-\caption{Response for 100 different offset pixel positions from central diffraction pattern}
+\includegraphics[scale=0.2125]{pics/ResponseOffset.jpg}
+\caption{Response for 100 different offset pixel positions from central diffraction pattern in X-direction}
 \label{fig:offset_calib}
 \end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.150]{pics/ResponseYOffset.jpg}
+\caption{Response for 100 different offset pixel positions from central diffraction pattern in Y-direction}
+\label{fig:offset_calibY}
+\end{figure}
+
+The peak positions for different pixel offset positions in the X and Y direction is shown in \ref{fig:peak_pixel_pos}. It can be seen that pixels in the same neighborhood have the same peak angular positions. The shift in peak is seen as we move across the detector. This can be attributed to the non-uniformity in the laser beam that is used for measuring the response of the pixels.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.225]{pics/MeshPlotAngularPeak.jpg}
+\caption{Peak Angular Positions for different Pixels}
+\label{fig:peak_pixel_pos}
+\end{figure}
+
 The experiment is repeated for 10 times and the response is plotted only for the red channel as we have only red frequency light hitting the sensor beam. The final result after solving the problems mentioned in the previous section is shown in Figure \ref{fig:acceptance_final}.
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.275]{pics/FinalCRAExp.jpg}
+\includegraphics[scale=0.2125]{pics/FinalCRAExp.jpg}
 \caption{Red Channel Response for Different Data Sets}
 \label{fig:acceptance_final}
 \end{figure}
-The standard deviation of the data has also reduced as shown in the Table \ref{tbl:std_cra}. It can be seen that the standard deviation has reduced for all the angular position thereby increasing the experimental accuracy and repeatability. There is less overlap in the subsequent angles and no points for excluded in the curve fitting process. The maximum standard deviation has reduced from 16 percent for angular position -20 to 6 percent for angular position 0. The peak of the curve is shifted towards -5 degrees because the maximum position of the laser beam occurs at -5 degree position of the rotational beam. This data needs to be incorporated into the simulation to see the effect of the acceptance cone of the sensor on the image reconstruction. This will be discussed in the subsequent section.
+There is less overlap in the subsequent angles and no points for excluded in the curve fitting process. The maximum standard deviation has reduced from 16 percent for angular position -20 to 6 percent for angular position 0. The peak of the curve is shifted towards -5 degrees because the maximum position of the laser beam occurs at -5 degree position of the rotational beam. This data needs to be incorporated into the simulation to see the effect of the acceptance cone of the sensor on the image reconstruction. This will be discussed in the subsequent section.
+\section{Adding to Simulation}
+The curve data that was obtained in the previous experiment was incorporated into the previously obtained simulation results. In order to incorporate the data, we need to generate a 2-dimensional matrix that would simulate the behavior of the acceptance cone effect on the re-construction. Since the behaviour will be in both the x and y directions, the 1-d curve was converted into 2-d by multiplying itself with it's transpose. This would generate a circular symmetric matrix that would generate the effect of the acceptance cone in both the x and y directions. This is shown in Figure \ref{fig:curve_sim}.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.25]{pics/AcceptanceConeCurveFit.jpg}
+\caption{Fitted Curve Data into simulation}
+\label{fig:curve_sim}
+\end{figure}
+This matrix was multiplied with the original image to simulate the effect of angle acceptance on the image reconstruction. This was tried with the simulation results that simulate the effects of diffraction to simulate as close to a real world. The source image is shown in Figure \ref{fig:Orig}. The reconstruction effects simulated after reconstruction is shown in Figure \ref{fig:Rec_Diff}. It can be seen that most of the source image is reconstructed with slight loss in information only with diffraction. Once we incorporate the effects of acceptance cone into the simulation, it can be seen that only a portion of the original image can be reconstructed which is indicated by the rectangular box in Figure \ref{fig:Rec_Acc}. 
+This would be the actual field of view in the real world. The actual area of the sensor which can be used is drastically reduced by approximately 50 percent. In order to find the angular field of view, the positions of the rectangular box must be correlated with the fitted matrix curve discussed. On doing this, it can be found that the area in the rectangular box corresponds to an angle from -21.7 to +21.7.
+
+\begin{figure}[]
+\centering
+\includegraphics[scale=0.25]{pics/OriginalImage.jpg}
+\caption{Source Image Cut from Moon}
+\label{fig:Orig}
+\end{figure}
+
+\begin{figure}[]
+\centering
+\includegraphics[scale=0.25]{pics/OriginalImageDiffRec.jpg}
+\caption{Reconstruction with Diffracted Mask}
+\label{fig:Rec_Diff}
+\end{figure}
+
+\begin{figure}[]
+\centering
+\includegraphics[scale=0.25]{pics/ImageRecWithAcc.jpg}
+\caption{Reconstruction with Diffracted Mask and Curve Data}
+\label{fig:Rec_Acc}
+\end{figure}
 
 \section{Spatial Light Modulators}
 A spatial light modulator (SLM) is an object that imposes some form of spatially varying modulation on a beam of light\cite{SLMWiki}.SLMs can be controlled by computer controlled software and it would be possible to generate patterns on the SLM that could modulate phase or the intensity of the beam or both simultaneously. An advantage of using an SLM over designing a lithographic mask is that it would be possible to test out different designs of masks quickly in order to find out an optimal mask configuration that would be suitable to our setup. In our design of the lensless imager, it must be possible to block and allow light in a certain binary pattern. A transmissive SLM would suit the purpose of simulating different mask patterns. For this purpose, a holoeye LC2012 SLM was used 

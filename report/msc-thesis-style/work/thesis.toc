@@ -17,11 +17,13 @@
 \contentsline {section}{\numberline {4.2}Testing of Acceptance Cone of Sensor}{16}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Experimental Setup}{16}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Improved experiment}{21}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Spatial Light Modulators}{23}{section.4.3}
-\contentsline {chapter}{\numberline {5}Experimentations with SLM}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Initial Experiments to image mask}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Effect of SLM brightness and contrast on CMOS sensor}{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}Effect of gray levels on CMOS sensor}{30}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusions}{33}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{33}{section.6.2}
+\contentsline {section}{\numberline {4.3}Adding to Simulation}{24}{section.4.3}
+\contentsline {section}{\numberline {4.4}Spatial Light Modulators}{25}{section.4.4}
+\contentsline {chapter}{\numberline {5}Experimentations with SLM}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Initial Experiments to image mask}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Effect of SLM brightness and contrast on CMOS sensor}{30}{section.5.2}
+\contentsline {section}{\numberline {5.3}Effect of gray levels on CMOS sensor}{34}{section.5.3}
+\contentsline {section}{\numberline {5.4}Imaging of Separable Mask using CMOS sensor}{34}{section.5.4}
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusions}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Work}{41}{section.6.2}

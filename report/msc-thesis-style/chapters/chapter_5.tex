@@ -114,3 +114,72 @@ The mean of the entire output image of the CMOS sensor is taken for plotting the
 \caption{Grayscale vs intensity of light received by the CMOS sensor.}
 \label{fig:grayscale_slm_graph}
 \end{figure}
+
+\section{Imaging of Separable Mask using CMOS sensor}
+In the previous section, we discussed how the SLM brightness and contrast affect the mask visibility on the CMOS sensor. In this section, we keep the mask brightness and contrast at maximum possible setting and image the mask. A random separable mask is generated for the resolution of the SLM. As mentioned in the previos sections, a random mask is one in which the row and column of the matrix can be expressed in the form:
+
+$$
+M = M_{x} * {M_{y}}^T
+$$
+
+Like in the simulations, a linearly spaced random vector is generated for a specific length(\texttt{Nxm0}) and interpolated to the SLM screen length(1024 X 768). Two vectors are generated(keeping \texttt{Nxm0} and \texttt{Nym0} constant) and the outer product of the vectors is taken to produce a mask that is same as the resolution of the SLM.
+In order to make sure that the mask preserves the property of separability, we need to perform singular value decomposition on the output image from the CMOS sensor.
+
+ Since the SLM is larger that the CMOS sensor, the sensor only images a particular portion of mask and not the complete mask itself.
+The mask can decomposed into a singular matrix value no matter which part of the mask is imaged by the sensor. This was also verified in the MATLAB simulations. An example of doubly toeplitz mask generated is shown in figure \ref{fig:doubly_toepl_custom}. The region marked in red will also exhibit only one singular value on performing SVD.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.20]{pics/slm/mask_sub_prop.jpg}
+\caption{Doubly Toeplitz mask}
+\label{fig:doubly_toepl_custom}
+\end{figure}
+SVD forms the basis of the mask imaging experiment. We image the mask using OV2640 and see whether the mask still exhibits the same property when imaged by the CMOS sensor. The image of the doubly toeplitz mask imaged by OV2640 is shown in figure \ref{fig:dt_ov2640}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.20]{pics/slm/ov2640dtmask.jpg}
+\caption{Doubly Toeplitz mask imaged by OV2640}
+\label{fig:dt_ov2640}
+\end{figure}
+As can be seen from the figure \ref{fig:dt_ov2640}, the OV2640 produces a very poor image of the mask. This can be attributed to the poor quality of compression. The quantization factor increased during the previous experiments in-order to reduce the size of the image has reduced the quality of the output image. Based on the mask image, we can be sure that it would be impossible to obtain proper reconstructions. So, it was decided to try whether other CMOS sensors would produce better quality pictures that would enable proper reconstruction. Based on the trade-off chosen previously, OV5642 sensor was also bought in-case of any failure. Since, OV2640 and OV5642 follow the same architecture and use the same open-source libraries, it was decided to check the image quality on OV5642. The OV5642 has an advantage that it has a bigger active sensor array(2592*1944) and comes with a larger FIFO buffer(8MB). In order to position these sensor on the stage, a script was written that would calculate the singular values in real time. The tilt of the sensor was adjusted such that the ratio of the first component to the second component is maximum. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.125]{pics/slm/ov5642dtmask.jpg}
+\caption{Doubly Toeplitz mask imaged by OV5642}
+\label{fig:dt_ov5642}
+\end{figure}
+It can be seen from figure \ref{fig:dt_ov5642} that OV5642 produces a better image of the mask. In order to compare performance of OV5642, another web camera(Microsoft Lifecam HD 3000) was dis-assembled and the mask was imaged(See figure \ref{fig:dt_lifecam}). The difference in redness is due to the saturation level adjustment on LifeCam.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{pics/slm/lifecamdtmask.png}
+\caption{Doubly Toeplitz mask imaged by Microsoft Lifecam HD 3000}
+\label{fig:dt_lifecam}
+\end{figure}
+A lot of methods were tried to increase the ratio of the first to the second singular value. Firstly, I tried to capture the image without any mask and capture the noise. I subtracted the noise from the mask image. However, this did not lead to any change in the singular component values. I then tried median filtering the output to reduce the gaussian noise effects and it increased the singular value ratio with all the CMOS sensors. This is shown in table \ref{tbl:dt_cmos_sensor_perf}. Table \ref{tbl:dt_cmos_sensor_perf} was plotted from the average of images in a particular data set using the same masks. The red channel data and the grayscale image data from the mask image are used for SVD. 
+It can been from the table that OV2640 provides a better singular value ratio than OV5642. However, the highest singular component does not at all represent the mask that is programmed onto the SLM. So, OV2640 does not perform equivalent to OV5642 despite the higher ratio of singular component.
+\begin{center}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|*{4}{c|}}\hline
+\backslashbox{Sensor}{Technique}&\makebox[4em]{SVD(Red)}&\makebox[10em]{SVD(Red) with filtering}&\makebox[4em]{SVD(Gray)}&\makebox[10em]{SVD(Gray) with filtering}\\\hline
+\makebox[3em]{OV2640}&\makebox[3em]{7.833}&\makebox[3em]{11.16}&\makebox[3em]{8.05}&\makebox[3em]{10.49}\\\hline
+\makebox[3em]{OV5642}&\makebox[3em]{8.74}&\makebox[3em]{10.84}&\makebox[3em]{7.04}&\makebox[3em]{10.78}\\\hline
+\makebox[3em]{LifeCam}&\makebox[3em]{16.82}&\makebox[3em]{21.57}&\makebox[3em]{20.89}&\makebox[3em]{26.75}\\\hline
+\end{tabular}
+\caption{Performance of Different CMOS sensors(The values indicate the ratio of the first SVD to the second SVD value)}
+\label{tbl:dt_cmos_sensor_perf}
+\end{table}
+\end{center}
+The same results as in the simulation(only one singular value) could not be replicated because the mask that is produced by the SLM is not completely binary as observed in the previous experiment with SLM. If you observe the images from the sensor closely you can see that the black regions allow some portion of the light to pass through. This results in the image matrix becoming non-binary which in-turn results in secondary SVD components. One way to solve this would be to use a threshold and make the mask image binary but this would result in loss of diffraction and object data. Apart from this factor, another reason why other SVD components are observed is due to the presence of dead-pixel regions in the output data. The values of these pixels over-ride the values of the mask. These effects do not play a major role in lens based imaging but form a very important role in lensless imaging. Exposure plays a very important role in decomposability of the matrix. I first thought of increasing the exposure in-order to make the difference between the black and white more prominent (which in-turn increases separability). This idea seems to have worked out. The ratio of singular value to the exposure time is shown in Figure \ref{fig:svd_exposure}. The mask becomes separable as the exposure time is increased. However, this comes with a disadvantage. LifeCam has a very limited controllable range of exposure time and the sensor starts quickly saturating at around 2ms. When the sensor starts saturating, it leads to loss of data which in turn will have an effect on reconstruction. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{pics/slm/svd_graph_exposure.jpg}
+\caption{Impact of Exposure Time on Singular Values}
+\label{fig:svd_exposure}
+\end{figure}
+The best decomposition that I could get was using the LifeCam HD-3000 with exposure adjusted(without saturation) based on figure \ref{fig:svd_exposure}. The decomposition of mask into different components is shown in figure \ref{fig:svd_dec_exp}. 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.50]{pics/slm/svd-decomp-exp.png}
+\caption{Decomposition of best data set(Ratio of first to second component = 39.70 )}
+\label{fig:svd_dec_exp}
+\end{figure}
