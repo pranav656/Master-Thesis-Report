@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}\setlength{\itemsep}{-1ex}\small
 
+\bibitem{cra1}
+Chief ray angle.
+\newblock
+  \url{http://armstrongoptical.co.uk/wp-content/uploads/2013/12/Chief-Ray-Angle.pdf}.
+\newblock Accessed: 2017-08-17.
+
 \bibitem{ImagingGeo}
 Imaging geometries.
 \newblock
@@ -37,6 +43,13 @@ Michael~J. DeWeert and Brian~P. Farm.
 \newblock Lensless coded-aperture imaging with separable doubly-toeplitz masks.
 \newblock {\em Optical Engineering}, 54(2):023102, 2015.
 
+\bibitem{Compression4}
+K.~Dezhgosha, A.~K. Sylla, and E.~Ngouyassa.
+\newblock Lossless and lossy image compression algorithms for on-board
+  processing in spacecrafts.
+\newblock In {\em Aerospace and Electronics Conference, 1994. NAECON 1994.,
+  Proceedings of the IEEE 1994 National}, pages 416--423 vol.1, May 1994.
+
 \bibitem{CompPipeline}
 Irfan Essa.
 \newblock {Computational Photography Udacity Course}.
@@ -46,6 +59,12 @@ Irfan Essa.
 A.~El Gamal and H.~Eltoukhy.
 \newblock Cmos image sensors.
 \newblock {\em IEEE Circuits and Devices Magazine}, 21(3):6--20, May 2005.
+
+\bibitem{Compression3}
+M.~Gostenčnik, D.~Gačnik, and I.~Kramberger.
+\newblock Survey of image compression algorithms for esmo mission.
+\newblock In {\em 2011 18th International Conference on Systems, Signals and
+  Image Processing}, pages 1--4, June 2011.
 
 \bibitem{SpInst}
 Ir.~A. Kamp.
@@ -59,6 +78,13 @@ K.~Khurshid, R.~Mahmood, and Q.~ul~Islam.
 \newblock In {\em 2013 6th International Conference on Recent Advances in Space
   Technologies (RAST)}, pages 875--879, June 2013.
 
+\bibitem{Compression2}
+C.~Lambert-Nebout and G.~Moury.
+\newblock A survey of on-board image compression for cnes space missions.
+\newblock In {\em Geoscience and Remote Sensing Symposium, 1999. IGARSS '99
+  Proceedings. IEEE 1999 International}, volume~4, pages 2032--2034 vol.4,
+  1999.
+
 \bibitem{OV2640DS}
 Omnivision Technologies.
 \newblock {\em Preliminary Data Sheet}, 2 2006.
@@ -68,5 +94,10 @@ Omnivision Technologies.
 Omnivision Technologies.
 \newblock {\em Software Application Notes}, 1 2008.
 \newblock V 1.04.
+
+\bibitem{cra2}
+Ho-Soon Yang, Yong-Geol Jo, Gyu-Ug Kim, and Yun-Woo Lee.
+\newblock Measurement of the chief ray angle of mobile phone camera.
+\newblock {\em Optical Review}, 18(5):403, Sep 2011.
 
 \end{thebibliography}
