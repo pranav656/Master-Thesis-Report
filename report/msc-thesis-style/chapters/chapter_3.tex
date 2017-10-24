@@ -13,7 +13,11 @@ F(y) = F(\phi)F(x)
 \label{eq:conv3}
 F(x) = \frac{F(y)}{F(\phi)}
 \end{equation}
-Equation \ref{eq:conv3} is the simplest possible computational inversion of the scene from the sensor. This method has also been used in \cite{Toeplitz}. As mentioned in the previous chapter, there are two types of masks that can be used for the purpose of encoding the scene onto the mask, namely separable and non-separable mask. MATLAB has been used for the purpose of simulating the algorithms. 
+\begin{equation}
+\label{eq:conv4}
+x = F^{-1}(\frac{F(y)}{F(\phi)})
+\end{equation}
+Equation \ref{eq:conv4} is the simplest possible computational inversion of the scene from the sensor. This method has also been used in \cite{Toeplitz}. As mentioned in the previous chapter, there are two types of masks that can be used for the purpose of encoding the scene onto the mask, namely separable and non-separable mask. MATLAB has been used for the purpose of simulating the algorithms. 
 \section{Simulation of a non-separable mask}
 
 \section{Simulation of a separable mask}

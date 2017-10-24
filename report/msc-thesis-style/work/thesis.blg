@@ -13,54 +13,56 @@ A level-1 auxiliary file: chapter_5.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 183 of file ../bib/mycollection.bib
+Repeated entry---line 196 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "tbl:TradeoffCompression"
+Warning--to sort, need author or key in DelfiC3
 Warning--to sort, need author or key in ImagingGeo
 Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
-You've used 18 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            619 strings with 6585 characters,
-and the built_in function-call counts, 5379 in all, are:
-= -- 522
-> -- 193
+            625 strings with 6700 characters,
+and the built_in function-call counts, 5547 in all, are:
+= -- 539
+> -- 194
 < -- 5
-+ -- 82
++ -- 83
 - -- 62
-* -- 344
-:= -- 804
-add.period$ -- 54
-call.type$ -- 18
-change.case$ -- 85
+* -- 349
+:= -- 823
+add.period$ -- 57
+call.type$ -- 19
+change.case$ -- 88
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 210
-empty$ -- 499
+cite$ -- 25
+duplicate$ -- 217
+empty$ -- 522
 format.name$ -- 62
-if$ -- 1201
+if$ -- 1243
 int.to.chr$ -- 0
-int.to.str$ -- 18
+int.to.str$ -- 19
 missing$ -- 9
-newline$ -- 93
+newline$ -- 98
 num.names$ -- 22
-pop$ -- 127
+pop$ -- 137
 preamble$ -- 1
-purify$ -- 69
+purify$ -- 71
 quote$ -- 0
-skip$ -- 166
+skip$ -- 171
 stack$ -- 0
-substring$ -- 330
-swap$ -- 57
+substring$ -- 335
+swap$ -- 58
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
-warning$ -- 5
+type$ -- 76
+warning$ -- 6
 while$ -- 35
-width$ -- 20
-write$ -- 186
+width$ -- 21
+write$ -- 195
 (There was 1 error message)
