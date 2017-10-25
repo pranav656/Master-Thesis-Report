@@ -161,21 +161,40 @@ Data Compression plays a very important role when it comes to space missions. It
 \begin{table}[ht]
 \caption{Ranking of Different Compression Algorithms}
 \label{tbl:TradeoffCompression}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \diaghead{\theadfont Diag ColumnmnHead II}%
-{Method}{Factors}&\thead{MSE}&\thead{PSNR}&\thead{AD} & Compression Ratio\\
+{Method}{Factors}&\thead{MSE}&\thead{PSNR}&\thead{AD} &Compression Ratio& Implementation Needed\\
 \hline
-JPEG & 1 & 1 & 1&2\\
+JPEG & 1 & 1 & 1&2&No\\
 \hline
-DCT & 2& 2& 1& 3\\
+DCT(With Zip) & 2& 2& 1& 3&No\\
 \hline
-SPIHT & 3& 1& 1&1\\
+SPIHT & 3& 1& 1&1&Yes\\
 \hline
 \end{tabular}
 \end{table}
 JPEG algorithm is chosen for implementation since it offers equivalent performance to SPIHT and JPEG compression engine is present in most of the commercially available CMOS/CCD sensors.
 
+The JPEG compression algorithm is comprised of the following steps.
+\begin{itemize}
+\item
+\end{itemize}
+
+
+\begin{figure}[]
+\centering
+\includegraphics[scale=0.50]{pics/jpegcompression.png}
+\caption{Steps involved in JPEG Compression\cite{Jpeg}}
+\label{fig:Rec_Acc}
+\end{figure}
+
+\begin{figure}[]
+\centering
+\includegraphics[scale=1]{pics/dct.PNG}
+\caption{DCT involved in JPEG\cite{dct}}
+\label{fig:Rec_Acc}
+\end{figure}
 \subsection{Reconstruction Algorithms}
 The simplest lensless imaging system is the pinhole camera. However, since the quality of the image depends on the size of the pinhole, that restricts the amount of light that can enter the imaging system. Lenses were introduced to focus the light from distant objects onto a film or a sensor. In the absense of a lens, the sensor would record the average intensity of the light entering it. This can also bee seen in the experiments which are described in the upcoming chapters. Coded aperture cameras extend the pinhole camera concept replacing the single aperture with a mask containing multiple apertures. The first developed coded aperture cameras were used in imaging X-Ray sources due to the difficulty involved in focussing light from X-Ray sources\cite{Cannon1}. Since a single pinhole limits the amount of light imaged by the sensing element, it was replaced by many holes, called the aperture so that overlapping images are formed on the film. The recorded image will have no similarity with the source and an digital processing is required to reconstruct the source image or the object. The recorded image is mathematically modelled as a  collection of overlapping shadows as described by the following equation\cite{VBoomi}\cite{Cannon1} 
 \begin{equation}

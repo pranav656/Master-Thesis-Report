@@ -27,6 +27,6 @@
 \contentsline {section}{\numberline {5.2}Effect of SLM brightness and contrast on CMOS sensor}{34}{section.5.2}
 \contentsline {section}{\numberline {5.3}Effect of gray levels on CMOS sensor}{38}{section.5.3}
 \contentsline {section}{\numberline {5.4}Imaging of Separable Mask using CMOS sensor}{38}{section.5.4}
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{45}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusions}{45}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{45}{section.6.2}
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{47}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusions}{47}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Work}{47}{section.6.2}

@@ -137,10 +137,38 @@ SVD forms the basis of the mask imaging experiment. We image the mask using OV26
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.20]{pics/slm/ov2640dtmask.jpg}
-\caption{Doubly Toeplitz mask imaged by OV2640}
+\caption{Doubly Toeplitz mask imaged by OV2640 after modification of Q-Table}
 \label{fig:dt_ov2640}
 \end{figure}
-As can be seen from the figure \ref{fig:dt_ov2640}, the OV2640 produces a very poor image of the mask. This can be attributed to the poor quality of compression. The quantization factor increased during the previous experiments in-order to reduce the size of the image has reduced the quality of the output image. Based on the mask image, we can be sure that it would be impossible to obtain proper reconstructions. So, it was decided to try whether other CMOS sensors would produce better quality pictures that would enable proper reconstruction. Based on the trade-off chosen previously, OV5642 sensor was also bought in-case of any failure. Since, OV2640 and OV5642 follow the same architecture and use the same open-source libraries, it was decided to check the image quality on OV5642. The OV5642 has an advantage that it has a bigger active sensor array(2592*1944) and comes with a larger FIFO buffer(8MB). In order to position these sensor on the stage, a script was written that would calculate the singular values in real time. The tilt of the sensor was adjusted such that the ratio of the first component to the second component is maximum. 
+As can be seen from the figure \ref{fig:dt_ov2640}, the OV2640 produces a very poor image of the mask. This can be attributed to the poor quality of compression. The quantization factor increased during the previous experiments in-order to reduce the size of the image has reduced the quality of the output image. The change in the default quantization matrix and the modified quantization matrix that has been used for compression is shown below. The default quantization matrix has been modified so that the size of the image is within 384 KB. Without modifying the quantization scale factor, it would not be possible to obtain any image using a mask-sensor setup using OV2640. From the modified Q-Table, we can see that the higher frequency components will be eliminated and the lower frequency components will be retained. The Q-tables were obtained using the \texttt{djpeg} program\cite{djpeg} on the output image sensors running on Linux. 
+\[
+Q-Default = 
+\begin{bmatrix}
+          12  &  8 &   8  & 12 &  18 &  30 &  38&   46 \\
+           9   & 9  & 11  & 14  & 20  & 44   &45  & 41 \\
+          11  & 10 &  12  & 18 &  30 &  43 &  52 &  42 \\
+          11  & 13  & 17   &22  & 38  & 65  & 60  & 47 \\
+          14  & 17  & 28  & 42  & 51 &  82 &  77 &  58 \\
+          18  & 26  & 41  & 48 &  61  & 78 &  85  & 69 \\
+          37  & 48 &  59 &  65 &  77 &  91 &  90 &  76 \\
+          54  & 69  & 71  & 74  & 84  & 75  & 77  & 74 \\
+\end{bmatrix}
+\]
+\[
+Q-Modified = 
+\begin{bmatrix}
+   	 47 &  32 &  29 &  47 &  71 & 118 & 150 & 179 \\
+          35 &  35 &  41 &  56 &  76 & 170 & 176 & 162\\
+          41 &  38 &  47  & 71 & 118 & 167 & 203 & 165\\
+          41 &  50 &  65  & 85 & 150 & 255 & 235 & 182\\
+          53 &  65 & 109 & 165 & 200 & 255 & 255 & 226\\
+          71 & 103 & 162 & 188 & 238 & 255 & 255 & 255\\
+         144 & 188 & 229 & 255 & 255 & 255 & 255 & 255\\
+         212 & 255 & 255 & 255 & 255 & 255 & 255 & 255\\
+\end{bmatrix}
+\]
+
+Based on the mask image, we can be sure that it would be impossible to obtain proper reconstructions. So, it was decided to try whether other CMOS sensors would produce better quality pictures that would enable proper reconstruction. Based on the trade-off chosen previously, OV5642 sensor was also bought in-case of any failure. Since, OV2640 and OV5642 follow the same architecture and use the same open-source libraries, it was decided to check the image quality on OV5642. The OV5642 has an advantage that it has a bigger active sensor array(2592*1944) and comes with a larger FIFO buffer(8MB). In order to position these sensor on the stage, a script was written that would calculate the singular values in real time. The tilt of the sensor was adjusted such that the ratio of the first component to the second component is maximum. 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.125]{pics/slm/ov5642dtmask.jpg}

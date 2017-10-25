@@ -11,6 +11,11 @@ Delfi-c3 project.
 \newblock \url{http://www.delfispace.nl/delfi-c3}.
 \newblock Accessed: 2017-05-20.
 
+\bibitem{Jpeg}
+How jpg works.
+\newblock \url{https://medium.freecodecamp.org/how-jpg-works-a4dbd2316f35}.
+\newblock Accessed: 2017-10-25.
+
 \bibitem{ImagingGeo}
 Imaging geometries.
 \newblock
@@ -54,6 +59,11 @@ K.~Dezhgosha, A.~K. Sylla, and E.~Ngouyassa.
   processing in spacecrafts.
 \newblock In {\em Aerospace and Electronics Conference, 1994. NAECON 1994.,
   Proceedings of the IEEE 1994 National}, pages 416--423 vol.1, May 1994.
+
+\bibitem{djpeg}
+die.net.
+\newblock {djpeg(1) - Linux man page}.
+\newblock \url{https://linux.die.net/man/1/djpeg}.
 
 \bibitem{CompPipeline}
 Irfan Essa.
@@ -99,6 +109,10 @@ Omnivision Technologies.
 Omnivision Technologies.
 \newblock {\em Software Application Notes}, 1 2008.
 \newblock V 1.04.
+
+\bibitem{dct}
+University of California San Diego.
+\newblock {\em Lecture Note 5, Multimedia Systems}, 2003.
 
 \bibitem{cra2}
 Ho-Soon Yang, Yong-Geol Jo, Gyu-Ug Kim, and Yun-Woo Lee.
