@@ -51,7 +51,7 @@ where $t_x$ and $t_y$ is the time at which the image is captured in the correspo
   \caption{Pushbroom Scanning}
   \label{fig:Pushbroom}
 \end{subfigure}
-\caption{A figure with two subfigures}
+\caption{Push Broom and Whisk Broom Scanning}
 \label{fig:test}
 \end{figure}
 
@@ -195,8 +195,50 @@ The JPEG compression algorithm is comprised of the following steps.
 \caption{DCT involved in JPEG\cite{dct}}
 \label{fig:Rec_Acc}
 \end{figure}
-\subsection{Reconstruction Algorithms}
-The simplest lensless imaging system is the pinhole camera. However, since the quality of the image depends on the size of the pinhole, that restricts the amount of light that can enter the imaging system. Lenses were introduced to focus the light from distant objects onto a film or a sensor. In the absense of a lens, the sensor would record the average intensity of the light entering it. This can also bee seen in the experiments which are described in the upcoming chapters. Coded aperture cameras extend the pinhole camera concept replacing the single aperture with a mask containing multiple apertures. The first developed coded aperture cameras were used in imaging X-Ray sources due to the difficulty involved in focussing light from X-Ray sources\cite{Cannon1}. Since a single pinhole limits the amount of light imaged by the sensing element, it was replaced by many holes, called the aperture so that overlapping images are formed on the film. The recorded image will have no similarity with the source and an digital processing is required to reconstruct the source image or the object. The recorded image is mathematically modelled as a  collection of overlapping shadows as described by the following equation\cite{VBoomi}\cite{Cannon1} 
+\subsection{Masks and Reconstruction Algorithms}
+The main aim of designing a lensless camera is that it would help reduce the size of the camera considerably. In a lensed camera, light emanating from multiple-points in the object would intersect to form the image of the object. This is illustrated in Figure \ref{fig:lens_image}. the focal length of the lens-involed primarily determines the thickness of the camera(See Figure \ref{fig:focal_length}). In a lensless, imaging system the lens is replaced by means of a mask(series of pinholes arranged in a periodic manner). This is illustrated in Figure \ref{fig:lensvslensless}.
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{0.75\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/lensed_image_formation}
+  \caption{Image Formation in a lens-based camera\cite{lens1}}
+  \label{fig:lens_image}
+\end{subfigure}
+\begin{subfigure}{0.75\textwidth}
+  \centering
+  \includegraphics[width=.65\linewidth]{pics/focal_length}
+  \caption{Relation between focal length and thickness\cite{lens2}}
+  \label{fig:focal_length}
+\end{subfigure}
+\caption{Lens-based Camera}
+\label{fig:lens_based}
+\end{figure}
+
+The simplest lensless imaging system is the pinhole camera. However, since the quality of the image depends on the size of the pinhole, that restricts the amount of light that can enter the imaging system. Lenses were introduced to focus the light from distant objects onto a film or a sensor. In the absence of a lens, the sensor would record the average intensity of the light entering it. This can also bee seen in the experiments which are described in the upcoming chapters. 
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{pics/lensless_1}
+  \caption{Conventional Lensed Imaging}
+  \label{fig:lensed_imaging}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{pics/lensless_2}
+  \caption{Lensless Imaging}
+  \label{fig:lensless_imaging}
+\end{subfigure}
+\caption{Difference between lensed and lensless imaging methods\cite{VBoomi}}
+\label{fig:lensvslensless}
+\end{figure}
+
+Before lenses, 
+
+
+
+Coded aperture cameras extend the pinhole camera concept replacing the single aperture with a mask containing multiple apertures. The first developed coded aperture cameras were used in imaging X-Ray sources due to the difficulty involved in focussing light from X-Ray sources\cite{Cannon1}. Since a single pinhole limits the amount of light imaged by the sensing element, it was replaced by many holes, called the aperture so that overlapping images are formed on the film. The recorded image will have no similarity with the source and an digital processing is required to reconstruct the source image or the object. The recorded image is mathematically modelled as a  collection of overlapping shadows as described by the following equation\cite{VBoomi}\cite{Cannon1} 
 \begin{equation}
 y = \phi * x + e
 \end{equation}

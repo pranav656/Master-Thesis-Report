@@ -16,6 +16,12 @@ How jpg works.
 \newblock \url{https://medium.freecodecamp.org/how-jpg-works-a4dbd2316f35}.
 \newblock Accessed: 2017-10-25.
 
+\bibitem{lens1}
+Image formation revisited.
+\newblock
+  \url{http://www.physicsclassroom.com/class/refrn/Lesson-5/Image-Formation-Revisited}.
+\newblock Accessed: 2017-11-2.
+
 \bibitem{ImagingGeo}
 Imaging geometries.
 \newblock
@@ -36,6 +42,12 @@ Manual exposure for ov2640.
 Spatial light modulators.
 \newblock \url{https://en.wikipedia.org/wiki/Spatial_light_modulator}.
 \newblock Accessed: 2017-06-29.
+
+\bibitem{lens2}
+Understanding focal length.
+\newblock
+  \url{https://www.nikonusa.com/en/learn-and-explore/a/tips-and-techniques/understanding-focal-length.html#}.
+\newblock Accessed: 2017-11-2.
 
 \bibitem{VBoomi}
 V.~Boominathan, J.~K. Adams, M.~S. Asif, B.~W. Avants, J.~T. Robinson, R.~G.

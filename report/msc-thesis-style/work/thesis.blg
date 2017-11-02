@@ -13,7 +13,7 @@ A level-1 auxiliary file: chapter_5.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 213 of file ../bib/mycollection.bib
+Repeated entry---line 226 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
@@ -21,49 +21,51 @@ Warning--I didn't find a database entry for "tbl:TradeoffCompression"
 Warning--to sort, need author or key in DelfiC3
 Warning--to sort, need author or key in ImagingGeo
 Warning--to sort, need author or key in Jpeg
+Warning--to sort, need author or key in lens1
+Warning--to sort, need author or key in lens2
 Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
-You've used 22 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            638 strings with 6958 characters,
-and the built_in function-call counts, 6067 in all, are:
-= -- 591
-> -- 203
+            645 strings with 7228 characters,
+and the built_in function-call counts, 6403 in all, are:
+= -- 625
+> -- 205
 < -- 5
-+ -- 88
++ -- 90
 - -- 64
-* -- 366
-:= -- 897
-add.period$ -- 65
-call.type$ -- 22
-change.case$ -- 98
+* -- 376
+:= -- 935
+add.period$ -- 71
+call.type$ -- 24
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 239
-empty$ -- 584
+cite$ -- 33
+duplicate$ -- 253
+empty$ -- 630
 format.name$ -- 64
-if$ -- 1364
+if$ -- 1448
 int.to.chr$ -- 0
-int.to.str$ -- 22
+int.to.str$ -- 24
 missing$ -- 9
-newline$ -- 112
+newline$ -- 122
 num.names$ -- 24
-pop$ -- 158
+pop$ -- 178
 preamble$ -- 1
-purify$ -- 79
+purify$ -- 83
 quote$ -- 0
-skip$ -- 189
+skip$ -- 199
 stack$ -- 0
-substring$ -- 351
-swap$ -- 61
+substring$ -- 361
+swap$ -- 63
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
-warning$ -- 7
+type$ -- 96
+warning$ -- 9
 while$ -- 37
-width$ -- 24
-write$ -- 221
+width$ -- 26
+write$ -- 239
 (There was 1 error message)
