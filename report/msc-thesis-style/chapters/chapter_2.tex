@@ -196,7 +196,7 @@ The JPEG compression algorithm is comprised of the following steps.
 \label{fig:Rec_Acc}
 \end{figure}
 \subsection{Masks and Reconstruction Algorithms}
-The main aim of designing a lensless camera is that it would help reduce the size of the camera considerably. In a lensed camera, light emanating from multiple-points in the object would intersect to form the image of the object. This is illustrated in Figure \ref{fig:lens_image}. the focal length of the lens-involed primarily determines the thickness of the camera(See Figure \ref{fig:focal_length}). In a lensless, imaging system the lens is replaced by means of a mask(series of pinholes arranged in a periodic manner). This is illustrated in Figure \ref{fig:lensvslensless}.
+The main aim of designing a lensless camera is that it would help reduce the size of the camera considerably. In a lensed camera, light emanating from multiple-points in the object would intersect to form the image of the object. This is illustrated in Figure \ref{fig:lens_image}. the focal length of the lens-involed primarily determines the thickness of the camera(See Figure \ref{fig:focal_length}). In a lensless imaging system, the lens is replaced by means of a mask(series of pinholes arranged in a periodic manner). This is illustrated in Figure \ref{fig:lensvslensless}.
 \begin{figure}[ht]
 \centering
 \begin{subfigure}{0.75\textwidth}
@@ -208,7 +208,7 @@ The main aim of designing a lensless camera is that it would help reduce the siz
 \begin{subfigure}{0.75\textwidth}
   \centering
   \includegraphics[width=.65\linewidth]{pics/focal_length}
-  \caption{Relation between focal length and thickness\cite{lens2}}
+  \caption{Image Distance dictated by focal length \cite{lens2}}
   \label{fig:focal_length}
 \end{subfigure}
 \caption{Lens-based Camera}
@@ -234,13 +234,108 @@ The simplest lensless imaging system is the pinhole camera. However, since the q
 \label{fig:lensvslensless}
 \end{figure}
 
-Before lenses, 
+In 1960s, Fernimore and Canon introduced Fresnel Zone Plates for a "large aperture, high resolution camera with neither refracting or reflecting components"\cite{Cannon1}. The fresnel zone plate is defined such that the radius of the $n^th$ zone is given by 
+\begin{equation}
+r_n  = r_1 \sqrt{n}
+\end{equation}
+An example of Fresnel Zone plate is shown in Figure \ref{fig:fzp}. Fresnel Zone Plates can be used in the places of lenses to produce images because FZPs produce images at multiple higher order foci depending on the type of fresnel plate used. The fresnel zone plates have a transmission of exactly 50 percent. It is always desirable to have an optical system with ideal system point spread function(SPSF). The point spread function describes the response of an optical system to a point source. It can also be called as the impulse response of the optical system. The ideal point spread function of an optical system would be a dirac-delta function. However, in-order to obtain such response with a fresnel zone plate, it would have to be infinite. So, different forms of coded-apertures were developed to overcome the limitations associated with fresnel zone plates. 
 
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{0.75\textwidth}
+  \centering
+  \includegraphics[width=0.50\linewidth]{pics/fzp}
+  \caption{A twenty ring Fresnel Zone Plates}
+  \label{fig:fzp}
+\end{subfigure}
+\hfill
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.50\linewidth]{pics/random_array}
+  \caption{A 60*60 Random Array}
+  \label{fig:random_array}
+\end{subfigure}
+\hfill
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.50\linewidth]{pics/ura}
+  \caption{A 61*59 Uniformly redundant array}
+  \label{fig:ura}
+\end{subfigure}
 
+\caption{Masks developed initally for lensless imaging\cite{Cannon1}}
+\label{fig:lensvslensless}
+\end{figure}
 
 Coded aperture cameras extend the pinhole camera concept replacing the single aperture with a mask containing multiple apertures. The first developed coded aperture cameras were used in imaging X-Ray sources due to the difficulty involved in focussing light from X-Ray sources\cite{Cannon1}. Since a single pinhole limits the amount of light imaged by the sensing element, it was replaced by many holes, called the aperture so that overlapping images are formed on the film. The recorded image will have no similarity with the source and an digital processing is required to reconstruct the source image or the object. The recorded image is mathematically modelled as a  collection of overlapping shadows as described by the following equation\cite{VBoomi}\cite{Cannon1} 
 \begin{equation}
 y = \phi * x + e
+\label{eq:conv}
+\end{equation}
+where $y$ represents the image formed on the sensor, $\phi$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $x$ using the inverse of the mask function. An ideal point spread optical function would produce a dirac-delta response $\phi * \phi^-1$.
+In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as am alternative coded aperture imaging method. The mask consists of randomly positioned holes in an opaque surface. An example of a random array is shown in Figure \ref{fig:random_array}. The total open area may or may not be equal to the amount of opaqueness. The image produced by random arrays are decoded digitally using auto-correlation analysis of the encoded images\cite{Cannon1}. Like Fresnel Zone Plates, the random array also exhibits an ideal response when the size of the array is infinite which is practically impossible. A new-class of apertures called uniformly redundant arrays(URAs) were developed over the disadvantages associated with random arrays. The uniformly random arrays exhibit a pattern that follows the equation \ref{eq:ura}\cite{Fenimore:78}. The URA have a dimension of $r$ by $s$ with $r - s = 2$. The quation \ref{eq:ura} takes $I  = mod_ri$ and $J  = mod_rj$($i$ and $j$ represent the array index position in x and y)
+\begin{equation}
+  A(I,J) =
+  \begin{cases}
+    0 & \text{if $I = 0$} \\
+    1 & \text{if $J = 0$ \& $I\neq 0$} \\
+    1 & \text{if $C_r(I)C_s(J) = 1$} \\
+    0 & \text{otherwise}\\
+  \end{cases}
+  \label{eq:ura}
+\end{equation}
+where
+\begin{equation}
+  C_r(I) =
+  \begin{cases}
+    1 & \text{if there exists an integer $x$ such that 
+    $1<x<r$ 
+	such that $I = mod_rx^2$    
+    } \\
+    -1 & \text{otherwise} \\
+  \end{cases}
+  \label{eq:ura}
 \end{equation}
 
-where $y$ represents the image formed on the sensor, $\phi$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. 
+The matrix used for deconvolution is given by the equation \ref{eq:decura}. This kind of array produces an ideal point spread function. The point spread function of different masks discussed above is shown in Figure \ref{fig:psf_old_mask}.
+\begin{equation}
+  G(I,J) =
+  \begin{cases}
+    1 & \text{if $A(i,j) = 1$} \\
+    -1 & \text{if $A(i,j) = 0$} \\
+  \end{cases}
+  \label{eq:decura}
+\end{equation}
+
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{pics/psf_mask}
+\caption{Point Spread function of different masks\cite{Fenimore:78}}
+\label{fig:psf_old_mask}
+\end{figure}
+
+It can be seen that the Uniformly redundant arrays would offer the best performance and would produce the ideal point spread function. The direct inversion by deconvolution with inverse works when the object is against a dark background with negligible diffraction effects(for example, in the X-Ray Spectrum). 
+However, in the later studies\cite{Toeplitz}, it can be seen that equation \ref{eq:conv} no longer holds in the visible light spectrum involving extended-object scenes and direct fourier/deconvolution based reconstruction methods would fail. This is also observed in the simulation studies described in the upcoming chapter. In order to solve the problems associated with reconstructing extended object scenes in the visible light spectrum, a new class of separable Doubly Toeplitz mask was developed by Michael et.al \cite{Toeplitz}. These classes of masks retain their properties even in the presence of diffraction and extended-object scene based scenarios. The doubly toeplitz-masks are expressed as a product of two independent vectors $A(i)$ and $B(j)$.
+\begin{equation}
+M(i,j) = A(i)B(j)
+\end{equation}
+If the mask can be expressed in the form of two independent vectors, then the equation \ref{eq:conv} can be re-written in the form: 
+\begin{equation}
+I = M_AOM_B^T
+\end{equation}
+
+The matrices $M_A$ and $M_B$ are toeplitz meaning they follow the form:
+
+\[ %\arraycolsep=4pt
+ M = 
+ \begin{bmatrix*}[r]
+    A1 & A2 & \cdots &AN & 0 &0 & \cdots & 0 \\
+    0 & A1 & A2 & \cdots &AN & 0 & \cdots & 0\\
+    \vdots &\cdots &\cdots &\cdots &\cdots&\cdots&\cdots \\
+  \end{bmatrix*}
+\]
+
+\begin{figure}[ht]
+\includegraphics[scale = 0.50]{pics/doubly-topelitz}
+\caption{An example of Doubly-Toeplitz Mask\cite{Topelitz}}
+\label{fig:doubly_toeplitz}
+\end{figure}

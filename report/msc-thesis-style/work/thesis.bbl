@@ -82,6 +82,11 @@ Irfan Essa.
 \newblock {Computational Photography Udacity Course}.
 \newblock \url{https://classroom.udacity.com/courses/ud955}.
 
+\bibitem{Fenimore:78}
+E.~E. Fenimore and T.~M. Cannon.
+\newblock Coded aperture imaging with uniformly redundant arrays.
+\newblock {\em Appl. Opt.}, 17(3):337--347, Feb 1978.
+
 \bibitem{cmos}
 A.~El Gamal and H.~Eltoukhy.
 \newblock Cmos image sensors.

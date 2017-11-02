@@ -18,6 +18,7 @@ Repeated entry---line 226 of file ../bib/mycollection.bib
  :                    ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "tbl:TradeoffCompression"
+Warning--I didn't find a database entry for "Topelitz"
 Warning--to sort, need author or key in DelfiC3
 Warning--to sort, need author or key in ImagingGeo
 Warning--to sort, need author or key in Jpeg
@@ -27,45 +28,45 @@ Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
-You've used 24 entries,
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            645 strings with 7228 characters,
-and the built_in function-call counts, 6403 in all, are:
-= -- 625
-> -- 205
+            657 strings with 7381 characters,
+and the built_in function-call counts, 6738 in all, are:
+= -- 660
+> -- 218
 < -- 5
-+ -- 90
-- -- 64
-* -- 376
-:= -- 935
-add.period$ -- 71
-call.type$ -- 24
-change.case$ -- 104
++ -- 95
+- -- 68
+* -- 404
+:= -- 990
+add.period$ -- 74
+call.type$ -- 25
+change.case$ -- 109
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 253
-empty$ -- 630
-format.name$ -- 64
-if$ -- 1448
+cite$ -- 34
+duplicate$ -- 264
+empty$ -- 657
+format.name$ -- 68
+if$ -- 1516
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 9
-newline$ -- 122
-num.names$ -- 24
-pop$ -- 178
+int.to.str$ -- 25
+missing$ -- 10
+newline$ -- 127
+num.names$ -- 26
+pop$ -- 181
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 87
 quote$ -- 0
-skip$ -- 199
+skip$ -- 207
 stack$ -- 0
-substring$ -- 361
-swap$ -- 63
+substring$ -- 391
+swap$ -- 64
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 100
 warning$ -- 9
-while$ -- 37
-width$ -- 26
-write$ -- 239
+while$ -- 41
+width$ -- 27
+write$ -- 250
 (There was 1 error message)
