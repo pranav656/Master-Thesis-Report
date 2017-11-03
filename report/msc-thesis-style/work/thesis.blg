@@ -13,7 +13,7 @@ A level-1 auxiliary file: chapter_5.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 226 of file ../bib/mycollection.bib
+Repeated entry---line 227 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
@@ -24,49 +24,51 @@ Warning--to sort, need author or key in ImagingGeo
 Warning--to sort, need author or key in Jpeg
 Warning--to sort, need author or key in lens1
 Warning--to sort, need author or key in lens2
+Warning--to sort, need author or key in Flatcam
 Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
-You've used 25 entries,
+Warning--empty author in Flatcam
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            657 strings with 7381 characters,
-and the built_in function-call counts, 6738 in all, are:
-= -- 660
-> -- 218
+            664 strings with 7512 characters,
+and the built_in function-call counts, 6949 in all, are:
+= -- 681
+> -- 219
 < -- 5
-+ -- 95
++ -- 96
 - -- 68
-* -- 404
-:= -- 990
-add.period$ -- 74
-call.type$ -- 25
-change.case$ -- 109
+* -- 424
+:= -- 1017
+add.period$ -- 76
+call.type$ -- 26
+change.case$ -- 112
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 264
-empty$ -- 657
+cite$ -- 37
+duplicate$ -- 275
+empty$ -- 681
 format.name$ -- 68
-if$ -- 1516
+if$ -- 1564
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 10
-newline$ -- 127
+int.to.str$ -- 26
+missing$ -- 11
+newline$ -- 131
 num.names$ -- 26
-pop$ -- 181
+pop$ -- 183
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 89
 quote$ -- 0
-skip$ -- 207
+skip$ -- 214
 stack$ -- 0
-substring$ -- 391
-swap$ -- 64
+substring$ -- 405
+swap$ -- 65
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
-warning$ -- 9
-while$ -- 41
-width$ -- 27
-write$ -- 250
+type$ -- 104
+warning$ -- 11
+while$ -- 42
+width$ -- 28
+write$ -- 259
 (There was 1 error message)

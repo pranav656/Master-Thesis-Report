@@ -1,4 +1,4 @@
-\chapter{Literature Survey and Trade-off Analysis}
+\chapter{Background and selection criteria}
 \label{chp:LitSurvey}
 In this chapter, a state-of-the art study will be presented that could assist in design of the lensless imager with specifications mentioned in the previous chapter.
 \section{Camera Computational Pipeline}
@@ -321,6 +321,7 @@ M(i,j) = A(i)B(j)
 If the mask can be expressed in the form of two independent vectors, then the equation \ref{eq:conv} can be re-written in the form: 
 \begin{equation}
 I = M_AOM_B^T
+\label{eq:separable}
 \end{equation}
 
 The matrices $M_A$ and $M_B$ are toeplitz meaning they follow the form:
@@ -339,3 +340,5 @@ The matrices $M_A$ and $M_B$ are toeplitz meaning they follow the form:
 \caption{An example of Doubly-Toeplitz Mask\cite{Topelitz}}
 \label{fig:doubly_toeplitz}
 \end{figure}
+
+Previous studies\cite{Toeplitz}\cite{VBoomi}\cite{Flatcam} have proven that it owuld be possible to perform lensless imaging  in the visible light spectrum for real-life object scenes. The detailed solution and modelling of the computational algorithm would be discussed in the next chapter. This kind of mask would be ideal for our application.
