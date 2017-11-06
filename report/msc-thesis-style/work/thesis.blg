@@ -13,7 +13,7 @@ A level-1 auxiliary file: chapter_5.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 227 of file ../bib/mycollection.bib
+Repeated entry---line 233 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
@@ -25,50 +25,51 @@ Warning--to sort, need author or key in Jpeg
 Warning--to sort, need author or key in lens1
 Warning--to sort, need author or key in lens2
 Warning--to sort, need author or key in Flatcam
+Warning--to sort, need author or key in MoonImage
 Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
 Warning--empty author in Flatcam
-You've used 26 entries,
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            664 strings with 7512 characters,
-and the built_in function-call counts, 6949 in all, are:
-= -- 681
-> -- 219
+            669 strings with 7678 characters,
+and the built_in function-call counts, 7117 in all, are:
+= -- 698
+> -- 220
 < -- 5
-+ -- 96
++ -- 97
 - -- 68
-* -- 424
-:= -- 1017
-add.period$ -- 76
-call.type$ -- 26
-change.case$ -- 112
+* -- 429
+:= -- 1036
+add.period$ -- 79
+call.type$ -- 27
+change.case$ -- 115
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 275
-empty$ -- 681
+cite$ -- 39
+duplicate$ -- 282
+empty$ -- 704
 format.name$ -- 68
-if$ -- 1564
+if$ -- 1606
 int.to.chr$ -- 0
-int.to.str$ -- 26
+int.to.str$ -- 27
 missing$ -- 11
-newline$ -- 131
+newline$ -- 136
 num.names$ -- 26
-pop$ -- 183
+pop$ -- 193
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 91
 quote$ -- 0
-skip$ -- 214
+skip$ -- 219
 stack$ -- 0
-substring$ -- 405
-swap$ -- 65
+substring$ -- 410
+swap$ -- 66
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 104
-warning$ -- 11
+type$ -- 108
+warning$ -- 12
 while$ -- 42
-width$ -- 28
-write$ -- 259
+width$ -- 29
+write$ -- 268
 (There was 1 error message)

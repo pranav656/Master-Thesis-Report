@@ -178,22 +178,44 @@ JPEG algorithm is chosen for implementation since it offers equivalent performan
 
 The JPEG compression algorithm is comprised of the following steps.
 \begin{itemize}
-\item
-\end{itemize}
+\item The first step is to prepare the image for compression. The picture in the RGB color format is converted to YCbCr colorpace. The YCbCr model has three channels namely, Luminance(indicated by Y), Chroma Blue(indicated by Cb) and Chroma Red(indicated by Cr). The reason for this is that the human eye is more receptive to luminance than chrominance. The Cb and the Cr channels are then down-sampled which results in loss of data. Since the maximum amount of data is in the luminance part, it is not downsampled and the channel data is retained without any down sampling. 
+\item The output image is then split into blocks of size 8*8.  It is divided into blocks of 8*8 because there will be less variation in this region of the image and this can be utilized to compress the image as much as possible.
+\item After this, the Discreet cosine transform is applied on these blocks of data to obtain the DCT coefficients for different frequencies. The idea behind the DCT is that by knowing the coefficients of different frequency components, it would be possible to reconstruct the image block. This is illustrated in Figure \ref{fig:dct}.
+\begin{equation}
+ S_{i,j} = \frac{1}{4} * C_i * C_j \sum_{x=0}^{x=7}\sum_{y=0}^{y=7}P_{x,y} *cos(\frac{(2y+1)*i*\pi}{16})*cos(\frac{(2x+1)*i*\pi}{16})
+\end{equation}
+where $P_{x,y}$ is the pixel value at the location $x,y$ and $C_i$ and $C_j$ can be calculated using the equation \ref{eq:jpeg_coeff}.
+\begin{equation}
+  C_i =
+  \begin{cases}
+    \frac{1}{\sqrt{2}} & \text{if $i = 0$} \\
+    1 & \text{otherwise} \\
+  \end{cases}
+  \label{eq:jpeg_coeff}
+\end{equation}
+\item The next step is the lossy part of the JPEG compression which involves quantization of the data. In this process the the coefficients obtained are quantized using a 8*8 quantization matrix. The quantization process is illustrated by equation \ref{eq:quant}.
+\begin{equation}
+B_{j,k} = \frac{S_{i,j}}{Q_{j,k}}
+\label{eq:quant}
+\end{equation}
 
+This quantization matrix varies form sensor to sensor depending on the manufacturer. However, the matrix is such that the DC component would be retained and the higher frequency components are rounded off to zero. This quantization factor also controls the quality of compression and higher the value of quantization table, lower the value of compression. If you multiply the quantization by a large quantization factor, you would lose the higher frequency components and would only retain the DC component(given by $S_{0,0}$) and lower frequency components. Many CMOS sensors allow the modification of quantization scaling factor.
+\item After this the coefficient data is converted from 8*8 to a 64*1 vector and the huffman encoding scheme is used to encode the data. This does not lead to any loss in data and the process is completely lossless.
+\end{itemize}
+The entire JPEG compression process is shown in Figure \ref{fig:jpeg}. The process is followed in the reverse order in-order to obtain back the original RGB image and is supported by all image viewing software.
 
 \begin{figure}[]
 \centering
 \includegraphics[scale=0.50]{pics/jpegcompression.png}
 \caption{Steps involved in JPEG Compression\cite{Jpeg}}
-\label{fig:Rec_Acc}
+\label{fig:jpeg}
 \end{figure}
 
 \begin{figure}[]
 \centering
 \includegraphics[scale=1]{pics/dct.PNG}
 \caption{DCT involved in JPEG\cite{dct}}
-\label{fig:Rec_Acc}
+\label{fig:dct}
 \end{figure}
 \subsection{Masks and Reconstruction Algorithms}
 The main aim of designing a lensless camera is that it would help reduce the size of the camera considerably. In a lensed camera, light emanating from multiple-points in the object would intersect to form the image of the object. This is illustrated in Figure \ref{fig:lens_image}. the focal length of the lens-involed primarily determines the thickness of the camera(See Figure \ref{fig:focal_length}). In a lensless imaging system, the lens is replaced by means of a mask(series of pinholes arranged in a periodic manner). This is illustrated in Figure \ref{fig:lensvslensless}.
@@ -234,7 +256,7 @@ The simplest lensless imaging system is the pinhole camera. However, since the q
 \label{fig:lensvslensless}
 \end{figure}
 
-In 1960s, Fernimore and Canon introduced Fresnel Zone Plates for a "large aperture, high resolution camera with neither refracting or reflecting components"\cite{Cannon1}. The fresnel zone plate is defined such that the radius of the $n^th$ zone is given by 
+In 1960s, Fernimore and Canon introduced Fresnel Zone Plates for a "large aperture, high resolution camera with neither refracting or reflecting components"\cite{Cannon1}. The fresnel zone plate is defined such that the radius of the $n^{th}$ zone is given by 
 \begin{equation}
 r_n  = r_1 \sqrt{n}
 \end{equation}
@@ -272,8 +294,8 @@ Coded aperture cameras extend the pinhole camera concept replacing the single ap
 y = \phi * x + e
 \label{eq:conv}
 \end{equation}
-where $y$ represents the image formed on the sensor, $\phi$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $x$ using the inverse of the mask function. An ideal point spread optical function would produce a dirac-delta response $\phi * \phi^-1$.
-In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as am alternative coded aperture imaging method. The mask consists of randomly positioned holes in an opaque surface. An example of a random array is shown in Figure \ref{fig:random_array}. The total open area may or may not be equal to the amount of opaqueness. The image produced by random arrays are decoded digitally using auto-correlation analysis of the encoded images\cite{Cannon1}. Like Fresnel Zone Plates, the random array also exhibits an ideal response when the size of the array is infinite which is practically impossible. A new-class of apertures called uniformly redundant arrays(URAs) were developed over the disadvantages associated with random arrays. The uniformly random arrays exhibit a pattern that follows the equation \ref{eq:ura}\cite{Fenimore:78}. The URA have a dimension of $r$ by $s$ with $r - s = 2$. The quation \ref{eq:ura} takes $I  = mod_ri$ and $J  = mod_rj$($i$ and $j$ represent the array index position in x and y)
+where $y$ represents the image formed on the sensor, $\phi$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $x$ using the inverse of the mask function. An ideal point spread optical function would produce a dirac-delta response $\phi * \phi^{-1}$.
+In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as am alternative coded aperture imaging method. The mask consists of randomly positioned holes in an opaque surface. An example of a random array is shown in Figure \ref{fig:random_array}. The total open area may or may not be equal to the amount of opaqueness. The image produced by random arrays are decoded digitally using auto-correlation analysis of the encoded images\cite{Cannon1}. Like Fresnel Zone Plates, the random array also exhibits an ideal response when the size of the array is infinite which is practically impossible. A new-class of apertures called uniformly redundant arrays(URAs) were developed over the disadvantages associated with random arrays. The uniformly random arrays exhibit a pattern that follows the equation \ref{eq:ura}\cite{Fenimore:78}. The URA have a dimension of $r$ by $s$ with $r - s = 2$. The quation \ref{eq:ura} takes $I  = mod_ri$ and $J  = mod_rj$($i$ and $j$ represent the array index position in x and y).
 \begin{equation}
   A(I,J) =
   \begin{cases}
@@ -341,4 +363,4 @@ The matrices $M_A$ and $M_B$ are toeplitz meaning they follow the form:
 \label{fig:doubly_toeplitz}
 \end{figure}
 
-Previous studies\cite{Toeplitz}\cite{VBoomi}\cite{Flatcam} have proven that it owuld be possible to perform lensless imaging  in the visible light spectrum for real-life object scenes. The detailed solution and modelling of the computational algorithm would be discussed in the next chapter. This kind of mask would be ideal for our application.
+Previous studies\cite{Toeplitz}\cite{VBoomi}\cite{Flatcam} have proven that it would be possible to perform lensless imaging  in the visible light spectrum for real-life object scenes. The detailed solution and modelling of the computational algorithm would be discussed in the next chapter. This kind of mask would be ideal for our application.
