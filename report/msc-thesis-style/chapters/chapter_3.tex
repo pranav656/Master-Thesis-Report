@@ -51,6 +51,7 @@ where
 \begin{equation}
 MSE = \frac{1}{mn}\sum_{i=1}^{i=N}\sum_{j=1}^{j=N}[O(i,j) - O_{guess}(i,j)]^2
 \end{equation}
+
 \begin{table}
 \label{tbl:sim_parameters}
 \caption{Simulation Parameters}
@@ -108,7 +109,52 @@ However, when the diffracted mask is modelled for the sensor image, the reconstr
     
     
 \section{Simulation of a separable mask}
-The non-separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}.
+As we saw in the previous section, a non-separable mask cannot be used for our application in the visible light region as the visible light spectrum contains significant diffraction effects. We can improve the solution since a separable mask follows the equation \ref{eq:separable}. The same improved solution has been used in \cite{Toeplitz}. We can express \ref{eq:separable} as shown in equation \ref{eq:sep_sq}.
+\begin{equation}
+M_{A}^TIsM_{B} = (M_{A}^TM_{A})O(M_{B}^TM_B)^T 
+\label{eq:sep_sq}
+\end{equation} 
+We multiply the left and right system matrices to obtain square symmetric matrices. The problem is that they are not invertible, due to the presence of zero eigenvalues. So, the parameters $\alpha_A$ and $\alpha_B$ to remove the zero eigenvalues and make them invertible. The final solution will be given by the equation \ref{eq:sep_final}.
+\begin{equation}
+O_{Guess} = (M_{A}^TM_A + \alpha_{A}^21_{R_{O}})^{-1}M_{A}^TIM_{B}(M_{B}^TM_B + \alpha_{B}^21_{C_{O}})^{-1}
+\label{eq:sep_final}
+\end{equation}
+One more advantage of using the separable mask is the reduced amount of computation needed compared to the non-separable mask. The number of computations for a non-separable mask will be given by the equation \ref{eq:non_sep_comp}. For a megapixel image, this would translate to $10^{18}$.
+\begin{equation}
+N_{operations} \propto (r_O*c_O)^3
+\label{eq:non_sep_comp}
+\end{equation}
+\begin{table}
+\label{tbl:comp_sep}
+\caption{Table indicating the rows and columns used for simulation}
+\begin{center}
+\begin{tabular}{ |c|c|c| }
+\hline
+Matrix & Rows & Columns \\
+\hline
+Mask Size & $r_M$ & $c_M$\\
+\hline
+Image on Sensor & $r_I$ & $c_I$\\
+\hline
+Object Area contributing &  $r_O = r_M + r_I - 1$ & $c_O = c_M + c_I - 1$\\
+\hline
+Left Toeplitz Mask & $r_{I}$ & $r_{O}$\\
+\hline
+Right Toeplitz matrix & $c_{I}$ & $c_{O}$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+For a separable mask however, the number of computation is drastically reduced because the size of the left and right system matrices is reduced to $(R_I*R_O)$ and $(C_I*C_O)$ from multiplying the entire object matrix of size $r_O*c_O$. This would come to around$2*10^9$ operations.This can also be observed in the simulation and it takes an extremely long amount of time to complete for a non-separable matrix. The size of different matrices used in simulation is shown in Table \ref{tbl:comp_sep}.
+
+\begin{equation}
+N_{operations} \propto [(r_I*r_O)^3 + (c_I*c_O)^3] 
+\label{eq:sep_comp}
+\end{equation}
+
+The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}.
 \begin{figure}[ht]
 \includegraphics[scale = 0.50]{pics/sep_mask_sim_flow}
 \caption{Simulation-Flow separable mask}
