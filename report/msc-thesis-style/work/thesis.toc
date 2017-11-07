@@ -7,26 +7,30 @@
 \contentsline {chapter}{\numberline {2}Background and selection criteria}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Camera Computational Pipeline}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Satellite Imaging Architectures}{6}{section.2.2}
-\contentsline {section}{\numberline {2.3}Trade-off Analysis}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Camera Sensor}{8}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Compression Algorithms}{11}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Masks and Reconstruction Algorithms}{14}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {3}Simulation of Reconstruction Algorithm}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Simulation of a non-separable mask}{22}{section.3.1}
-\contentsline {section}{\numberline {3.2}Simulation of a separable mask}{22}{section.3.2}
-\contentsline {chapter}{\numberline {4}Implementation}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Embedded Software of Camera}{25}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Exposure Control of OV2640}{26}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Testing of Acceptance Cone of Sensor}{28}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Experimental Setup}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Improved experiment}{33}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Adding to Simulation}{36}{section.4.3}
-\contentsline {section}{\numberline {4.4}Spatial Light Modulators}{39}{section.4.4}
-\contentsline {chapter}{\numberline {5}Experimentations with SLM}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Initial Experiments to image mask}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}Effect of SLM brightness and contrast on CMOS sensor}{42}{section.5.2}
-\contentsline {section}{\numberline {5.3}Effect of gray levels on CMOS sensor}{46}{section.5.3}
-\contentsline {section}{\numberline {5.4}Imaging of Separable Mask using CMOS sensor}{46}{section.5.4}
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{55}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusions}{55}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{55}{section.6.2}
+\contentsline {section}{\numberline {2.3}Spatial Resolution and Field of View}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Spatial Resolution}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Field of View}{10}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Trade-off Analysis}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Camera Sensor}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Compression Algorithms}{14}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Masks and Reconstruction Algorithms}{16}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}Simulation of Reconstruction Algorithm}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Simulation of a non-separable mask}{24}{section.3.1}
+\contentsline {section}{\numberline {3.2}Simulation of a separable mask}{24}{section.3.2}
+\contentsline {chapter}{\numberline {4}Implementation}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Embedded Software of Camera}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Exposure Control of OV2640}{28}{subsection.4.1.1}
+\contentsline {chapter}{\numberline {5}Experiment to determine Acceptance Angle of CMOS sensor}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Testing of Acceptance Cone of Sensor}{31}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Experimental Setup}{31}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Improved experiment}{36}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Adding to Simulation}{38}{section.5.2}
+\contentsline {section}{\numberline {5.3}Spatial Light Modulators}{40}{section.5.3}
+\contentsline {chapter}{\numberline {6}Experimentations with SLM}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Initial Experiments to image mask}{43}{section.6.1}
+\contentsline {section}{\numberline {6.2}Effect of SLM brightness and contrast on CMOS sensor}{44}{section.6.2}
+\contentsline {section}{\numberline {6.3}Effect of gray levels on CMOS sensor}{48}{section.6.3}
+\contentsline {section}{\numberline {6.4}Imaging of Separable Mask using CMOS sensor}{48}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{57}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusions}{57}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{57}{section.7.2}

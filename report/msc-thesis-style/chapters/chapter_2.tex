@@ -66,6 +66,49 @@ $$
 $$
 where $f(x)$ and $f(y)$ represents the sensor output.
 \end{itemize}
+
+\section{Spatial Resolution and Field of View}
+Two important factors that come into account when developing cameras for space applications are spatial resolution and field of view. These factors determine the performance of the camera and it is important to know how these cameras will perform when designed.
+
+
+\subsection{Spatial Resolution}
+Spatial resolution in remote sensing refers to the smallest area of the earth that can be captured by the sensor in use. The impact of different spatial resolutions on imaging a house object is shown in Figure \ref{fig:spatial_resolution}. For example, if an house on earth measures 30*30 m, a camera with a spatial resolution of 30 m cannot image the house completely and the pixel is going to be the average color of that particular area which is 30m. If the spatial resolution is reduced to 5m, then we can differentiate between different components of the house. An even smaller spatial resolution of 1m will enable us to see the finer details of the house components. 
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{pics/spatial-resolution}
+\caption{Picture Quality variation according to different spatial resolutions\cite{SpatialResol}}
+\label{fig:spatial_resolution}
+\end{figure}
+
+In remote sensing, a system with high spatial resolution is one which has resolution of 0.41-4 meters per pixel, a system with low spatial resolution has resolution ranging from 30-1000 meters per pixel\cite{SpatialResol}. The spatial resolution of a system can be determined by the equation equation \ref{eq:spat_res}. 
+
+\begin{equation}
+\label{eq:spat_res}
+d_e = \frac{d_p}{d_t} * d_h
+\end{equation}
+where $d_e$ indicates the spatial resolution, $d_p$ indicates the individual pixel size or detector element, $d_h$ indicates the height of the instrument from earth and $d_t$ indicates the thickness of the camera or the distance of the lens/mask from the sensor.
+
+The equation \ref{eq:spat_res} is obtained by using the simple triangular rules and the relation can be obtained by using Figure \ref{fig:spatial_resolution_calc}.
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{pics/spatialRes}
+\caption{Spatial Resolution Calculation}
+\label{fig:spatial_resolution_calc}
+\end{figure}
+
+\subsection{Field of View}
+
+The field of view can be determined by the equation
+\begin{equation}
+\label{eq:fov_calc}
+d_e = 2*d_h*tan(\theta_{cra})
+\end{equation}
+where $d_e$ is the area that can be imaged by the earth, $d_h$ determined the height of the instrument from the surface of the earth and $\theta_{cra}$ determines the acceptance cone or the acceptance angle of the sensor elements. This equation can be determined by using simple triangular laws and this is shown in Figure \ref{fig:fov_calc}.
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{pics/fov}
+\caption{Field of View Calculation}
+\label{fig:fov_calc}
+\end{figure}
+
 \section{Trade-off Analysis}
 \label{sec:tradeOff}
 \subsection{Camera Sensor}
@@ -154,6 +197,7 @@ Price & - & + & X & X & - - - & ++ & X & + & X & X\\
 \hline
 \end{tabular}
 \end{table}
+
 
 \subsection{Compression Algorithms}
 Data Compression plays a very important role when it comes to space missions. It is a very important aspect in the system design of a lensless camera for space application as the image that needs to be sent down to earth needs to be compressed as much as possible. Various surveys\cite{Compression2}\cite{Compression3}\cite{Compression4} have been conducted previously in-terms of which compression algorithm would best preserve the data and provide maximum compression at the same-time. Compression algorithms can be divided into two types namely lossy and lossless. Lossless compression algorithms are algorithms in which we can reconstruct the original image without any loss in data. Typical examples of lossless algorithms include Portable Network Graphics Format(PNG), Bitmap Format(BMP), TIFF(Tagged Image File Format). Lossy compression algorithms are compression algorithms in which we cannot completely reconstruct the original image. However, lossy compression factors offer a very high compression ratio compared to loss-less algorithms. Lossy Compression algorithms include DCT(Discreet Cosine Transform), JPEG(Joint Photographic Experts Group), SPIHT(Set Partitioning in Hierarchical Trees)\cite{Compression3}. A survey conducted for European Student Moon Orbiter Mission\cite{Compression3} has reviewed various possible compression algorithms that could be used for lunar imaging. The compression algorithms were evaluated on the basis of Mean Square Error(MSE), Peak Signal to Noise Ratio(PSNR), Normalized Cross-Correlation(NK), Averaged Difference(AD), Structural Content(SC), Maximal Difference and Normalized Absolute Error(NAED). The reviewed compression formats were BMP, CGM, GIF, JPEG, PNG, TIFF, WebP. Loss-less compression generally does not offer a compression ratio of more than 2 due to the entropy present in real-life artefacts. Since space missions offer a limited communication link-speed, the compression ratio needs to be more than 2. This cannot be offered by lossless compression and hence we need to go for lossy compression formats. It can be seen from table \cite{tbl:TradeoffCompression} that JPEG and SPIHT perform better compared to DCT. It can be seen that JPEG offers better performance in-terms of Mean Squared Error. However, SPIHT offers a higher compression ratio. 

@@ -70,6 +70,13 @@ T.~M. Cannon and E.~E. Fenimore.
 \newblock Coded aperture imaging: Many holes make light work.
 \newblock {\em Optical Engineering}, 19(3):193283--193283--, 1980.
 
+\bibitem{SpatialResol}
+Satellite~Imaging Corporation.
+\newblock Characterization of satellite remote sensing systems.
+\newblock
+  \url{https://www.satimagingcorp.com/services/resources/characterization-of-satellite-remote-sensing-systems/}.
+\newblock Accessed: 2017-05-20.
+
 \bibitem{Toeplitz}
 Michael~J. DeWeert and Brian~P. Farm.
 \newblock Lensless coded-aperture imaging with separable doubly-toeplitz masks.

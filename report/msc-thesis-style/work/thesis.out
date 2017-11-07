@@ -6,26 +6,30 @@
 \BOOKMARK [0][-]{chapter.2}{Background and selection criteria}{}% 6
 \BOOKMARK [1][-]{section.2.1}{Camera Computational Pipeline}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.2}{Satellite Imaging Architectures}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Trade-off Analysis}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.3.1}{Camera Sensor}{section.2.3}% 10
-\BOOKMARK [2][-]{subsection.2.3.2}{Compression Algorithms}{section.2.3}% 11
-\BOOKMARK [2][-]{subsection.2.3.3}{Masks and Reconstruction Algorithms}{section.2.3}% 12
-\BOOKMARK [0][-]{chapter.3}{Simulation of Reconstruction Algorithm}{}% 13
-\BOOKMARK [1][-]{section.3.1}{Simulation of a non-separable mask}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.2}{Simulation of a separable mask}{chapter.3}% 15
-\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 16
-\BOOKMARK [1][-]{section.4.1}{Embedded Software of Camera}{chapter.4}% 17
-\BOOKMARK [2][-]{subsection.4.1.1}{Exposure Control of OV2640}{section.4.1}% 18
-\BOOKMARK [1][-]{section.4.2}{Testing of Acceptance Cone of Sensor}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.2.1}{Experimental Setup}{section.4.2}% 20
-\BOOKMARK [2][-]{subsection.4.2.2}{Improved experiment}{section.4.2}% 21
-\BOOKMARK [1][-]{section.4.3}{Adding to Simulation}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.4}{Spatial Light Modulators}{chapter.4}% 23
-\BOOKMARK [0][-]{chapter.5}{Experimentations with SLM}{}% 24
-\BOOKMARK [1][-]{section.5.1}{Initial Experiments to image mask}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.2}{Effect of SLM brightness and contrast on CMOS sensor}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.3}{Effect of gray levels on CMOS sensor}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.4}{Imaging of Separable Mask using CMOS sensor}{chapter.5}% 28
-\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 29
-\BOOKMARK [1][-]{section.6.1}{Conclusions}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.2}{Future Work}{chapter.6}% 31
+\BOOKMARK [1][-]{section.2.3}{Spatial Resolution and Field of View}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.3.1}{Spatial Resolution}{section.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.3.2}{Field of View}{section.2.3}% 11
+\BOOKMARK [1][-]{section.2.4}{Trade-off Analysis}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.4.1}{Camera Sensor}{section.2.4}% 13
+\BOOKMARK [2][-]{subsection.2.4.2}{Compression Algorithms}{section.2.4}% 14
+\BOOKMARK [2][-]{subsection.2.4.3}{Masks and Reconstruction Algorithms}{section.2.4}% 15
+\BOOKMARK [0][-]{chapter.3}{Simulation of Reconstruction Algorithm}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Simulation of a non-separable mask}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Simulation of a separable mask}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Embedded Software of Camera}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.1.1}{Exposure Control of OV2640}{section.4.1}% 21
+\BOOKMARK [0][-]{chapter.5}{Experiment to determine Acceptance Angle of CMOS sensor}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Testing of Acceptance Cone of Sensor}{chapter.5}% 23
+\BOOKMARK [2][-]{subsection.5.1.1}{Experimental Setup}{section.5.1}% 24
+\BOOKMARK [2][-]{subsection.5.1.2}{Improved experiment}{section.5.1}% 25
+\BOOKMARK [1][-]{section.5.2}{Adding to Simulation}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.3}{Spatial Light Modulators}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Experimentations with SLM}{}% 28
+\BOOKMARK [1][-]{section.6.1}{Initial Experiments to image mask}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.2}{Effect of SLM brightness and contrast on CMOS sensor}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.3}{Effect of gray levels on CMOS sensor}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.4}{Imaging of Separable Mask using CMOS sensor}{chapter.6}% 32
+\BOOKMARK [0][-]{chapter.7}{Conclusions and Future Work}{}% 33
+\BOOKMARK [1][-]{section.7.1}{Conclusions}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.2}{Future Work}{chapter.7}% 35
