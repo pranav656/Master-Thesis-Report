@@ -36,11 +36,52 @@ x = F^{-1}(\frac{F(y)}{F(\phi)+k})
 \label{fig:non_sep_sim}
 \end{figure}
 
-In order to start with the mathematical modelling process and to imitate the sensor data and reconstruction, a reference image is needed. For that, it was decided to use the full moon image captured by the Apollo 11 space craft\cite{MoonImage}. Since the satellite is going to be pointing towards astronomical objects like the earth, moon, it was decided to crop out a portion of the full moon image as the main purpose of the satellite would be to image specific portions of earth. The simulation is done under the assumption that the camera is enclosed in a box-like structure and light from specific region of the earth/moon would reach it and the sensor size is finite. The image was converted to gray and scaled down form 0 to 1 and is displayed in the \texttt{bone} colormap format available on MATLAB as th colormap would display the minute variations in the reconstructed image. This is illustrated in Figure \ref{fig:moon_image}. The simulation is performed with and without diffraction and analysed. 
+In order to start with the mathematical modelling process and to imitate the sensor data and reconstruction, a reference image is needed. For that, it was decided to use the full moon image captured by the Apollo 11 space craft\cite{MoonImage}. Since the satellite is going to be pointing towards astronomical objects like the earth, moon, it was decided to crop out a portion of the full moon image as the main purpose of the satellite would be to image specific portions of earth. The simulation is done under the assumption that the camera is enclosed in a box-like structure and light from specific region of the earth/moon would reach it and the sensor size is finite. The image was converted to gray and scaled down form 0 to 1 and is displayed in the \texttt{bone} colormap format available on MATLAB as th colormap would display the minute variations in the reconstructed image. This is illustrated in Figure \ref{fig:moon_image}. The simulation is performed with and without diffraction and analysed. The mask used for simulation is shown in Figure \ref{fig:non_sep_sim}.
 \begin{figure}[ht]
 \includegraphics[scale = 0.50]{pics/MoonImagePortion}
 \caption{The first image is the orginal image of the moon as taken by Apollo 11 spacecraft. The second image indicates the cropped region and the third image indicates the region that is used for the simulation.}
 \label{fig:moon_image}
+\end{figure}
+The simulation parameters are shown in Table \ref{tbl:sim_parameters}. The reconstruction error is given by the equation \ref{eq:psnr}. $O_{guess}$ indicates the reconstruction and $O$ represents the original object. Fresnel diffraction features are added to the mask since the distance between the mask and the sensor lies in the fresnel diffraction region and the fresnel number for the mask is less than  1. The fresnel diffraction modelling is described in the appendix section of the report.Diffraction causes the mask to become non-binary.
+\begin{equation}
+PSNR = 20log(\frac{N*max(O)}{MSE})
+\label{eq:psnr}
+\end{equation}
+where 
+\begin{equation}
+MSE = \frac{1}{mn}\sum_{i=1}^{i=N}\sum_{j=1}^{j=N}[O(i,j) - O_{guess}(i,j)]^2
+\end{equation}
+\begin{table}
+\label{tbl:sim_parameters}
+\caption{Simulation Parameters}
+\begin{center}
+\begin{tabular}{ |c|c| }
+\hline
+Pixel Size & 2.2$\mu m$ * 2.2$\mu m$\\
+\hline
+Sensor Size & 512 * 512 pixels\\
+\hline     
+Mask Size & 1024 * 1024 pixels\\
+\hline 
+Mask Sensor Distance & 5 millimeters \\
+\hline 
+\texttt{Nxm0, Nym0} & 256, 256\\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale = 0.250]{pics/non_separable_mask}
+\caption{Non-separable mask used for simulation}
+\label{fig:non_sep_sim}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width = \textwidth]{pics/non_sep_diffracted_mask}
+\caption{The mask image on the left indicates undiffracted mask and the mask on the right indicates the diffracted non-separable mask}
+\label{fig:non_sep_sim_diff}
 \end{figure}
 
 \begin{figure}[ht]
@@ -48,8 +89,24 @@ In order to start with the mathematical modelling process and to imitate the sen
 \caption{The first image indicates the sensor image if the sensor plane was infinite. The second image indicates the cropped sensor image that would be formed on an actual finite sensor size(cropped).}
 \label{fig:moon_image}
 \end{figure}
-
-
+The reconstructions obtained using equation \ref{eq:conv5} is shown in Figure \ref{fig:rec_non_sep}. It can be seen from the figure that we have successful reconstructions using equation \ref{eq:conv5}. The value of $k $ was set to 0.01.
+However, when the diffracted mask is modelled for the sensor image, the reconstruction fails. This is the reason why we need to go for the separable mask as this mask is not resistant to diffraction effects. 
+  \begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[scale = 0.5]{pics/rec_non_sep}
+    
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[scale= 0.5]{pics/rec_non_sep_diff}
+    \end{subfigure}
+    \caption{the figure shows the reconstruction with and without fresnel diffraction effects for a non-separable mask using equation \ref{eq:conv5}. We are able to obtain PSNR = 57.85 without diffraction effects. However, the reconstruction with the mask fails when diffraction effects are incorporated into the mask. }
+    \label{fig:rec_non_sep}
+    \end{figure}
+    
+    
 \section{Simulation of a separable mask}
 The non-separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}.
 \begin{figure}[ht]
@@ -57,4 +114,33 @@ The non-separable mask simulation was carried out as shown in Figure \ref{fig:se
 \caption{Simulation-Flow separable mask}
 \label{fig:sep_sim}
 \end{figure}
+  \begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/mask_16}
+        \caption{\texttt{Nxm0} = 16}
+        \label{fig:mask-16}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/mask_32}
+        \caption{\texttt{Nxm0} = 32}
+        \label{fig:mask-32}
+    \end{subfigure}
+    
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[width=0.5\linewidth]{pics/mask_256}
+        \caption{\texttt{Nxm0} = 256}
+        \label{fig:mask-256}
+    \end{subfigure}%     
+    \caption{Different separable masks generated with different \texttt{Nxm0}}
+    \label{fig:exptests}
+    \end{figure}
 
+\begin{figure}[ht]
+\includegraphics[width=\linewidth]{pics/diffracted_mask}
+\caption{The mask image on the left indicates undiffracted mask and the mask on the right indicates the diffracted separable mask}
+\label{fig:moon_image}
+\end{figure}

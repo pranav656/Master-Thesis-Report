@@ -14,14 +14,14 @@ A level-1 auxiliary file: chapter_6.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 240 of file ../bib/mycollection.bib
+Repeated entry---line 246 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "tbl:TradeoffCompression"
-Warning--I didn't find a database entry for "Topelitz"
 Warning--to sort, need author or key in DelfiC3
 Warning--to sort, need author or key in ImagingGeo
+Warning--to sort, need author or key in landsat
 Warning--to sort, need author or key in Jpeg
 Warning--to sort, need author or key in lens1
 Warning--to sort, need author or key in lens2
@@ -32,45 +32,45 @@ Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
 Warning--empty author in Flatcam
-You've used 28 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            675 strings with 7905 characters,
-and the built_in function-call counts, 7330 in all, are:
-= -- 719
-> -- 227
+            676 strings with 8008 characters,
+and the built_in function-call counts, 7498 in all, are:
+= -- 736
+> -- 228
 < -- 5
-+ -- 100
++ -- 101
 - -- 70
-* -- 434
-:= -- 1072
-add.period$ -- 83
-call.type$ -- 28
-change.case$ -- 119
+* -- 439
+:= -- 1091
+add.period$ -- 86
+call.type$ -- 29
+change.case$ -- 122
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 289
-empty$ -- 726
+cite$ -- 42
+duplicate$ -- 296
+empty$ -- 749
 format.name$ -- 70
-if$ -- 1653
+if$ -- 1695
 int.to.chr$ -- 0
-int.to.str$ -- 28
+int.to.str$ -- 29
 missing$ -- 11
-newline$ -- 142
+newline$ -- 147
 num.names$ -- 28
-pop$ -- 203
+pop$ -- 213
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 96
 quote$ -- 0
-skip$ -- 224
+skip$ -- 229
 stack$ -- 0
-substring$ -- 415
-swap$ -- 67
+substring$ -- 420
+swap$ -- 68
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 12
+type$ -- 116
+warning$ -- 13
 while$ -- 44
-width$ -- 30
-write$ -- 279
+width$ -- 31
+write$ -- 288
 (There was 1 error message)

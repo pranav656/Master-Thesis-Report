@@ -44,6 +44,12 @@ Manual exposure for ov2640.
 \newblock \url{http://www.arducam.com/manual-exposure-ov2640/}.
 \newblock Accessed: 2017-06-28.
 
+\bibitem{landsat}
+Resolutions of remote sensing.
+\newblock
+  \url{http://www.edc.uri.edu/nrs/classes/NRS409/RS/Lectures/HowRemoteSensonWork.pdf}.
+\newblock Accessed: 2017-05-20.
+
 \bibitem{SLMWiki}
 Spatial light modulators.
 \newblock \url{https://en.wikipedia.org/wiki/Spatial_light_modulator}.
