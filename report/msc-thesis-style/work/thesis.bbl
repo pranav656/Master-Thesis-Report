@@ -50,6 +50,12 @@ Resolutions of remote sensing.
   \url{http://www.edc.uri.edu/nrs/classes/NRS409/RS/Lectures/HowRemoteSensonWork.pdf}.
 \newblock Accessed: 2017-05-20.
 
+\bibitem{hadamard}
+A russian dolls ordering of the hadamard basis for compressive single-pixel
+  imaging.
+\newblock \url{https://www.nature.com/articles/s41598-017-03725-6}.
+\newblock Accessed: 2017-11-09.
+
 \bibitem{SLMWiki}
 Spatial light modulators.
 \newblock \url{https://en.wikipedia.org/wiki/Spatial_light_modulator}.

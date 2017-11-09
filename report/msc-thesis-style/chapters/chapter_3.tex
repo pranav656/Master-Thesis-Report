@@ -31,7 +31,7 @@ The non-separable mask simulation was carried out as shown in Figure \ref{fig:no
 x = F^{-1}(\frac{F(y)}{F(\phi)+k})
 \end{equation}
 \begin{figure}[ht]
-\includegraphics[scale = 0.50]{pics/non_sep_sim_flow}
+\includegraphics[width=\linewidth]{pics/non_sep_sim_flow}
 \caption{Simulation-Flow non-separable mask}
 \label{fig:non_sep_sim}
 \end{figure}
@@ -53,7 +53,6 @@ MSE = \frac{1}{mn}\sum_{i=1}^{i=N}\sum_{j=1}^{j=N}[O(i,j) - O_{guess}(i,j)]^2
 \end{equation}
 
 \begin{table}
-\label{tbl:sim_parameters}
 \caption{Simulation Parameters}
 \begin{center}
 \begin{tabular}{ |c|c| }
@@ -67,7 +66,9 @@ Mask Size & 1024 * 1024 pixels\\
 Mask Sensor Distance & 5 millimeters \\
 \hline 
 \texttt{Nxm0, Nym0} & 256, 256\\
+\hline
 \end{tabular}
+\label{tbl:sim_parameters}
 \end{center}
 \end{table}
 
@@ -157,7 +158,7 @@ N_{operations} \propto [(r_I*r_O)^3 + (c_I*c_O)^3]
 The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks begin generated. The shape of the mask is more simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks vary between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}.
 The difference between diffracted and non-diffracted separable mask is shown in Figure \ref{fig:diff_separable}.
 \begin{figure}[ht]
-\includegraphics[scale = 0.50]{pics/sep_mask_sim_flow}
+\includegraphics[width=\linewidth]{pics/sep_mask_sim_flow}
 \caption{Simulation-Flow separable mask}
 \label{fig:sep_sim}
 \end{figure}

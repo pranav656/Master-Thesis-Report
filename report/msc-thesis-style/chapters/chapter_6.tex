@@ -45,20 +45,20 @@ In order to solve these problems, multiple changes were made to the way the expe
 The first set of experiments was conducted to see the effect of brightness and contrast of the SLM on the image formed by the CMOS sensor. For this I thought of illuminating the CMOS sensor using the laser beam and then study the output image from the CMOS sensor for different gray levels on the CMOS sensor. Three gray levels(0,128,255) were chosen and the brightness/contrast levels were varied to see which brightness/contrast levels best represent the amount of light propotional to the grayness levels of the SLM. The brightness/contrast levels could be varied from 0 to 64 on the SLM. All the readings were normalized with respect to 255 to see how the intensity drops with respect to grayness levels. It can be seen from figures \ref{fig:slm_grayscale0},\ref{fig:slm_grayscale128},\ref{fig:slm_grayscale255} that there is a certain level of drop in intensity signal irrespective of the brightness levels. However, it is only in some gray levels that the drop is significant and noticeable(>25 percent reduction in intensity). The attenuation factors(ratio of reduction in intensity with respect to gray level 0) is plotted in tables \ref{tbl:attenuation128},\ref{tbl:attenuation255} that brightness levels and contrast levels close to 60 provide maximum attenuation in signals for graylevels 128(around 28 percent reduction) and gray levels 255(around 88 percent reduction) gray levels. It was decided to set the brightness and contrast values to 63 and study how the grayness level of the SLM affects the amount of light passing through the SLM.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.35]{pics/slm/slmgrayscale0.jpg}
+\includegraphics[width = \linewidth]{pics/slm/slmgrayscale0.jpg}
 \caption{Effect of brightness and contrast on intensity for grayscale 0}
 \label{fig:slm_grayscale0}
 \end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.35]{pics/slm/slmgrayscale128.jpg}
+\includegraphics[width = \linewidth]{pics/slm/slmgrayscale128.jpg}
 \caption{Effect of brightness and contrast on intensity for grayscale 128}
 \label{fig:slm_grayscale128}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.35]{pics/slm/slmgrayscale255.jpg}
+\includegraphics[width = \linewidth]{pics/slm/slmgrayscale255.jpg}
 \caption{Effect of brightness and contrast on intensity for grayscale 255}
 \label{fig:slm_grayscale255}
 \end{figure}
@@ -110,7 +110,7 @@ The mean of the entire output image of the CMOS sensor is taken for plotting the
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=0.35]{pics/slm/grayscale_slm_graph.jpg}
+\includegraphics[width = \linewidth]{pics/slm/grayscale_slm_graph.jpg}
 \caption{Grayscale vs intensity of light received by the CMOS sensor.}
 \label{fig:grayscale_slm_graph}
 \end{figure}
@@ -200,14 +200,14 @@ It can been from the table that OV2640 provides a better singular value ratio th
 The same results as in the simulation(only one singular value) could not be replicated because the mask that is produced by the SLM is not completely binary as observed in the previous experiment with SLM. If you observe the images from the sensor closely you can see that the black regions allow some portion of the light to pass through. This results in the image matrix becoming non-binary which in-turn results in secondary SVD components. One way to solve this would be to use a threshold and make the mask image binary but this would result in loss of diffraction and object data. Apart from this factor, another reason why other SVD components are observed is due to the presence of dead-pixel regions in the output data. The values of these pixels over-ride the values of the mask. These effects do not play a major role in lens based imaging but form a very important role in lensless imaging. Exposure plays a very important role in decomposability of the matrix. I first thought of increasing the exposure in-order to make the difference between the black and white more prominent (which in-turn increases separability). This idea seems to have worked out. The ratio of singular value to the exposure time is shown in Figure \ref{fig:svd_exposure}. The mask becomes separable as the exposure time is increased. However, this comes with a disadvantage. LifeCam has a very limited controllable range of exposure time and the sensor starts quickly saturating at around 2ms. When the sensor starts saturating, it leads to loss of data which in turn will have an effect on reconstruction. 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.35]{pics/slm/svd_graph_exposure.jpg}
+\includegraphics[width = \linewidth]{pics/slm/svd_graph_exposure.jpg}
 \caption{Impact of Exposure Time on Singular Values}
 \label{fig:svd_exposure}
 \end{figure}
 The best decomposition that I could get was using the LifeCam HD-3000 with exposure adjusted(without saturation) based on figure \ref{fig:svd_exposure}. The decomposition of mask into different components is shown in figure \ref{fig:svd_dec_exp}. 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.50]{pics/slm/svd-decomp-exp.png}
+\includegraphics[width = \linewidth]{pics/slm/svd-decomp-exp.png}
 \caption{Decomposition of best data set(Ratio of first to second component = 39.70 )}
 \label{fig:svd_dec_exp}
 \end{figure}

@@ -15,7 +15,7 @@ A level-1 auxiliary file: chapter_7.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 253 of file ../bib/mycollection.bib
+Repeated entry---line 254 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
@@ -32,46 +32,47 @@ Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
 Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
+Warning--to sort, need author or key in hadamard
 Warning--empty author in Flatcam
-You've used 29 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            677 strings with 8021 characters,
-and the built_in function-call counts, 7498 in all, are:
-= -- 736
-> -- 228
+            681 strings with 8188 characters,
+and the built_in function-call counts, 7668 in all, are:
+= -- 753
+> -- 229
 < -- 5
-+ -- 101
++ -- 103
 - -- 70
-* -- 439
-:= -- 1091
-add.period$ -- 86
-call.type$ -- 29
-change.case$ -- 122
+* -- 444
+:= -- 1110
+add.period$ -- 89
+call.type$ -- 30
+change.case$ -- 125
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 296
-empty$ -- 749
+cite$ -- 44
+duplicate$ -- 303
+empty$ -- 772
 format.name$ -- 70
-if$ -- 1695
+if$ -- 1737
 int.to.chr$ -- 0
-int.to.str$ -- 29
+int.to.str$ -- 30
 missing$ -- 11
-newline$ -- 147
+newline$ -- 152
 num.names$ -- 28
-pop$ -- 213
+pop$ -- 223
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 98
 quote$ -- 0
-skip$ -- 229
+skip$ -- 234
 stack$ -- 0
-substring$ -- 420
-swap$ -- 68
+substring$ -- 426
+swap$ -- 69
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
-warning$ -- 13
+type$ -- 120
+warning$ -- 14
 while$ -- 44
-width$ -- 31
-write$ -- 288
+width$ -- 32
+write$ -- 297
 (There was 1 error message)
