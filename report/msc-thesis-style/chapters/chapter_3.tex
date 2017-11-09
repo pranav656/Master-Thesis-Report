@@ -147,14 +147,15 @@ Right Toeplitz matrix & $c_{I}$ & $c_{O}$\\
 \end{table}
 
 
-For a separable mask however, the number of computation is drastically reduced because the size of the left and right system matrices is reduced to $(R_I*R_O)$ and $(C_I*C_O)$ from multiplying the entire object matrix of size $r_O*c_O$. This would come to around$2*10^9$ operations.This can also be observed in the simulation and it takes an extremely long amount of time to complete for a non-separable matrix. The size of different matrices used in simulation is shown in Table \ref{tbl:comp_sep}.
+For a separable mask however, the number of computation is drastically reduced because the size of the left and right system matrices is reduced to $(R_I*R_O)$ and $(C_I*C_O)$ from multiplying the entire object matrix of size $r_O*c_O$. This would come to around $2*10^9$ operations.This can also be observed in the simulation and it takes an extremely long amount of time to complete for a non-separable matrix. The size of different matrices used in simulation is shown in Table \ref{tbl:comp_sep}.
 
 \begin{equation}
 N_{operations} \propto [(r_I*r_O)^3 + (c_I*c_O)^3] 
 \label{eq:sep_comp}
 \end{equation}
 
-The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}.
+The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks begin generated. The shape of the mask is more simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks vary between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}.
+The difference between diffracted and non-diffracted separable mask is shown in Figure \ref{fig:diff_separable}.
 \begin{figure}[ht]
 \includegraphics[scale = 0.50]{pics/sep_mask_sim_flow}
 \caption{Simulation-Flow separable mask}
@@ -182,11 +183,29 @@ The separable mask simulation was carried out as shown in Figure \ref{fig:sep_si
         \label{fig:mask-256}
     \end{subfigure}%     
     \caption{Different separable masks generated with different \texttt{Nxm0}}
-    \label{fig:exptests}
+    \label{fig:sep_mask_multi}
     \end{figure}
 
 \begin{figure}[ht]
 \includegraphics[width=\linewidth]{pics/diffracted_mask}
 \caption{The mask image on the left indicates undiffracted mask and the mask on the right indicates the diffracted separable mask}
-\label{fig:moon_image}
+\label{fig:diff_separable}
 \end{figure}
+
+It can be seen from Figure \ref{fig:rec_sep} that even in the presence of diffraction it would be possible to obtain reconstructions using equation \ref{eq:sep_final} by using a separable mask unlike a non-separable mask which fails to provide any reconstruction in the presence of diffraction effects. 
+  \begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+    \centering
+        \includegraphics[scale = 0.25]{pics/sep_mask_rec}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+	\hspace{4cm}    
+    \centering
+        \includegraphics[scale= 0.25]{pics/sep_mask_rec_diff}
+    \end{subfigure}
+    \caption{The figure shows the reconstruction with and without fresnel diffraction effects for a separable mask using equation \ref{eq:sep_final}. We are able to obtain PSNR = 57.85 without diffraction effects. It can be seen that we can obtain reconstructions even in the presence of diffraction effects with PSNR = 57.93 }
+    \label{fig:rec_sep}
+    \end{figure}
+It was seen that the separable mask would work best for our application and we can safely assume that we can use these masks to obtain reconstructions for extended object imaging in the visible light spectrum as the diffraction effects have also been taken into account.     
+    

@@ -11,10 +11,11 @@ A level-1 auxiliary file: chapter_3.aux
 A level-1 auxiliary file: chapter_4.aux
 A level-1 auxiliary file: chapter_5.aux
 A level-1 auxiliary file: chapter_6.aux
+A level-1 auxiliary file: chapter_7.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 246 of file ../bib/mycollection.bib
+Repeated entry---line 253 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
@@ -34,7 +35,7 @@ Warning--to sort, need author or key in SLMWiki
 Warning--empty author in Flatcam
 You've used 29 entries,
             2118 wiz_defined-function locations,
-            676 strings with 8008 characters,
+            677 strings with 8021 characters,
 and the built_in function-call counts, 7498 in all, are:
 = -- 736
 > -- 228
