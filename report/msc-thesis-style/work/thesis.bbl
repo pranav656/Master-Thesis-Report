@@ -71,6 +71,16 @@ Understanding focal length.
 Flatcam: Thin, lensless cameras using coded aperture and computation.
 \newblock {\em IEEE Transactions on Computational Imaging}, PP(99):1--1, 2016.
 
+\bibitem{OV2640Arducam}
+Arducam.
+\newblock {\em 2MP SPI Camera User Guide}, 2 2015.
+\newblock Rev 1.0.
+
+\bibitem{OV5642Arducam}
+Arducam.
+\newblock {\em 5MP SPI Camera User Guide}, 10 2016.
+\newblock Rev 1.0.
+
 \bibitem{VBoomi}
 V.~Boominathan, J.~K. Adams, M.~S. Asif, B.~W. Avants, J.~T. Robinson, R.~G.
   Baraniuk, A.~C. Sankaranarayanan, and A.~Veeraraghavan.

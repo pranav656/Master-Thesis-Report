@@ -1,5 +1,36 @@
 \chapter{Implementation}
 
+The main specifications of the chosen cameras are shown in Table \ref{tbl:camera_specs}. These specifications are taken from the sensor data sheet and the camera manual provided by the vendors of the camera\cite{OV2640Arducam}\cite{OV5642Arducam}\cite{OV2640DS}\cite{OV5642DS}.
+\begin{table}[]
+\centering
+\caption{ Key Specifications Specifications of sensors Chosen}
+\label{tbl:camera_specs}
+\begin{tabular}{|c|c|c|}
+\hline
+Specification & OV2640 &  OV5642 \\
+\hline
+Voltage Level & 3.3/5V &  3.3/5V\\
+ \hline
+Frame Buffer Size & 384 KB & 8MB \\
+ \hline
+ Active Pixel Array Size& 1600$\times$1200&  2592$\times$1944 \\
+ \hline  
+ Camera Dimensions & 34mm $\times$ 24mm & 34mm $\times$24mm\\
+ \hline
+ Sensor Dimensions & 5725 $\mu$m $\times$ 6285 $\mu$m& 6945 $\mu$m $\times$ 6695 $\mu$m\\
+ \hline
+ Pixel Size & 2.2 $\mu$m $\times$ 2.2 $mu$m & 1.4$\mu$m $\times$ 1.4 $\mu$m\\
+ \hline
+ Weight & 20 grams & 20 grams \\
+ \hline
+ Operating Temperatures & -10 to 55 degree celsius & -10 to 55 degree celsius \\
+ \hline
+ Electronic Interfaces Needed & SPI, I2C & SPI, I2C\\
+ \hline
+ Dynamic Range & 50 dB & 68 dB \\
+ \hline
+\end{tabular}
+\end{table}
 \section{Embedded Software of Camera}
 One of the main reasons behind choosing the OV2640 CMOS sensor is that it has a ready electronic interface that can be used t interface with standard 8-bit/16-bit microcontrollers,  The OV2640 is one of the sensors that is available as a part of Arducam hardware. Arducam is an open source camera that comes along with open-source hardware and software that is needed to capture images using the CMOS sensor. However, using the camera comes with its own advantages and disadvantages. The main advantage behind using this platform is that the platform has open-source libraries that could be used to interface with ATMEGA328P, an 8-bit microcontroller. In space-missions, it would not be possible to send high-powered microprocessors, and microcontroller is used as an on-board computer. Arducam has standard software libraries that can be used to interface with Arduino making the cumbersome and lengthy job of writing an interface software to a CMOS sensor way more easier.  A disadvantage of the hardware module is the on-board memory that it has to capture an image. The OV2640 Arducam mini camera module can capture upto 1600*1200 resolution images with or without any form of compression. However due to the limitation of the on-board OV2640 FIFO memory AL422B it would be possible to capture only compressed images and not full resolution RAW images. The AL422B on-board FIFO has only 384KB of memory and that is not enough to obtain a full-resolution RAW image. However, we would like to have the RAW unprocessed image from the sensor. One of the other disadvantages is that custom code needs to be written to obtain various controls that we need for our camera. We have to write our own camera control software if we need to control factors such as exposure time, ISO, etc. as the default software uses automatic exposure control to enhance the image quality. The camera module architecture is shown in Figure \ref{fig:arducam_arch}.
 
