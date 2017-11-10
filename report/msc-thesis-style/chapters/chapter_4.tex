@@ -82,3 +82,39 @@ As shown in Figure \ref{fig:ShutterTimingOV2640}, one line consists of 1922 pixe
     \caption{Images of a laser beam caught in different exposure times(with lens)}
     \label{fig:exptests}
     \end{figure}
+    
+\section{Power Consumption of Sensors}
+ One important aspect that also needs to be taken into account is the power consumption of the camera module(including the sensor, memory, voltage regulators, etc). Since, we have two camera modules, OV2640(low resolution, low power) and OV5642(high resolution, high power). The power consumption profile for OV2640 was provided by the manufacturer, however, the same is not available for OV5642. So, it was decided to perform power consumption measurements for the sensors manually. In order to find the amount of power consumed, we connect a 1 $\omega$ resistor in series with the power line connecting the microcontroller and CMOS image sensor. The voltage measured across the resistor would be the current consumed by the camera sensors. The camera was operated in two modes: one in continuous "on" mode and the second mode was "on only when use". The second mode was activated clearing \texttt{GPIO\_PWDN\_MASK} when the camera is in use and setting it once again once the camera is done taking the pictures and then saving it onto the memory card. The current consumption graph is shown in Figure \ref{fig:power}.
+ 
+   \begin{figure}[ht]
+    \centering
+    \begin{subfigure}{\textwidth}
+    \centering
+        \includegraphics[width=1\linewidth]{pics/power_1.JPG}
+        \caption{Voltage across  resistor when continuosly on}
+    \end{subfigure}%
+   
+    \begin{subfigure}{\textwidth}
+    \centering
+        \includegraphics[width=1\linewidth]{pics/power_2.JPG}
+        \caption{Voltage across  resistor when  using \texttt{GPIO\_PWDN\_MASK}}
+    \end{subfigure}
+       \caption{This figure shows the difference between keeping the OV5642 sensor module continuously on and using the \texttt{GPIO\_PWDN\_MASK}}
+        \label{fig:power}
+   \end{figure}
+ 
+ It can be seen from Figure \ref{fig:power} that we can reduce power consumption by switching on the camera only when in use. The camera is operated in 5V mode. The current consumed by the camera is averaged  and the measured power consumption is shown in Table \ref{tbl:power_cons}. As expected, the higher resolution camera OV5642 consumes more power than OV2640. Since, OV2640 is consumes lower power and is also of lower resolution(which implies lesser size), we proceed to continue with the next set of experiments using OV2640.
+\begin{table}[]
+\centering
+\caption{measured power consumption of Cameras only when "on"}
+\label{tbl:power_cons}
+\begin{tabular}{|c|c|}
+\hline
+Sensor & Power \\
+\hline
+ OV2640 & 5V/93mA\\
+ \hline
+ OV5642 & 5V/233mA\\
+ \hline
+\end{tabular}
+\end{table}

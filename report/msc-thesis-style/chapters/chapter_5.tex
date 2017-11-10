@@ -164,6 +164,25 @@ This would be the actual field of view in the real world. The actual area of the
 \label{fig:Rec_Acc}
 \end{figure}
 
+\section{Actual Field of View and Spatial Resolution Calculations}
+In this section, we will be discussing about how we can calculate the field of view of the camera from the experiment and perform spatial resolution calculation of the camera we can expect when we use the lensless camera in practice. The spatial resolution can be calculated using equation \ref{eq:spat_res}. The calculated spatial resolutions based on mask-sensor distance and the height of the satellite from the earth is shown in Figure \ref{fig:spat-res-graph-1}. It can be seen from the graph that as we increase the mask-sensor distance, we can attain better spatial resolutions that can represent the ground data better. the best spatial resolution is obtained when the mask-sensor distance is the greatest(i.e 10 mm) and when the satellite is as close to the earth(350 kilometres). The spatial resolution at a height of 350 kilometres would be 7.7 metres per pixel for a mask-sensor distance of 10 mm. A mask-sensor distance of 5 mm would provide 15.4 meters per pixel at the same height. The figure \ref{fig:spat-res-graph-1} is calculated for a pixel size of $2.2 \times 2.2 \mu m$. The other sensor OV5642 can offer a better spatial resolution as it's pixel size is smaller $1.4 \times 1.4 \mu m$. The spatial resolution values will be scaled by the ratio of the pixel sizes. 
+
+\begin{figure}[]
+\centering
+\includegraphics[width = \linewidth]{pics/spatial-res-calc}
+\caption{Relation between Spatial resolution and mask-sensor distance for sensor OV2640}
+\label{fig:spat-res-graph-1}
+\end{figure}
+
+The field of view of the camera can be calculated using the acceptance angle calculated from integrating the experimental and simulation results. The sensor OV2640 has an experimentally verified acceptance angle of 21.7 degrees. The field of view can be calculated using equation \ref{eq:fov_calc}. The obtained calculation results are shown in Figure \ref{fig:fov-graph-1}. It can be seen that maximum field of view can be obtained when the satellite is at a height of 800 kilometres from the surface of the earth. However, the spatial resolution as mentioned earlier will be lower at higher altitudes. A maximum field of view of 636 kilometres can be obtained. The sensor OV5642 has a chief ray angle of 23.6 degrees as mentioned in it's data sheet\cite{OV5642DS}. However, this claim has not been experimentally verified.
+
+\begin{figure}[]
+\centering
+\includegraphics[width = \linewidth]{pics/fov-calc}
+\caption{Field of View Calculation based on Experimental Results}
+\label{fig:fov-graph-1}
+\end{figure}
+
 \section{Spatial Light Modulators}
 A spatial light modulator (SLM) is an object that imposes some form of spatially varying modulation on a beam of light\cite{SLMWiki}.SLMs can be controlled by computer controlled software and it would be possible to generate patterns on the SLM that could modulate phase or the intensity of the beam or both simultaneously. An advantage of using an SLM over designing a lithographic mask is that it would be possible to test out different designs of masks quickly in order to find out an optimal mask configuration that would be suitable to our setup. In our design of the lensless imager, it must be possible to block and allow light in a certain binary pattern. A transmissive SLM would suit the purpose of simulating different mask patterns. For this purpose, a holoeye LC2012 SLM was used 
 

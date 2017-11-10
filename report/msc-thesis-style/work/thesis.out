@@ -19,22 +19,24 @@
 \BOOKMARK [0][-]{chapter.4}{Implementation}{}% 19
 \BOOKMARK [1][-]{section.4.1}{Embedded Software of Camera}{chapter.4}% 20
 \BOOKMARK [2][-]{subsection.4.1.1}{Exposure Control of OV2640}{section.4.1}% 21
-\BOOKMARK [0][-]{chapter.5}{Experiment to determine Acceptance Angle of CMOS sensor}{}% 22
-\BOOKMARK [1][-]{section.5.1}{Testing of Acceptance Cone of Sensor}{chapter.5}% 23
-\BOOKMARK [2][-]{subsection.5.1.1}{Experimental Setup}{section.5.1}% 24
-\BOOKMARK [2][-]{subsection.5.1.2}{Improved experiment}{section.5.1}% 25
-\BOOKMARK [1][-]{section.5.2}{Adding to Simulation}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.3}{Spatial Light Modulators}{chapter.5}% 27
-\BOOKMARK [0][-]{chapter.6}{Experimentations with SLM}{}% 28
-\BOOKMARK [1][-]{section.6.1}{Initial Experiments to image mask}{chapter.6}% 29
-\BOOKMARK [1][-]{section.6.2}{Effect of SLM brightness and contrast on CMOS sensor}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.3}{Effect of gray levels on CMOS sensor}{chapter.6}% 31
-\BOOKMARK [1][-]{section.6.4}{Imaging of Separable Mask using CMOS sensor}{chapter.6}% 32
-\BOOKMARK [0][-]{chapter.7}{Estimation of System Matrices}{}% 33
-\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 34
-\BOOKMARK [1][-]{section.7.2}{Strategy}{chapter.7}% 35
-\BOOKMARK [2][-]{subsection.7.2.1}{Identity Basis}{section.7.2}% 36
-\BOOKMARK [2][-]{subsection.7.2.2}{Hadamard Basis}{section.7.2}% 37
-\BOOKMARK [0][-]{chapter.8}{Conclusions and Future Work}{}% 38
-\BOOKMARK [1][-]{section.8.1}{Conclusions}{chapter.8}% 39
-\BOOKMARK [1][-]{section.8.2}{Future Work}{chapter.8}% 40
+\BOOKMARK [1][-]{section.4.2}{Power Consumption of Sensors}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{Experiment to determine Acceptance Angle of CMOS sensor}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Testing of Acceptance Cone of Sensor}{chapter.5}% 24
+\BOOKMARK [2][-]{subsection.5.1.1}{Experimental Setup}{section.5.1}% 25
+\BOOKMARK [2][-]{subsection.5.1.2}{Improved experiment}{section.5.1}% 26
+\BOOKMARK [1][-]{section.5.2}{Adding to Simulation}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.3}{Actual Field of View and Spatial Resolution Calculations}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.4}{Spatial Light Modulators}{chapter.5}% 29
+\BOOKMARK [0][-]{chapter.6}{Experimentations with SLM}{}% 30
+\BOOKMARK [1][-]{section.6.1}{Initial Experiments to image mask}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.2}{Effect of SLM brightness and contrast on CMOS sensor}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.3}{Effect of gray levels on CMOS sensor}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.4}{Imaging of Separable Mask using CMOS sensor}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{Estimation of System Matrices}{}% 35
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 36
+\BOOKMARK [1][-]{section.7.2}{Strategy}{chapter.7}% 37
+\BOOKMARK [2][-]{subsection.7.2.1}{Identity Basis}{section.7.2}% 38
+\BOOKMARK [2][-]{subsection.7.2.2}{Hadamard Basis}{section.7.2}% 39
+\BOOKMARK [0][-]{chapter.8}{Conclusions and Future Work}{}% 40
+\BOOKMARK [1][-]{section.8.1}{Conclusions}{chapter.8}% 41
+\BOOKMARK [1][-]{section.8.2}{Future Work}{chapter.8}% 42
