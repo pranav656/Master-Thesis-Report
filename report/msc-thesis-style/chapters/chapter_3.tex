@@ -155,7 +155,19 @@ N_{operations} \propto [(r_I*r_O)^3 + (c_I*c_O)^3]
 \label{eq:sep_comp}
 \end{equation}
 
-The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks begin generated. The shape of the mask is more simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks vary between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}.
+The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks begin generated. The shape of the mask is more simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks vary between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}. It can be seen from figure \ref{fig:sep_sim} that there as an additional step involved in the simulation process of separable masks which is the rank-1 estimation of diffracted matrices. In this step, we perform Singular Value Decomposition(SVD) on the diffracted matrices to obtain $M_x$ and $M_y$. Now let us see what is singular value decomposition. Singular value decomposition is a mathematical tool that would enable us to express any matrix of the form $M_{ \times n}$ in the form given by equation \ref{eq:svd_1}\cite{svd}. 
+
+\begin{equation}
+\label{eq:svd_1}
+M_{m \times n} = U_{m \times r}S_{r\times r}(V_{n \times r})^T
+\end{equation}
+where $r$ represents the rank of the matrix $M$ , $m$ and $n$ denote the size of the matrix respectively. We can estimate the rank-1 estimation of a matrix by taking the first row and column of $U$ and $V$ and multiplying them as shown in equation \label{eq:svd_2}.
+
+\begin{equation}
+\label{eq:svd_2}
+M_{1} = U_{1}S_1(V_{1})^T
+\end{equation}
+One of the main advantages of using a doubly toeplitz mask is that it is decomposable in to a single rank matrix with and without the effects of diffraction. The other rank-components are negligible even in the presence of diffraction. This is an important property that must be kept in mind which will be used for various experimental purposes.  In the simulation, we use SVD on the diffracted mask, take the rank-1 estimate of of the mask. The $U_1$ and $V_1$ will represent the left and right system matrix of the refracted mask. The obtained single dimensional $U_1$ and $V_1$ of the doubly toeplitz mask will be converted into toeplitz matrices and inverted using equation \ref{eq:sep_final}. The decomposition of the diffracted and non-diffracted separable mask into a 1-rank matrix(with other components negligible) was also verified in the simulations.
 The difference between diffracted and non-diffracted separable mask is shown in Figure \ref{fig:diff_separable}.
 \begin{figure}[ht]
 \includegraphics[width=\linewidth]{pics/sep_mask_sim_flow}

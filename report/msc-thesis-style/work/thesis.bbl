@@ -156,6 +156,11 @@ C.~Lambert-Nebout and G.~Moury.
   Proceedings. IEEE 1999 International}, volume~4, pages 2032--2034 vol.4,
   1999.
 
+\bibitem{svd}
+Wolfram Mathworld.
+\newblock Singular value decomposition.
+\newblock \url{http://mathworld.wolfram.com/SingularValueDecomposition.html}.
+
 \bibitem{OV2640DS}
 Omnivision Technologies.
 \newblock {\em Preliminary Data Sheet}, 2 2006.

@@ -14,10 +14,15 @@ A level-1 auxiliary file: chapter_6.aux
 A level-1 auxiliary file: chapter_7.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
+A level-1 auxiliary file: appendix_a.aux
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 280 of file ../bib/mycollection.bib
+Repeated entry---line 288 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 293 of file ../bib/mycollection.bib
+ : @misc{svd
+ :          ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "tbl:TradeoffCompression"
 Warning--to sort, need author or key in DelfiC3
@@ -34,45 +39,45 @@ Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
 Warning--to sort, need author or key in hadamard
 Warning--empty author in Flatcam
-You've used 33 entries,
+You've used 34 entries,
             2118 wiz_defined-function locations,
-            695 strings with 8368 characters,
-and the built_in function-call counts, 8145 in all, are:
-= -- 807
-> -- 232
+            700 strings with 8496 characters,
+and the built_in function-call counts, 8349 in all, are:
+= -- 826
+> -- 239
 < -- 5
-+ -- 106
-- -- 70
-* -- 471
-:= -- 1179
-add.period$ -- 98
-call.type$ -- 33
-change.case$ -- 134
++ -- 109
+- -- 72
+* -- 476
+:= -- 1213
+add.period$ -- 101
+call.type$ -- 34
+change.case$ -- 138
 chr.to.int$ -- 0
-cite$ -- 47
-duplicate$ -- 327
-empty$ -- 823
-format.name$ -- 70
-if$ -- 1845
+cite$ -- 48
+duplicate$ -- 334
+empty$ -- 845
+format.name$ -- 72
+if$ -- 1890
 int.to.chr$ -- 0
-int.to.str$ -- 33
+int.to.str$ -- 34
 missing$ -- 11
-newline$ -- 167
-num.names$ -- 28
-pop$ -- 229
+newline$ -- 172
+num.names$ -- 30
+pop$ -- 237
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 110
 quote$ -- 0
-skip$ -- 249
+skip$ -- 257
 stack$ -- 0
-substring$ -- 444
-swap$ -- 72
+substring$ -- 449
+swap$ -- 73
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 136
 warning$ -- 14
-while$ -- 44
-width$ -- 35
-write$ -- 327
-(There was 1 error message)
+while$ -- 46
+width$ -- 36
+write$ -- 336
+(There were 2 error messages)
