@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.5)  10 NOV 2017 14:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.5)  11 NOV 2017 09:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -836,11 +836,12 @@ Overfull \hbox (76.43483pt too wide) in paragraph at lines 162--199
 [][] 
  []
 
+[13]
 
-LaTeX Warning: Citation `tbl:TradeoffCompression' on page 13 undefined on input
+LaTeX Warning: Citation `tbl:TradeoffCompression' on page 14 undefined on input
  line 203.
 
-[13] [14]
+[14]
 Overfull \hbox (75.60666pt too wide) in paragraph at lines 208--220
 [][] 
  []
@@ -882,14 +883,14 @@ File: pics/focal_length.jpg Graphic file (type jpg)
 Package pdftex.def Info: pics/focal_length.jpg used on input line 276.
 (pdftex.def)             Requested size: 176.15645pt x 106.18475pt.
  [16]
-<pics/lensless_1.PNG, id=475, 301.8778pt x 100.87688pt>
+<pics/lensless_1.PNG, id=474, 301.8778pt x 100.87688pt>
 File: pics/lensless_1.PNG Graphic file (type png)
 
 <use pics/lensless_1.PNG>
 Package pdftex.def Info: pics/lensless_1.PNG used on input line 289.
 (pdftex.def)             Requested size: 271.01248pt x 90.56206pt.
 
-<pics/lensless_2.PNG, id=476, 444.91219pt x 97.86563pt>
+<pics/lensless_2.PNG, id=475, 444.91219pt x 97.86563pt>
 File: pics/lensless_2.PNG Graphic file (type png)
 
 <use pics/lensless_2.PNG>
@@ -925,16 +926,16 @@ File: pics/ura.PNG Graphic file (type png)
 Package pdftex.def Info: pics/ura.PNG used on input line 327.
 (pdftex.def)             Requested size: 94.85602pt x 90.4063pt.
  [18 <./pics/lensed_image_formation.png> <./pics/focal_length.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./pics/lensless_1.PNG> <./pics/lensless_2.PNG>]
 Overfull \hbox (52.57639pt too wide) detected at line 364
 [][]\OML/cmm/m/it/10.95 C[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 I\OT1/cmr/m/
 n/10.95 ) = []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19 <./pics/lensless_1.PNG> <./pics/lensless_2.PNG>]
-<pics/psf_mask.PNG, id=528, 301.125pt x 149.05687pt>
+[20 <./pics/fzp.PNG> <./pics/random_array.PNG> <./pics/ura.PNG>]
+<pics/psf_mask.PNG, id=536, 301.125pt x 149.05687pt>
 File: pics/psf_mask.PNG Graphic file (type png)
  <use pics/psf_mask.PNG>
 Package pdftex.def Info: pics/psf_mask.PNG used on input line 377.
@@ -944,30 +945,31 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 377--378
 [][] 
  []
 
-[20 <./pics/fzp.PNG> <./pics/random_array.PNG> <./pics/ura.PNG>]
-<pics/doubly-topelitz.PNG, id=544, 185.94469pt x 189.70876pt>
+[21 <./pics/psf_mask.PNG>]
+<pics/doubly-topelitz.PNG, id=553, 185.94469pt x 189.70876pt>
 File: pics/doubly-topelitz.PNG Graphic file (type png)
 
 <use pics/doubly-topelitz.PNG>
 Package pdftex.def Info: pics/doubly-topelitz.PNG used on input line 406.
 (pdftex.def)             Requested size: 92.9721pt x 94.85414pt.
-) [21 <./pics/psf_mask.PNG>] [22 <./pics/doubly-topelitz.PNG>]
+) [22 <./pics/doubly-topelitz.PNG>]
 \openout2 = `chapter_3.aux'.
 
- (./chapters/chapter_3.tex
+
+(./chapters/chapter_3.tex
 Chapter 3.
 [23
 
 
 
-] <pics/non_sep_sim_flow.png, id=584, 857.2025pt x 261.97874pt>
+] <pics/non_sep_sim_flow.png, id=588, 857.2025pt x 261.97874pt>
 File: pics/non_sep_sim_flow.png Graphic file (type png)
 
 <use pics/non_sep_sim_flow.png>
 Package pdftex.def Info: pics/non_sep_sim_flow.png used on input line 34.
 (pdftex.def)             Requested size: 360.0pt x 110.02232pt.
 
-<pics/MoonImagePortion.jpg, id=588, 764.8575pt x 233.37187pt>
+<pics/MoonImagePortion.jpg, id=592, 764.8575pt x 233.37187pt>
 File: pics/MoonImagePortion.jpg Graphic file (type jpg)
 
 <use pics/MoonImagePortion.jpg>
@@ -979,14 +981,14 @@ Overfull \hbox (22.42781pt too wide) in paragraph at lines 41--42
  []
 
 [24 <./pics/non_sep_sim_flow.png>]
-<pics/non_separable_mask.jpg, id=604, 603.0028pt x 606.01407pt>
+<pics/non_separable_mask.jpg, id=608, 603.0028pt x 606.01407pt>
 File: pics/non_separable_mask.jpg Graphic file (type jpg)
 
 <use pics/non_separable_mask.jpg>
 Package pdftex.def Info: pics/non_separable_mask.jpg used on input line 77.
 (pdftex.def)             Requested size: 150.75032pt x 151.50314pt.
 
-<pics/non_sep_diffracted_mask.jpg, id=605, 987.69pt x 353.82187pt>
+<pics/non_sep_diffracted_mask.jpg, id=609, 987.69pt x 353.82187pt>
 File: pics/non_sep_diffracted_mask.jpg Graphic file (type jpg)
 
 <use pics/non_sep_diffracted_mask.jpg>
@@ -998,7 +1000,7 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 84--85
  [][] 
  []
 
-<pics/sensorCropped.jpg, id=606, 778.40813pt x 342.5297pt>
+<pics/sensorCropped.jpg, id=610, 778.40813pt x 342.5297pt>
 File: pics/sensorCropped.jpg Graphic file (type jpg)
 
 <use pics/sensorCropped.jpg>
@@ -1009,14 +1011,14 @@ Overfull \hbox (29.20311pt too wide) in paragraph at lines 90--91
 [][] 
  []
 
-<pics/rec_non_sep.jpg, id=610, 266.49562pt x 267.24844pt>
+<pics/rec_non_sep.jpg, id=614, 266.49562pt x 267.24844pt>
 File: pics/rec_non_sep.jpg Graphic file (type jpg)
 
 <use pics/rec_non_sep.jpg>
 Package pdftex.def Info: pics/rec_non_sep.jpg used on input line 100.
 (pdftex.def)             Requested size: 133.24748pt x 133.62389pt.
 
-<pics/rec_non_sep_diff.jpg, id=611, 262.73157pt x 267.24844pt>
+<pics/rec_non_sep_diff.jpg, id=615, 262.73157pt x 267.24844pt>
 File: pics/rec_non_sep_diff.jpg Graphic file (type jpg)
 
 <use pics/rec_non_sep_diff.jpg>
@@ -1038,20 +1040,20 @@ LaTeX Warning: Reference `tbl:comp_sep' on page 27 undefined on input line 151.
 
 
 [27 <./pics/sensorCropped.jpg>]
-<pics/sep_mask_sim_flow.png, id=653, 857.2025pt x 261.97874pt>
+<pics/sep_mask_sim_flow.png, id=657, 857.2025pt x 261.97874pt>
 File: pics/sep_mask_sim_flow.png Graphic file (type png)
 
 <use pics/sep_mask_sim_flow.png>
 Package pdftex.def Info: pics/sep_mask_sim_flow.png used on input line 173.
 (pdftex.def)             Requested size: 360.0pt x 110.02232pt.
 
-<pics/mask_16.jpg, id=654, 261.97874pt x 265.74281pt>
+<pics/mask_16.jpg, id=658, 261.97874pt x 265.74281pt>
 File: pics/mask_16.jpg Graphic file (type jpg)
  <use pics/mask_16.jpg>
 Package pdftex.def Info: pics/mask_16.jpg used on input line 181.
 (pdftex.def)             Requested size: 90.3375pt x 91.6327pt.
 
-<pics/mask_32.jpg, id=655, 267.24844pt x 267.24844pt>
+<pics/mask_32.jpg, id=659, 267.24844pt x 267.24844pt>
 File: pics/mask_32.jpg Graphic file (type jpg)
  <use pics/mask_32.jpg>
 Package pdftex.def Info: pics/mask_32.jpg used on input line 187.
@@ -1061,28 +1063,28 @@ Overfull \hbox (1.34998pt too wide) in paragraph at lines 179--191
  []$[]$$[]$ 
  []
 
-<pics/mask_256.jpg, id=656, 268.75406pt x 271.76532pt>
+<pics/mask_256.jpg, id=660, 268.75406pt x 271.76532pt>
 File: pics/mask_256.jpg Graphic file (type jpg)
  <use pics/mask_256.jpg>
 Package pdftex.def Info: pics/mask_256.jpg used on input line 194.
 (pdftex.def)             Requested size: 90.3375pt x 91.34984pt.
 
 [28 <./pics/rec_non_sep.jpg> <./pics/rec_non_sep_diff.jpg>]
-<pics/diffracted_mask.jpg, id=665, 977.90344pt x 352.31625pt>
+<pics/diffracted_mask.jpg, id=669, 977.90344pt x 352.31625pt>
 File: pics/diffracted_mask.jpg Graphic file (type jpg)
 
 <use pics/diffracted_mask.jpg>
 Package pdftex.def Info: pics/diffracted_mask.jpg used on input line 203.
 (pdftex.def)             Requested size: 360.0pt x 129.6991pt.
 
-<pics/sep_mask_rec.png, id=668, 601.4972pt x 604.50844pt>
+<pics/sep_mask_rec.png, id=672, 601.4972pt x 604.50844pt>
 File: pics/sep_mask_rec.png Graphic file (type png)
 
 <use pics/sep_mask_rec.png>
 Package pdftex.def Info: pics/sep_mask_rec.png used on input line 213.
 (pdftex.def)             Requested size: 150.37393pt x 151.12674pt.
 
-<pics/sep_mask_rec_diff.png, id=669, 615.0478pt x 618.05907pt>
+<pics/sep_mask_rec_diff.png, id=673, 615.0478pt x 618.05907pt>
 File: pics/sep_mask_rec_diff.png Graphic file (type png)
 
 <use pics/sep_mask_rec_diff.png>
@@ -1113,133 +1115,153 @@ Overfull \hbox (35.87814pt too wide) in paragraph at lines 8--33
  [][] 
  []
 
-[33] <pics/arducam_architecture.PNG, id=709, 408.02437pt x 202.50656pt>
+[33] <pics/arducam_architecture.PNG, id=715, 408.02437pt x 202.50656pt>
 File: pics/arducam_architecture.PNG Graphic file (type png)
 
 <use pics/arducam_architecture.PNG>
-Package pdftex.def Info: pics/arducam_architecture.PNG used on input line 39.
+Package pdftex.def Info: pics/arducam_architecture.PNG used on input line 41.
 (pdftex.def)             Requested size: 306.01753pt x 151.87953pt.
 
-<pics/implementation_setup.png, id=711, 460.72125pt x 99.37125pt>
+<pics/implementation_setup.png, id=718, 460.72125pt x 99.37125pt>
 File: pics/implementation_setup.png Graphic file (type png)
 
 <use pics/implementation_setup.png>
-Package pdftex.def Info: pics/implementation_setup.png used on input line 47.
+Package pdftex.def Info: pics/implementation_setup.png used on input line 49.
 (pdftex.def)             Requested size: 345.54008pt x 74.52824pt.
  [34 <./pics/arducam_architecture.PNG>]
-<pics/rolling_shutter.jpg, id=722, 691.83469pt x 356.83313pt>
-File: pics/rolling_shutter.jpg Graphic file (type jpg)
+<pics/SoftwareFlowOV2640.png, id=728, 273.02pt x 510.90875pt>
+File: pics/SoftwareFlowOV2640.png Graphic file (type png)
 
-<use pics/rolling_shutter.jpg>
-Package pdftex.def Info: pics/rolling_shutter.jpg used on input line 61.
-(pdftex.def)             Requested size: 361.34999pt x 186.37645pt.
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 61--62
-[][] 
- []
-
-<pics/OV2640timing.jpg, id=725, 716.6775pt x 276.28218pt>
-File: pics/OV2640timing.jpg Graphic file (type jpg)
-
-<use pics/OV2640timing.jpg>
-Package pdftex.def Info: pics/OV2640timing.jpg used on input line 67.
-(pdftex.def)             Requested size: 361.34999pt x 139.30428pt.
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 67--68
-[][] 
- []
-
-<pics/exposure/60us.jpg, id=728, 1606.0pt x 1204.5pt>
-File: pics/exposure/60us.jpg Graphic file (type jpg)
-
-<use pics/exposure/60us.jpg>
-Package pdftex.def Info: pics/exposure/60us.jpg used on input line 76.
-(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
-
-<pics/exposure/1ms.jpg, id=729, 1606.0pt x 1204.5pt>
-File: pics/exposure/1ms.jpg Graphic file (type jpg)
-
-<use pics/exposure/1ms.jpg>
-Package pdftex.def Info: pics/exposure/1ms.jpg used on input line 82.
-(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
-
-Overfull \hbox (1.34998pt too wide) in paragraph at lines 74--86
- []$[]$$[]$ 
- []
-
-<pics/exposure/5ms.jpg, id=730, 1606.0pt x 1204.5pt>
-File: pics/exposure/5ms.jpg Graphic file (type jpg)
-
-<use pics/exposure/5ms.jpg>
-Package pdftex.def Info: pics/exposure/5ms.jpg used on input line 89.
-(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
-
-<pics/exposure/10ms.jpg, id=731, 1606.0pt x 1204.5pt>
-File: pics/exposure/10ms.jpg Graphic file (type jpg)
-
-<use pics/exposure/10ms.jpg>
-Package pdftex.def Info: pics/exposure/10ms.jpg used on input line 95.
-(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
-
-Overfull \hbox (1.34998pt too wide) in paragraph at lines 87--99
- []$[]$$[]$ 
- []
-
-<pics/exposure/20ms.jpg, id=732, 1606.0pt x 1204.5pt>
-File: pics/exposure/20ms.jpg Graphic file (type jpg)
-
-<use pics/exposure/20ms.jpg>
-Package pdftex.def Info: pics/exposure/20ms.jpg used on input line 102.
-(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
-
-<pics/exposure/60ms.jpg, id=733, 1606.0pt x 1204.5pt>
-File: pics/exposure/60ms.jpg Graphic file (type jpg)
-
-<use pics/exposure/60ms.jpg>
-Package pdftex.def Info: pics/exposure/60ms.jpg used on input line 108.
-(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
-
-Overfull \hbox (1.34998pt too wide) in paragraph at lines 100--113
- []$[]$$[]$ 
- []
-
-[35 <./pics/implementation_setup.png>]
-<pics/power_1.JPG, id=743, 642.4pt x 481.8pt>
-File: pics/power_1.JPG Graphic file (type jpg)
- <use pics/power_1.JPG>
-Package pdftex.def Info: pics/power_1.JPG used on input line 124.
-(pdftex.def)             Requested size: 361.34999pt x 271.01918pt.
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 122--127
- []$[]$ 
- []
-
-<pics/power_2.JPG, id=744, 642.4pt x 481.8pt>
-File: pics/power_2.JPG Graphic file (type jpg)
- <use pics/power_2.JPG>
-Package pdftex.def Info: pics/power_2.JPG used on input line 130.
-(pdftex.def)             Requested size: 361.34999pt x 271.01918pt.
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 128--133
- []$[]$ 
- []
-
-
-LaTeX Warning: Float too large for page by 20.4381pt on input line 135.
+<use pics/SoftwareFlowOV2640.png>
+Package pdftex.def Info: pics/SoftwareFlowOV2640.png used on input line 57.
+(pdftex.def)             Requested size: 136.50966pt x 255.45375pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 138.
+               Default added (so using `tbp') on input line 63.
 
-) [36 <./pics/rolling_shutter.jpg> <./pics/OV2640timing.jpg>] [37 <./pics/expos
-ure/60us.jpg> <./pics/exposure/1ms.jpg> <./pics/exposure/5ms.jpg> <./pics/expos
-ure/10ms.jpg> <./pics/exposure/20ms.jpg> <./pics/exposure/60ms.jpg>] [38 <./pic
-s/power_1.JPG> <./pics/power_2.JPG>]
+
+Overfull \hbox (48.42271pt too wide) in paragraph at lines 67--90
+ [][] 
+ []
+
+[35 <./pics/implementation_setup.png>] [36]
+<pics/rolling_shutter.jpg, id=744, 691.83469pt x 356.83313pt>
+File: pics/rolling_shutter.jpg Graphic file (type jpg)
+
+<use pics/rolling_shutter.jpg>
+Package pdftex.def Info: pics/rolling_shutter.jpg used on input line 99.
+(pdftex.def)             Requested size: 361.34999pt x 186.37645pt.
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 99--100
+[][] 
+ []
+
+<pics/OV2640timing.jpg, id=747, 716.6775pt x 276.28218pt>
+File: pics/OV2640timing.jpg Graphic file (type jpg)
+
+<use pics/OV2640timing.jpg>
+Package pdftex.def Info: pics/OV2640timing.jpg used on input line 105.
+(pdftex.def)             Requested size: 361.34999pt x 139.30428pt.
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 105--106
+[][] 
+ []
+
+<pics/exposure/60us.jpg, id=750, 1606.0pt x 1204.5pt>
+File: pics/exposure/60us.jpg Graphic file (type jpg)
+
+<use pics/exposure/60us.jpg>
+Package pdftex.def Info: pics/exposure/60us.jpg used on input line 114.
+(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
+
+<pics/exposure/1ms.jpg, id=751, 1606.0pt x 1204.5pt>
+File: pics/exposure/1ms.jpg Graphic file (type jpg)
+
+<use pics/exposure/1ms.jpg>
+Package pdftex.def Info: pics/exposure/1ms.jpg used on input line 120.
+(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
+
+Overfull \hbox (1.34998pt too wide) in paragraph at lines 112--124
+ []$[]$$[]$ 
+ []
+
+<pics/exposure/5ms.jpg, id=752, 1606.0pt x 1204.5pt>
+File: pics/exposure/5ms.jpg Graphic file (type jpg)
+
+<use pics/exposure/5ms.jpg>
+Package pdftex.def Info: pics/exposure/5ms.jpg used on input line 127.
+(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
+
+<pics/exposure/10ms.jpg, id=753, 1606.0pt x 1204.5pt>
+File: pics/exposure/10ms.jpg Graphic file (type jpg)
+
+<use pics/exposure/10ms.jpg>
+Package pdftex.def Info: pics/exposure/10ms.jpg used on input line 133.
+(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
+
+Overfull \hbox (1.34998pt too wide) in paragraph at lines 125--137
+ []$[]$$[]$ 
+ []
+
+<pics/exposure/20ms.jpg, id=754, 1606.0pt x 1204.5pt>
+File: pics/exposure/20ms.jpg Graphic file (type jpg)
+
+<use pics/exposure/20ms.jpg>
+Package pdftex.def Info: pics/exposure/20ms.jpg used on input line 140.
+(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
+
+<pics/exposure/60ms.jpg, id=755, 1606.0pt x 1204.5pt>
+File: pics/exposure/60ms.jpg Graphic file (type jpg)
+
+<use pics/exposure/60ms.jpg>
+Package pdftex.def Info: pics/exposure/60ms.jpg used on input line 146.
+(pdftex.def)             Requested size: 90.3375pt x 67.7456pt.
+
+Overfull \hbox (1.34998pt too wide) in paragraph at lines 138--151
+ []$[]$$[]$ 
+ []
+
+
+Underfull \vbox (badness 4726) has occurred while \output is active []
+
+ [37 <./pics/SoftwareFlowOV2640.png>] [38 <./pics/rolling_shutter.jpg> <./pics/
+OV2640timing.jpg>] <pics/power_1.JPG, id=770, 642.4pt x 481.8pt>
+File: pics/power_1.JPG Graphic file (type jpg)
+ <use pics/power_1.JPG>
+Package pdftex.def Info: pics/power_1.JPG used on input line 162.
+(pdftex.def)             Requested size: 361.34999pt x 271.01918pt.
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 160--165
+ []$[]$ 
+ []
+
+<pics/power_2.JPG, id=771, 642.4pt x 481.8pt>
+File: pics/power_2.JPG Graphic file (type jpg)
+ <use pics/power_2.JPG>
+Package pdftex.def Info: pics/power_2.JPG used on input line 168.
+(pdftex.def)             Requested size: 361.34999pt x 271.01918pt.
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 166--171
+ []$[]$ 
+ []
+
+
+LaTeX Warning: Float too large for page by 20.4381pt on input line 173.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 176.
+
+) [39 <./pics/exposure/60us.jpg> <./pics/exposure/1ms.jpg> <./pics/exposure/5ms
+.jpg> <./pics/exposure/10ms.jpg> <./pics/exposure/20ms.jpg> <./pics/exposure/60
+ms.jpg>] [40 <./pics/power_1.JPG> <./pics/power_2.JPG>]
 \openout2 = `chapter_5.aux'.
 
- (./chapters/chapter_5.tex
+
+(./chapters/chapter_5.tex
 Chapter 5.
-<pics/acceptanceCone.png, id=768, 499.8675pt x 472.76625pt>
+<pics/acceptanceCone.png, id=791, 499.8675pt x 472.76625pt>
 File: pics/acceptanceCone.png Graphic file (type png)
 
 <use pics/acceptanceCone.png>
@@ -1251,14 +1273,14 @@ Overfull \hbox (7.15887pt too wide) in paragraph at lines 5--13
 e-flec-to-meter method
  []
 
-<pics/withoutPinhole.jpg, id=769, 642.4pt x 481.8pt>
+<pics/withoutPinhole.jpg, id=792, 642.4pt x 481.8pt>
 File: pics/withoutPinhole.jpg Graphic file (type jpg)
 
 <use pics/withoutPinhole.jpg>
 Package pdftex.def Info: pics/withoutPinhole.jpg used on input line 18.
 (pdftex.def)             Requested size: 90.3375pt x 67.75294pt.
 
-<pics/withPinhole.jpg, id=770, 642.4pt x 481.8pt>
+<pics/withPinhole.jpg, id=793, 642.4pt x 481.8pt>
 File: pics/withPinhole.jpg Graphic file (type jpg)
  <use pics/withPinhole.jpg>
 Package pdftex.def Info: pics/withPinhole.jpg used on input line 24.
@@ -1268,40 +1290,40 @@ Overfull \hbox (1.34998pt too wide) in paragraph at lines 16--28
  []$[]$$[]$ 
  []
 
-<pics/ExposureTests.jpg, id=773, 1371.1225pt x 628.3475pt>
+<pics/ExposureTests.jpg, id=796, 1371.1225pt x 628.3475pt>
 File: pics/ExposureTests.jpg Graphic file (type jpg)
 
 <use pics/ExposureTests.jpg>
 Package pdftex.def Info: pics/ExposureTests.jpg used on input line 34.
 (pdftex.def)             Requested size: 342.77979pt x 157.08649pt.
- [39
+ [41
 
 
 
 ]
-<pics/RedChannel.jpg, id=786, 1371.1225pt x 653.44125pt>
+<pics/RedChannel.jpg, id=808, 1371.1225pt x 653.44125pt>
 File: pics/RedChannel.jpg Graphic file (type jpg)
 
 <use pics/RedChannel.jpg>
 Package pdftex.def Info: pics/RedChannel.jpg used on input line 42.
 (pdftex.def)             Requested size: 342.77979pt x 163.35991pt.
- [40 <./pics/acceptanceCone.png> <./pics/withoutPinhole.jpg> <./pics/withPinhol
+ [42 <./pics/acceptanceCone.png> <./pics/withoutPinhole.jpg> <./pics/withPinhol
 e.jpg>]
-<pics/GreenChannel.jpg, id=796, 1371.1225pt x 653.44125pt>
+<pics/GreenChannel.jpg, id=818, 1371.1225pt x 653.44125pt>
 File: pics/GreenChannel.jpg Graphic file (type jpg)
 
 <use pics/GreenChannel.jpg>
 Package pdftex.def Info: pics/GreenChannel.jpg used on input line 49.
 (pdftex.def)             Requested size: 342.77979pt x 163.35991pt.
 
-<pics/BlueChannel.jpg, id=797, 1371.1225pt x 653.44125pt>
+<pics/BlueChannel.jpg, id=819, 1371.1225pt x 653.44125pt>
 File: pics/BlueChannel.jpg Graphic file (type jpg)
 
 <use pics/BlueChannel.jpg>
 Package pdftex.def Info: pics/BlueChannel.jpg used on input line 56.
 (pdftex.def)             Requested size: 342.77979pt x 163.35991pt.
- [41 <./pics/ExposureTests.jpg> <./pics/RedChannel.jpg>] <pics/ImproperDetectio
-n.jpg, id=804, 876.27374pt x 417.05812pt>
+ [43 <./pics/ExposureTests.jpg> <./pics/RedChannel.jpg>] <pics/ImproperDetectio
+n.jpg, id=826, 876.27374pt x 417.05812pt>
 File: pics/ImproperDetection.jpg Graphic file (type jpg)
 
 <use pics/ImproperDetection.jpg>
@@ -1312,14 +1334,14 @@ Overfull \hbox (78.13579pt too wide) in paragraph at lines 72--73
  [][] 
  []
 
-[42 <./pics/GreenChannel.jpg> <./pics/BlueChannel.jpg>]
-<pics/awb.jpg, id=811, 240.9pt x 180.675pt>
+[44 <./pics/GreenChannel.jpg> <./pics/BlueChannel.jpg>]
+<pics/awb.jpg, id=833, 240.9pt x 180.675pt>
 File: pics/awb.jpg Graphic file (type jpg)
  <use pics/awb.jpg>
 Package pdftex.def Info: pics/awb.jpg used on input line 83.
 (pdftex.def)             Requested size: 90.3375pt x 67.75294pt.
 
-<pics/withoutawb.jpg, id=812, 240.9pt x 180.675pt>
+<pics/withoutawb.jpg, id=834, 240.9pt x 180.675pt>
 File: pics/withoutawb.jpg Graphic file (type jpg)
  <use pics/withoutawb.jpg>
 Package pdftex.def Info: pics/withoutawb.jpg used on input line 88.
@@ -1329,8 +1351,8 @@ Overfull \hbox (1.34998pt too wide) in paragraph at lines 81--91
 []$[]$$[]$ 
  []
 
-[43 <./pics/ImproperDetection.jpg>]
-<pics/CentralRegionTracking.jpg, id=821, 1371.1225pt x 653.44125pt>
+[45 <./pics/ImproperDetection.jpg>]
+<pics/CentralRegionTracking.jpg, id=844, 1371.1225pt x 653.44125pt>
 File: pics/CentralRegionTracking.jpg Graphic file (type jpg)
 
 <use pics/CentralRegionTracking.jpg>
@@ -1341,8 +1363,8 @@ Overfull \hbox (51.33992pt too wide) in paragraph at lines 99--100
  [][] 
  []
 
-[44 <./pics/awb.jpg> <./pics/withoutawb.jpg>]
-<pics/ResponseOffset.jpg, id=832, 1371.1225pt x 653.44125pt>
+[46 <./pics/awb.jpg> <./pics/withoutawb.jpg>]
+<pics/ResponseOffset.jpg, id=855, 1371.1225pt x 653.44125pt>
 File: pics/ResponseOffset.jpg Graphic file (type jpg)
 
 <use pics/ResponseOffset.jpg>
@@ -1352,7 +1374,7 @@ Package pdftex.def Info: pics/ResponseOffset.jpg used on input line 107.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<pics/ResponseYOffset.jpg, id=833, 1927.2pt x 966.61125pt>
+<pics/ResponseYOffset.jpg, id=856, 1927.2pt x 966.61125pt>
 File: pics/ResponseYOffset.jpg Graphic file (type jpg)
 
 <use pics/ResponseYOffset.jpg>
@@ -1362,7 +1384,7 @@ Package pdftex.def Info: pics/ResponseYOffset.jpg used on input line 114.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<pics/MeshPlotAngularPeak.jpg, id=835, 1927.2pt x 966.61125pt>
+<pics/MeshPlotAngularPeak.jpg, id=858, 1927.2pt x 966.61125pt>
 File: pics/MeshPlotAngularPeak.jpg Graphic file (type jpg)
 
 <use pics/MeshPlotAngularPeak.jpg>
@@ -1376,7 +1398,7 @@ Overfull \hbox (73.6307pt too wide) in paragraph at lines 122--123
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<pics/FinalCRAExp.jpg, id=837, 1371.1225pt x 653.44125pt>
+<pics/FinalCRAExp.jpg, id=860, 1371.1225pt x 653.44125pt>
 File: pics/FinalCRAExp.jpg Graphic file (type jpg)
 
 <use pics/FinalCRAExp.jpg>
@@ -1386,27 +1408,27 @@ Package pdftex.def Info: pics/FinalCRAExp.jpg used on input line 130.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[45 <./pics/CentralRegionTracking.jpg>]
-<pics/AcceptanceConeCurveFit.jpg, id=848, 1371.1225pt x 653.44125pt>
+[47 <./pics/CentralRegionTracking.jpg>]
+<pics/AcceptanceConeCurveFit.jpg, id=870, 1371.1225pt x 653.44125pt>
 File: pics/AcceptanceConeCurveFit.jpg Graphic file (type jpg)
 
 <use pics/AcceptanceConeCurveFit.jpg>
 Package pdftex.def Info: pics/AcceptanceConeCurveFit.jpg used on input line 139
 .
 (pdftex.def)             Requested size: 360.0pt x 171.5658pt.
- [46 <./pics/ResponseOffset.jpg> <./pics/ResponseYOffset.jpg>]
+ [48 <./pics/ResponseOffset.jpg> <./pics/ResponseYOffset.jpg>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Underfull \vbox (badness 3635) has occurred while \output is active []
 
- [47 <./pics/MeshPlotAngularPeak.jpg> <./pics/FinalCRAExp.jpg>]
+ [49 <./pics/MeshPlotAngularPeak.jpg> <./pics/FinalCRAExp.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 146.
 
-<pics/OriginalImage.jpg, id=864, 1371.1225pt x 653.44125pt>
+<pics/OriginalImage.jpg, id=886, 1371.1225pt x 653.44125pt>
 File: pics/OriginalImage.jpg Graphic file (type jpg)
 
 <use pics/OriginalImage.jpg>
@@ -1417,7 +1439,7 @@ Package pdftex.def Info: pics/OriginalImage.jpg used on input line 148.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 153.
 
-<pics/OriginalImageDiffRec.jpg, id=865, 1371.1225pt x 653.44125pt>
+<pics/OriginalImageDiffRec.jpg, id=887, 1371.1225pt x 653.44125pt>
 File: pics/OriginalImageDiffRec.jpg Graphic file (type jpg)
 
 <use pics/OriginalImageDiffRec.jpg>
@@ -1428,19 +1450,19 @@ Package pdftex.def Info: pics/OriginalImageDiffRec.jpg used on input line 155.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 160.
 
-<pics/ImageRecWithAcc.jpg, id=866, 1330.9725pt x 559.08875pt>
+<pics/ImageRecWithAcc.jpg, id=888, 1330.9725pt x 559.08875pt>
 File: pics/ImageRecWithAcc.jpg Graphic file (type jpg)
 
 <use pics/ImageRecWithAcc.jpg>
 Package pdftex.def Info: pics/ImageRecWithAcc.jpg used on input line 162.
 (pdftex.def)             Requested size: 360.0pt x 151.22043pt.
- [48 <./pics/AcceptanceConeCurveFit.jpg> <./pics/OriginalImage.jpg>] [49 <./pic
+ [50 <./pics/AcceptanceConeCurveFit.jpg> <./pics/OriginalImage.jpg>] [51 <./pic
 s/OriginalImageDiffRec.jpg> <./pics/ImageRecWithAcc.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 170.
 
-<pics/spatial-res-calc.png, id=878, 866.48718pt x 449.42906pt>
+<pics/spatial-res-calc.png, id=902, 866.48718pt x 449.42906pt>
 File: pics/spatial-res-calc.png Graphic file (type png)
 
 <use pics/spatial-res-calc.png>
@@ -1451,35 +1473,35 @@ Package pdftex.def Info: pics/spatial-res-calc.png used on input line 172.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 179.
 
-<pics/fov-calc.png, id=882, 855.94781pt x 450.9347pt>
+<pics/fov-calc.png, id=906, 855.94781pt x 450.9347pt>
 File: pics/fov-calc.png Graphic file (type png)
  <use pics/fov-calc.png>
 Package pdftex.def Info: pics/fov-calc.png used on input line 181.
 (pdftex.def)             Requested size: 360.0pt x 189.65274pt.
 
-[50 <./pics/spatial-res-calc.png>]
-<pics/slm.PNG, id=890, 171.64125pt x 133.24782pt>
+[52 <./pics/spatial-res-calc.png>]
+<pics/slm.PNG, id=914, 171.64125pt x 133.24782pt>
 File: pics/slm.PNG Graphic file (type png)
  <use pics/slm.PNG>
 Package pdftex.def Info: pics/slm.PNG used on input line 191.
 (pdftex.def)             Requested size: 180.67499pt x 140.25996pt.
-) [51 <./pics/fov-calc.png> <./pics/slm.PNG>]
+) [53 <./pics/fov-calc.png> <./pics/slm.PNG>]
 \openout2 = `chapter_6.aux'.
 
- (./chapters/chapter_6.tex [52
+ (./chapters/chapter_6.tex [54
 
 
 
 ]
 Chapter 6.
-[53] <pics/slm/binaryaxicon.png, id=913, 1084.05pt x 677.53125pt>
+[55] <pics/slm/binaryaxicon.png, id=935, 1084.05pt x 677.53125pt>
 File: pics/slm/binaryaxicon.png Graphic file (type png)
 
 <use pics/slm/binaryaxicon.png>
 Package pdftex.def Info: pics/slm/binaryaxicon.png used on input line 12.
 (pdftex.def)             Requested size: 90.3375pt x 56.45735pt.
 
-<pics/slm/hor-div.png, id=914, 1084.05pt x 677.53125pt>
+<pics/slm/hor-div.png, id=936, 1084.05pt x 677.53125pt>
 File: pics/slm/hor-div.png Graphic file (type png)
 
 <use pics/slm/hor-div.png>
@@ -1490,7 +1512,7 @@ Overfull \hbox (1.34998pt too wide) in paragraph at lines 10--22
  []$[]$$[]$ 
  []
 
-<pics/slm/binaryaxiconcmos.jpg, id=915, 1606.0pt x 1204.5pt>
+<pics/slm/binaryaxiconcmos.jpg, id=937, 1606.0pt x 1204.5pt>
 File: pics/slm/binaryaxiconcmos.jpg Graphic file (type jpg)
 
 <use pics/slm/binaryaxiconcmos.jpg>
@@ -1501,7 +1523,7 @@ Underfull \hbox (badness 3029) in paragraph at lines 31--31
 []\OT1/cmr/m/n/10 (a) |Bin-ary Axicon Mask im-aged by
  []
 
-<pics/slm/horizontalcmos.jpg, id=916, 1606.0pt x 1204.5pt>
+<pics/slm/horizontalcmos.jpg, id=938, 1606.0pt x 1204.5pt>
 File: pics/slm/horizontalcmos.jpg Graphic file (type jpg)
 
 <use pics/slm/horizontalcmos.jpg>
@@ -1517,25 +1539,25 @@ Overfull \hbox (11.00119pt too wide) in paragraph at lines 44--44
 []\OT1/cmr/bx/n/14.4 Effect of SLM bright-ness and con-trast on CMOS
  []
 
-<pics/slm/slmgrayscale0.jpg, id=922, 1284.8pt x 910.40125pt>
+<pics/slm/slmgrayscale0.jpg, id=944, 1284.8pt x 910.40125pt>
 File: pics/slm/slmgrayscale0.jpg Graphic file (type jpg)
 
 <use pics/slm/slmgrayscale0.jpg>
 Package pdftex.def Info: pics/slm/slmgrayscale0.jpg used on input line 48.
 (pdftex.def)             Requested size: 360.0pt x 255.0912pt.
 
-<pics/slm/slmgrayscale128.jpg, id=923, 1284.8pt x 910.40125pt>
+<pics/slm/slmgrayscale128.jpg, id=945, 1284.8pt x 910.40125pt>
 File: pics/slm/slmgrayscale128.jpg Graphic file (type jpg)
 
 <use pics/slm/slmgrayscale128.jpg>
 Package pdftex.def Info: pics/slm/slmgrayscale128.jpg used on input line 54.
 (pdftex.def)             Requested size: 360.0pt x 255.0912pt.
- [54 <./pics/slm/binaryaxicon.png> <./pics/slm/hor-div.png> <./pics/slm/binarya
+ [56 <./pics/slm/binaryaxicon.png> <./pics/slm/hor-div.png> <./pics/slm/binarya
 xiconcmos.jpg> <./pics/slm/horizontalcmos.jpg>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pics/slm/slmgrayscale255.jpg, id=930, 1284.8pt x 910.40125pt>
+<pics/slm/slmgrayscale255.jpg, id=952, 1284.8pt x 910.40125pt>
 File: pics/slm/slmgrayscale255.jpg Graphic file (type jpg)
 
 <use pics/slm/slmgrayscale255.jpg>
@@ -1557,45 +1579,45 @@ Overfull \hbox (53.73395pt too wide) in paragraph at lines 89--102
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[55 <./pics/slm/slmgrayscale0.jpg>] [56 <./pics/slm/slmgrayscale128.jpg>]
-<pics/slm/grayscale_slm_graph.jpg, id=945, 1284.8pt x 910.40125pt>
+[57 <./pics/slm/slmgrayscale0.jpg>] [58 <./pics/slm/slmgrayscale128.jpg>]
+<pics/slm/grayscale_slm_graph.jpg, id=968, 1284.8pt x 910.40125pt>
 File: pics/slm/grayscale_slm_graph.jpg Graphic file (type jpg)
 
 <use pics/slm/grayscale_slm_graph.jpg>
 Package pdftex.def Info: pics/slm/grayscale_slm_graph.jpg used on input line 11
 3.
 (pdftex.def)             Requested size: 360.0pt x 255.0912pt.
- [57 <./pics/slm/slmgrayscale255.jpg>]
+ [59 <./pics/slm/slmgrayscale255.jpg>]
 Overfull \hbox (4.59956pt too wide) in paragraph at lines 118--118
 []\OT1/cmr/bx/n/14.4 Imaging of Sep-ar-able Mask us-ing CMOS sensor 
  []
 
-<pics/slm/mask_sub_prop.jpg, id=953, 1429.34pt x 786.94pt>
+<pics/slm/mask_sub_prop.jpg, id=975, 1429.34pt x 786.94pt>
 File: pics/slm/mask_sub_prop.jpg Graphic file (type jpg)
 
 <use pics/slm/mask_sub_prop.jpg>
 Package pdftex.def Info: pics/slm/mask_sub_prop.jpg used on input line 132.
 (pdftex.def)             Requested size: 285.86293pt x 157.38521pt.
 
-<pics/slm/ov2640dtmask.jpg, id=955, 1606.0pt x 1204.5pt>
+<pics/slm/ov2640dtmask.jpg, id=977, 1606.0pt x 1204.5pt>
 File: pics/slm/ov2640dtmask.jpg Graphic file (type jpg)
 
 <use pics/slm/ov2640dtmask.jpg>
 Package pdftex.def Info: pics/slm/ov2640dtmask.jpg used on input line 139.
 (pdftex.def)             Requested size: 321.19432pt x 240.89574pt.
- [58 <./pics/slm/grayscale_slm_graph.jpg>]
+ [60 <./pics/slm/grayscale_slm_graph.jpg>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[59 <./pics/slm/mask_sub_prop.jpg>]
-<pics/slm/ov5642dtmask.jpg, id=969, 2601.72pt x 1951.29pt>
+[61 <./pics/slm/mask_sub_prop.jpg>]
+<pics/slm/ov5642dtmask.jpg, id=991, 2601.72pt x 1951.29pt>
 File: pics/slm/ov5642dtmask.jpg Graphic file (type jpg)
 
 <use pics/slm/ov5642dtmask.jpg>
 Package pdftex.def Info: pics/slm/ov5642dtmask.jpg used on input line 174.
 (pdftex.def)             Requested size: 325.2142pt x 243.91064pt.
 
-<pics/slm/lifecamdtmask.png, id=972, 1284.8pt x 803.0pt>
+<pics/slm/lifecamdtmask.png, id=994, 1284.8pt x 803.0pt>
 File: pics/slm/lifecamdtmask.png Graphic file (type png)
 
 <use pics/slm/lifecamdtmask.png>
@@ -1605,7 +1627,7 @@ Package pdftex.def Info: pics/slm/lifecamdtmask.png used on input line 181.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[60 <./pics/slm/ov2640dtmask.jpg>]
+[62 <./pics/slm/ov2640dtmask.jpg>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1617,7 +1639,7 @@ Overfull \hbox (117.72578pt too wide) in paragraph at lines 190--196
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pics/slm/svd_graph_exposure.jpg, id=981, 1445.4pt x 786.94pt>
+<pics/slm/svd_graph_exposure.jpg, id=1003, 1445.4pt x 786.94pt>
 File: pics/slm/svd_graph_exposure.jpg Graphic file (type jpg)
 
 <use pics/slm/svd_graph_exposure.jpg>
@@ -1625,21 +1647,21 @@ Package pdftex.def Info: pics/slm/svd_graph_exposure.jpg used on input line 203
 .
 (pdftex.def)             Requested size: 360.0pt x 196.00204pt.
 
-<pics/slm/svd-decomp-exp.png, id=984, 824.07875pt x 188.705pt>
+<pics/slm/svd-decomp-exp.png, id=1006, 824.07875pt x 188.705pt>
 File: pics/slm/svd-decomp-exp.png Graphic file (type png)
 
 <use pics/slm/svd-decomp-exp.png>
 Package pdftex.def Info: pics/slm/svd-decomp-exp.png used on input line 210.
 (pdftex.def)             Requested size: 360.0pt x 82.43729pt.
-) [61 <./pics/slm/ov5642dtmask.jpg>]
+) [63 <./pics/slm/ov5642dtmask.jpg>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[62 <./pics/slm/lifecamdtmask.png (PNG copy)>] [63 <./pics/slm/svd_graph_exposu
+[64 <./pics/slm/lifecamdtmask.png (PNG copy)>] [65 <./pics/slm/svd_graph_exposu
 re.jpg> <./pics/slm/svd-decomp-exp.png>]
 \openout2 = `chapter_7.aux'.
 
- (./chapters/chapter_7.tex [64
+ (./chapters/chapter_7.tex [66
 
 
 
@@ -1651,29 +1673,29 @@ Overfull \hbox (5.51718pt too wide) in paragraph at lines 4--5
 the sys-tem matrices($\OML/cmm/m/it/10.95 ^^^[]$
  []
 
-[65] [66] <pics/system_matrix_estimation.png, id=1024, 2103.86pt x 542.025pt>
+[67] [68] <pics/system_matrix_estimation.png, id=1047, 2103.86pt x 542.025pt>
 File: pics/system_matrix_estimation.png Graphic file (type png)
 
 <use pics/system_matrix_estimation.png>
 Package pdftex.def Info: pics/system_matrix_estimation.png used on input line 9
 3.
 (pdftex.def)             Requested size: 360.0pt x 92.74678pt.
- [67 <./pics/system_matrix_estimation.png>] <pics/identity_left_right.png, id=1
-037, 1129.97156pt x 497.60907pt>
+ [69 <./pics/system_matrix_estimation.png>] <pics/identity_left_right.png, id=1
+060, 1129.97156pt x 497.60907pt>
 File: pics/identity_left_right.png Graphic file (type png)
 
 <use pics/identity_left_right.png>
 Package pdftex.def Info: pics/identity_left_right.png used on input line 101.
 (pdftex.def)             Requested size: 360.0pt x 158.53201pt.
 
-<pics/id_reconst.png, id=1039, 1030.60031pt x 223.58531pt>
+<pics/id_reconst.png, id=1062, 1030.60031pt x 223.58531pt>
 File: pics/id_reconst.png Graphic file (type png)
 
 <use pics/id_reconst.png>
 Package pdftex.def Info: pics/id_reconst.png used on input line 108.
 (pdftex.def)             Requested size: 360.0pt x 78.09909pt.
- [68 <./pics/identity_left_right.png> <./pics/id_reconst.png>] <pics/Striped_Pa
-ttern_Response.png, id=1055, 991.705pt x 262.9825pt>
+ [70 <./pics/identity_left_right.png> <./pics/id_reconst.png>] <pics/Striped_Pa
+ttern_Response.png, id=1078, 991.705pt x 262.9825pt>
 File: pics/Striped_Pattern_Response.png Graphic file (type png)
 
 <use pics/Striped_Pattern_Response.png>
@@ -1684,30 +1706,30 @@ Package pdftex.def Info: pics/Striped_Pattern_Response.png used on input line 1
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[69] [70 <./pics/Striped_Pattern_Response.png>]
-<pics/hadamard_ex.png, id=1084, 1139.75812pt x 500.62032pt>
+[71] [72 <./pics/Striped_Pattern_Response.png>]
+<pics/hadamard_ex.png, id=1106, 1139.75812pt x 500.62032pt>
 File: pics/hadamard_ex.png Graphic file (type png)
 
 <use pics/hadamard_ex.png>
 Package pdftex.def Info: pics/hadamard_ex.png used on input line 192.
 (pdftex.def)             Requested size: 360.0pt x 158.12401pt.
 
-<pics/hadamard_rec.png, id=1087, 1032.85875pt x 219.82124pt>
+<pics/hadamard_rec.png, id=1109, 1032.85875pt x 219.82124pt>
 File: pics/hadamard_rec.png Graphic file (type png)
 
 <use pics/hadamard_rec.png>
 Package pdftex.def Info: pics/hadamard_rec.png used on input line 199.
 (pdftex.def)             Requested size: 360.0pt x 76.61658pt.
-) [71 <./pics/hadamard_ex.png> <./pics/hadamard_rec.png>] [72]
+) [73 <./pics/hadamard_ex.png> <./pics/hadamard_rec.png>] [74]
 \openout2 = `conclusionsandfuturework.aux'.
 
  (./chapters/conclusionsandfuturework.tex
 Chapter 8.
-) [73
+) [75
 
 
 
-] (./work/thesis.bbl [74
+] (./work/thesis.bbl [76
 
 
 ]
@@ -1753,13 +1775,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--69
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 96--101
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+[]\OT1/cmr/m/n/10 Arducam.  Ar-du-chip Re-gisters.  []$\OT1/cmtt/m/n/10 http : 
+/ / www . arducam . com /
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 106--111
 \OT1/cmr/m/n/10 ing sys-tems.  []$\OT1/cmtt/m/n/10 https : / / www . satimaging
 corp . com / services / resources /
  []
 
-[75]
-Underfull \hbox (badness 1484) in paragraph at lines 120--123
+[77]
+Underfull \hbox (badness 1484) in paragraph at lines 135--138
 []\OT1/cmr/m/n/10 Irfan Essa.  Com-pu-ta-tional Pho-to-graphy Uda-city Course. 
  []$\OT1/cmtt/m/n/10 https : / /
  []
@@ -1768,21 +1796,21 @@ Missing character: There is no ƒ in font cmr10!
 Missing character: There is no ç in font cmr10!
 Missing character: There is no ƒ in font cmr10!
 Missing character: There is no ç in font cmr10!
-) [76]
+) [78]
 \openout2 = `appendix_a.aux'.
 
- (./chapters/appendix_a.tex [77
+ (./chapters/appendix_a.tex [79
 
 
 
-] [78]
-<pics/arducam_mech.PNG, id=1158, 347.04657pt x 367.3725pt>
+] [80]
+<pics/arducam_mech.PNG, id=1182, 347.04657pt x 367.3725pt>
 File: pics/arducam_mech.PNG Graphic file (type png)
 
 <use pics/arducam_mech.PNG>
 Package pdftex.def Info: pics/arducam_mech.PNG used on input line 7.
 (pdftex.def)             Requested size: 270.0pt x 285.82065pt.
-) [79 <./pics/arducam_mech.PNG>]
+) [81 <./pics/arducam_mech.PNG>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (./work/thesis.aux
@@ -1805,10 +1833,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 10812 strings out of 493304
- 163650 string characters out of 6139872
- 290704 words of memory out of 5000000
- 13546 multiletter control sequences out of 15000+600000
+ 10831 strings out of 493304
+ 164003 string characters out of 6139872
+ 287993 words of memory out of 5000000
+ 13556 multiletter control sequences out of 15000+600000
  22122 words of font info for 71 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,28n,42p,2372b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1829,10 +1857,10 @@ ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on ./work/thesis.pdf (89 pages, 10263906 bytes).
+Output written on ./work/thesis.pdf (91 pages, 10287341 bytes).
 PDF statistics:
- 1293 PDF objects out of 1440 (max. 8388607)
- 1032 compressed objects within 11 object streams
- 314 named destinations out of 1000 (max. 500000)
- 805 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1319 PDF objects out of 1440 (max. 8388607)
+ 1054 compressed objects within 11 object streams
+ 322 named destinations out of 1000 (max. 500000)
+ 810 words of extra memory for PDF output out of 10000 (max. 10000000)
 

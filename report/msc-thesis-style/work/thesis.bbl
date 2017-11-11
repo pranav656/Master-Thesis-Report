@@ -71,6 +71,11 @@ Understanding focal length.
 Flatcam: Thin, lensless cameras using coded aperture and computation.
 \newblock {\em IEEE Transactions on Computational Imaging}, PP(99):1--1, 2016.
 
+\bibitem{Arduchip}
+Arducam.
+\newblock {Arduchip Registers}.
+\newblock \url{http://www.arducam.com/arduchip-registers/#more-119}.
+
 \bibitem{OV2640Arducam}
 Arducam.
 \newblock {\em 2MP SPI Camera User Guide}, 2 2015.
@@ -80,6 +85,11 @@ Arducam.
 Arducam.
 \newblock {\em 5MP SPI Camera User Guide}, 10 2016.
 \newblock Rev 1.0.
+
+\bibitem{ArducamSoftwareApp}
+Arducam.
+\newblock {\em SPI Camera Software Application Note}, 10 2016.
+\newblock Rev 2.0.
 
 \bibitem{VBoomi}
 V.~Boominathan, J.~K. Adams, M.~S. Asif, B.~W. Avants, J.~T. Robinson, R.~G.
@@ -116,6 +126,11 @@ die.net.
 \newblock {djpeg(1) - Linux man page}.
 \newblock \url{https://linux.die.net/man/1/djpeg}.
 
+\bibitem{hexagonal2}
+Jie Ding, Mohammad Noshad, and Vahid Tarokh.
+\newblock Complementary lattice arrays for coded aperture imaging.
+\newblock {\em J. Opt. Soc. Am. A}, 33(5):863--881, May 2016.
+
 \bibitem{CompPipeline}
 Irfan Essa.
 \newblock {Computational Photography Udacity Course}.
@@ -136,6 +151,11 @@ M.~Gostenčnik, D.~Gačnik, and I.~Kramberger.
 \newblock Survey of image compression algorithms for esmo mission.
 \newblock In {\em 2011 18th International Conference on Systems, Signals and
   Image Processing}, pages 1--4, June 2011.
+
+\bibitem{hexagonal}
+M~H.~Finger and T~A.~Prince.
+\newblock Hexagonal uniformly redundant arrays for coded-aperture imaging.
+\newblock 3, 09 1985.
 
 \bibitem{SpInst}
 Ir.~A. Kamp.

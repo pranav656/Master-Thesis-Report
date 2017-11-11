@@ -16,11 +16,11 @@ A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 A level-1 auxiliary file: appendix_a.aux
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 288 of file ../bib/mycollection.bib
+Repeated entry---line 331 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 293 of file ../bib/mycollection.bib
+Repeated entry---line 336 of file ../bib/mycollection.bib
  : @misc{svd
  :          ,
 I'm skipping whatever remains of this entry
@@ -39,45 +39,46 @@ Warning--to sort, need author or key in imfindcircles
 Warning--to sort, need author or key in SLMWiki
 Warning--to sort, need author or key in hadamard
 Warning--empty author in Flatcam
-You've used 34 entries,
+Warning--empty journal in hexagonal
+You've used 38 entries,
             2118 wiz_defined-function locations,
-            700 strings with 8496 characters,
-and the built_in function-call counts, 8349 in all, are:
-= -- 826
-> -- 239
+            719 strings with 8970 characters,
+and the built_in function-call counts, 9323 in all, are:
+= -- 923
+> -- 278
 < -- 5
-+ -- 109
-- -- 72
-* -- 476
-:= -- 1213
-add.period$ -- 101
-call.type$ -- 34
-change.case$ -- 138
++ -- 125
+- -- 84
+* -- 538
+:= -- 1376
+add.period$ -- 113
+call.type$ -- 38
+change.case$ -- 156
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 334
-empty$ -- 845
-format.name$ -- 72
-if$ -- 1890
+cite$ -- 53
+duplicate$ -- 370
+empty$ -- 928
+format.name$ -- 84
+if$ -- 2092
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 11
-newline$ -- 172
-num.names$ -- 30
-pop$ -- 237
+int.to.str$ -- 38
+missing$ -- 13
+newline$ -- 192
+num.names$ -- 36
+pop$ -- 256
 preamble$ -- 1
-purify$ -- 110
+purify$ -- 125
 quote$ -- 0
-skip$ -- 257
+skip$ -- 286
 stack$ -- 0
-substring$ -- 449
-swap$ -- 73
+substring$ -- 495
+swap$ -- 76
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
-warning$ -- 14
-while$ -- 46
-width$ -- 36
-write$ -- 336
+type$ -- 152
+warning$ -- 15
+while$ -- 54
+width$ -- 40
+write$ -- 376
 (There were 2 error messages)
