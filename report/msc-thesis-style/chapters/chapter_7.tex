@@ -1,7 +1,16 @@
 \chapter{Estimation of System Matrices}
 
 \section{Introduction}
-This document will describe the strategy for obtaining the system matrices(${\phi}_L$ and ${\phi}_R$) of the mask produced by the SLM in front of the sensor. The experimental setup consists of an LCD screen placed at 20 cm from the SLM-sensor setup. The LCD will be used to project objects and patterns in front of the sensor. Initially, I tried projecting a complete blank white pattern on the LCD but the sensor recorded a blank image. I expected that the sensor would give me an image that would represent the mask itself. I tried to move the mask-sensor closer to the LCD as I thought that it might be due to not enough light reaching the sensor, but it also made no difference.The reasoning behind this is due to vignetting of light by the pattern. I tried projecting an horizontal dividable pattern on the LCD to see if there is any variation in intensity across the sensor, but there was no difference in intensity across the output image. Then, I decided to project a circular pattern, to see if there is any difference in the readings from the CMOS sensor. I projected two patterns, a white circle in a black background and a black circle in a white. On seeing the outputs through the naked eye, I found that there was not much difference. To my surprise, on subtracting the two output images, there were slight patterns seen on the difference image. So, I decided to develop a strategy that would enable me to estimate the system matrices.
+This document will describe the strategy for obtaining the system matrices(${\phi}_L$ and ${\phi}_R$) of the mask produced by the SLM in front of the sensor. The experimental setup consists of an LCD screen placed at 20 cm from the SLM-sensor setup. The LCD will be used to project objects and patterns in front of the sensor. The experimental setup is shown in Figure \ref{fig:experiment_lcd}.
+Initially, I tried projecting a complete blank white pattern on the LCD but the sensor recorded a blank image. I expected that the sensor would give me an image that would represent the mask itself. I tried to move the mask-sensor closer to the LCD as I thought that it might be due to not enough light reaching the sensor, but it also made no difference.The reasoning behind this is due to vignetting of light by the pattern. I tried projecting an horizontal dividable pattern on the LCD to see if there is any variation in intensity across the sensor, but there was no difference in intensity across the output image. Then, I decided to project a circular pattern, to see if there is any difference in the readings from the CMOS sensor. I projected two patterns, a white circle in a black background and a black circle in a white. On seeing the outputs through the naked eye, I found that there was not much difference. To my surprise, on subtracting the two output images, there were slight patterns seen on the difference image. So, I decided to develop a strategy that would enable me to estimate the system matrices.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.75\linewidth]{pics/experiment_lcd}
+\caption{Setup for Intial Experiments}
+\label{fig:experiment_lcd}
+\end{figure}
+
 \section{Strategy}
 The following precautions are taken to make sure that we can accurately estimate the system matrices.
 \begin{itemize}

@@ -16,11 +16,11 @@ A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 A level-1 auxiliary file: appendix_a.aux
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 331 of file ../bib/mycollection.bib
+Repeated entry---line 340 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 336 of file ../bib/mycollection.bib
+Repeated entry---line 345 of file ../bib/mycollection.bib
  : @misc{svd
  :          ,
 I'm skipping whatever remains of this entry
@@ -40,45 +40,45 @@ Warning--to sort, need author or key in SLMWiki
 Warning--to sort, need author or key in hadamard
 Warning--empty author in Flatcam
 Warning--empty journal in hexagonal
-You've used 38 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            719 strings with 8970 characters,
-and the built_in function-call counts, 9323 in all, are:
-= -- 923
-> -- 278
+            724 strings with 9064 characters,
+and the built_in function-call counts, 9538 in all, are:
+= -- 942
+> -- 285
 < -- 5
-+ -- 125
-- -- 84
-* -- 538
-:= -- 1376
-add.period$ -- 113
-call.type$ -- 38
-change.case$ -- 156
++ -- 128
+- -- 86
+* -- 546
+:= -- 1414
+add.period$ -- 116
+call.type$ -- 39
+change.case$ -- 159
 chr.to.int$ -- 0
-cite$ -- 53
-duplicate$ -- 370
-empty$ -- 928
-format.name$ -- 84
-if$ -- 2092
+cite$ -- 54
+duplicate$ -- 382
+empty$ -- 950
+format.name$ -- 86
+if$ -- 2138
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 13
-newline$ -- 192
-num.names$ -- 36
-pop$ -- 256
+int.to.str$ -- 39
+missing$ -- 15
+newline$ -- 197
+num.names$ -- 38
+pop$ -- 264
 preamble$ -- 1
-purify$ -- 125
+purify$ -- 128
 quote$ -- 0
-skip$ -- 286
+skip$ -- 292
 stack$ -- 0
-substring$ -- 495
-swap$ -- 76
+substring$ -- 500
+swap$ -- 77
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 152
+type$ -- 154
 warning$ -- 15
-while$ -- 54
-width$ -- 40
-write$ -- 376
+while$ -- 56
+width$ -- 41
+write$ -- 386
 (There were 2 error messages)

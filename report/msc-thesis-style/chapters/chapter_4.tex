@@ -60,7 +60,7 @@ One of the important factors that need to be controlled in camera is the exposur
 \end{figure}
 
 
-\begin{table}[]
+\begin{table}[ht]
 \centering
 \caption{ Details of Main APIs used}
 \label{tbl:camera_apis}
@@ -72,17 +72,17 @@ API & Function \\
 \hline
 \texttt{set\_format} & \makecell{JPEG an BMP output formats \\can be selected}\\
 \hline
-\texttt{flush\_fifo} &  \\
-\texttt{clear\_fifo\_flag} & \makecell{These functions are used to control \\the FIFO buffer, \\read the size of \\the image  and \\to reset them when needed}  \\
-\texttt{read\_fifo\_length} & \\ 
-\texttt{set\_fifo\_burst} & \\ 
+
+\makecell{\texttt{clear\_fifo\_flag}\\ \texttt{read\_fifo\_length}\\
+\texttt{set\_fifo\_burst} \\
+\texttt{flush\_fifo}} & \makecell{These functions are \\used to control the FIFO buffer, \\read the size of \\the image  and \\to reset them when needed}  \\
+
 \hline
 \texttt{write\_reg} & \makecell{This function is used to write \\values to the specified register\\ address on the Arduchip.}\\
 \hline
-\texttt{wrSensorReg16\_8, wrSensorReg8\_8} & \makecell{These functions are used set camera \\ registers using I2C. The first function \\ is used for 16-bit register addresses and the \\second function is used for 8-bit addresses}  \\
+\texttt{\makecell{wrSensorReg16\_8\\wrSensorReg8\_8}} & \makecell{These functions are used to\\ set camera \\ registers using I2C. The first function \\ is used for 16-bit register\\ addresses and the \\second function is used for\\ 8-bit addresses}  \\
 \hline
-\texttt{OV2640\_set\_JPEG\_size} & \makecell{These functions are used \\to set the resolution of the output image } \\
-\texttt{OV5642\_set\_JPEG\_size} & \\
+\texttt{\makecell{OV2640\_set\_JPEG\_size\\ \texttt{OV5642\_set\_JPEG\_size}}} & \makecell{These functions are used \\to set the resolution of the\\ output image } \\
 \hline
 \texttt{OV5642\_set\_Exposure\_level} & \makecell{This functions are used \\to set the exposure level of the \\OV5642 CMOS sensor}\\
 \hline

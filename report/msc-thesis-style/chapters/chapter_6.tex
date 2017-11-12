@@ -1,6 +1,18 @@
 \chapter{Experimentations with SLM}
 \label{chp:SLM}
 \section{Initial Experiments to image mask}
+The experimental setup consists of a coherent laser beam, two mirrors, a spatial filter, a collimator lens, LC2012 SLM and finally an OV2640 CMOS sensor. The experimetal setup is shown in Figure \ref{fig:experiment_slm}. The collimator lens and the spatial filter make the beam parallel and remove unwanted random noise in the laser beam.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width = 0.75\linewidth]{pics/slm_experiment}
+\caption{Experimental Setup to image mask}
+\label{fig:experiment_slm}
+\end{figure}
+
+
+
 I started off the experiment with the setup mentioned in the previous section. However, when trying to take an image of the mask with the CMOS sensor, I faced multiple challenges along the  way. The first challenge came in the form of the memory limitations of the camera module. The OV2640 camera module has only 384KB of memory which can store compressed JPEG images when imaging with lens. The memory limitation of the camera does not come into effect when imaging with lens as JPEG encoding is naturally designed for reducing size of real life artifacts and object scenes with a very high compression ratio. However, when using the same camera module, for lensless imaging, the size of the image easily exceeds the size of the FIFO buffer and the host software provided by the vendor is unable to read out the images. In order to overcome this challenge, I thought of increasing the extent of compression(with a trade-off of loss in quality) to image of the mask. This can be done by changing the \texttt{QSC} register(quantization scale factor) \cite{} of the CMOS sensor. The default value of the quantization scale factor is \texttt{0C}(hex value). This value was increased to \texttt{2F} by setting the registers using I2C as mentioned for the previous acceptance cone experiments. The size of the image was successfully reduced and the host software was able to read out images. After this the sensor was placed in front of the SLM and the experiments were continued. I started experimenting with the default masks provided by the SLM vendor before continuing onto the custom mask designed using simulations. The mask that was used was a binary axicon mask and binary mask which divides the SLM into two different halves.The figure of the mask is shown in Figure \ref{fig:InitMask}. The white portion of the horizontal mask is not visible.
 
 After overcoming this challenge I faced the second challenge wherein, the mask was not visible and the central part of the sensor had saturated(whited out). This can be seen in Figure \ref{fig:InitMaskCMOS}. It can be seen from Figure \ref{fig:InitMaskCMOS} that the binary axicon mask is not at all visible due to the saturation of the CMOS sensor in the central region. The horizontal mask is imaged as a vertical mask by the CMOS sensor as the SLM is oriented vertically against the CMOS sensor. Even in the horizontal mask, the central portion has saturated. 
@@ -188,7 +200,7 @@ It can been from the table that OV2640 provides a better singular value ratio th
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|*{4}{c|}}\hline
-\backslashbox{Sensor}{Technique}&\makebox[4em]{SVD(Red)}&\makebox[10em]{SVD(Red) with filtering}&\makebox[4em]{SVD(Gray)}&\makebox[10em]{SVD(Gray) with filtering}\\\hline
+\backslashbox{Sensor}{Technique}&\makebox[4em]{SVD(Red)}&\makebox[6em]{\makecell{SVD(Red) \\with \\filtering}}&\makebox[4em]{SVD(Gray)}&\makebox[6em]{\makecell{SVD(Gray) \\with \\filtering}}\\\hline
 \makebox[3em]{OV2640}&\makebox[3em]{7.833}&\makebox[3em]{11.16}&\makebox[3em]{8.05}&\makebox[3em]{10.49}\\\hline
 \makebox[3em]{OV5642}&\makebox[3em]{8.74}&\makebox[3em]{10.84}&\makebox[3em]{7.04}&\makebox[3em]{10.78}\\\hline
 \makebox[3em]{LifeCam}&\makebox[3em]{16.82}&\makebox[3em]{21.57}&\makebox[3em]{20.89}&\makebox[3em]{26.75}\\\hline
