@@ -71,6 +71,11 @@ Understanding focal length.
 Flatcam: Thin, lensless cameras using coded aperture and computation.
 \newblock {\em IEEE Transactions on Computational Imaging}, PP(99):1--1, 2016.
 
+\bibitem{lenses}
+Arducam.
+\newblock {Arducam lenses}.
+\newblock \url{http://www.arducam.com/lenses/}.
+
 \bibitem{Arduchip}
 Arducam.
 \newblock {Arduchip Registers}.
@@ -156,6 +161,12 @@ M.~Gostenčnik, D.~Gačnik, and I.~Kramberger.
 M~H.~Finger and T~A.~Prince.
 \newblock Hexagonal uniformly redundant arrays for coded-aperture imaging.
 \newblock 3, 09 1985.
+
+\bibitem{LC2012MAN}
+Holoeye.
+\newblock {\em LC2012 Device Operating Instructions/SLM Software Instructions},
+  10 2016.
+\newblock V 3.1.
 
 \bibitem{SpInst}
 Ir.~A. Kamp.
