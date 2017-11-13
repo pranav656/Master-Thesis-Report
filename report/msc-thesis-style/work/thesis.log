@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.5)  12 NOV 2017 16:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.5)  12 NOV 2017 16:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -960,12 +960,12 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 397--398
  []
 
 [22 <./pics/fzp.PNG> <./pics/random_array.PNG> <./pics/ura.PNG>]
-<pics/doubly-topelitz.PNG, id=567, 185.94469pt x 189.70876pt>
+<pics/doubly-topelitz.PNG, id=567, 115.18031pt x 116.68594pt>
 File: pics/doubly-topelitz.PNG Graphic file (type png)
 
 <use pics/doubly-topelitz.PNG>
 Package pdftex.def Info: pics/doubly-topelitz.PNG used on input line 426.
-(pdftex.def)             Requested size: 92.9721pt x 94.85414pt.
+(pdftex.def)             Requested size: 57.59pt x 58.34282pt.
 ) [23 <./pics/psf_mask.PNG>] [24 <./pics/doubly-topelitz.PNG>]
 \openout2 = `chapter_3.aux'.
 
@@ -1499,14 +1499,14 @@ File: pics/slm_experiment.png Graphic file (type png)
 Package pdftex.def Info: pics/slm_experiment.png used on input line 9.
 (pdftex.def)             Requested size: 270.0pt x 256.29095pt.
  [57 <./pics/slm_experiment.png>]
-<pics/slm/binaryaxicon.png, id=962, 1084.05pt x 677.53125pt>
+<pics/slm/binaryaxicon.png, id=963, 1084.05pt x 677.53125pt>
 File: pics/slm/binaryaxicon.png Graphic file (type png)
 
 <use pics/slm/binaryaxicon.png>
 Package pdftex.def Info: pics/slm/binaryaxicon.png used on input line 24.
 (pdftex.def)             Requested size: 90.3375pt x 56.45735pt.
 
-<pics/slm/hor-div.png, id=963, 1084.05pt x 677.53125pt>
+<pics/slm/hor-div.png, id=964, 1084.05pt x 677.53125pt>
 File: pics/slm/hor-div.png Graphic file (type png)
 
 <use pics/slm/hor-div.png>
@@ -1517,7 +1517,7 @@ Overfull \hbox (1.34998pt too wide) in paragraph at lines 22--34
  []$[]$$[]$ 
  []
 
-<pics/slm/binaryaxiconcmos.jpg, id=964, 1606.0pt x 1204.5pt>
+<pics/slm/binaryaxiconcmos.jpg, id=965, 1606.0pt x 1204.5pt>
 File: pics/slm/binaryaxiconcmos.jpg Graphic file (type jpg)
 
 <use pics/slm/binaryaxiconcmos.jpg>
@@ -1528,7 +1528,7 @@ Underfull \hbox (badness 3029) in paragraph at lines 43--43
 []\OT1/cmr/m/n/10 (a) |Bin-ary Axicon Mask im-aged by
  []
 
-<pics/slm/horizontalcmos.jpg, id=965, 1606.0pt x 1204.5pt>
+<pics/slm/horizontalcmos.jpg, id=966, 1606.0pt x 1204.5pt>
 File: pics/slm/horizontalcmos.jpg Graphic file (type jpg)
 
 <use pics/slm/horizontalcmos.jpg>
@@ -1547,14 +1547,14 @@ Overfull \hbox (11.00119pt too wide) in paragraph at lines 56--56
 []\OT1/cmr/bx/n/14.4 Effect of SLM bright-ness and con-trast on CMOS
  []
 
-<pics/slm/slmgrayscale0.jpg, id=979, 1284.8pt x 910.40125pt>
+<pics/slm/slmgrayscale0.jpg, id=980, 1284.8pt x 910.40125pt>
 File: pics/slm/slmgrayscale0.jpg Graphic file (type jpg)
 
 <use pics/slm/slmgrayscale0.jpg>
 Package pdftex.def Info: pics/slm/slmgrayscale0.jpg used on input line 60.
 (pdftex.def)             Requested size: 360.0pt x 255.0912pt.
 
-<pics/slm/slmgrayscale128.jpg, id=980, 1284.8pt x 910.40125pt>
+<pics/slm/slmgrayscale128.jpg, id=981, 1284.8pt x 910.40125pt>
 File: pics/slm/slmgrayscale128.jpg Graphic file (type jpg)
 
 <use pics/slm/slmgrayscale128.jpg>
@@ -1567,7 +1567,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pics/slm/slmgrayscale255.jpg, id=981, 1284.8pt x 910.40125pt>
+<pics/slm/slmgrayscale255.jpg, id=982, 1284.8pt x 910.40125pt>
 File: pics/slm/slmgrayscale255.jpg Graphic file (type jpg)
 
 <use pics/slm/slmgrayscale255.jpg>
@@ -1590,7 +1590,7 @@ Overfull \hbox (53.73395pt too wide) in paragraph at lines 101--114
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [60 <./pics/slm/slmgrayscale0.jpg>] [61 <./pics/slm/slmgrayscale128.jpg>]
-<pics/slm/grayscale_slm_graph.jpg, id=1001, 1284.8pt x 910.40125pt>
+<pics/slm/grayscale_slm_graph.jpg, id=1002, 1284.8pt x 910.40125pt>
 File: pics/slm/grayscale_slm_graph.jpg Graphic file (type jpg)
 
 <use pics/slm/grayscale_slm_graph.jpg>
@@ -1603,14 +1603,14 @@ Overfull \hbox (4.59956pt too wide) in paragraph at lines 130--130
  []
 
 [62 <./pics/slm/slmgrayscale255.jpg>]
-<pics/slm/mask_sub_prop.jpg, id=1007, 1429.34pt x 786.94pt>
+<pics/slm/mask_sub_prop.jpg, id=1008, 1429.34pt x 786.94pt>
 File: pics/slm/mask_sub_prop.jpg Graphic file (type jpg)
 
 <use pics/slm/mask_sub_prop.jpg>
 Package pdftex.def Info: pics/slm/mask_sub_prop.jpg used on input line 144.
 (pdftex.def)             Requested size: 285.86293pt x 157.38521pt.
 
-<pics/slm/ov2640dtmask.jpg, id=1009, 1606.0pt x 1204.5pt>
+<pics/slm/ov2640dtmask.jpg, id=1010, 1606.0pt x 1204.5pt>
 File: pics/slm/ov2640dtmask.jpg Graphic file (type jpg)
 
 <use pics/slm/ov2640dtmask.jpg>
@@ -1624,14 +1624,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [63 <./pics/slm/grayscale_slm_graph.jpg>]
-<pics/slm/ov5642dtmask.jpg, id=1019, 2601.72pt x 1951.29pt>
+<pics/slm/ov5642dtmask.jpg, id=1020, 2601.72pt x 1951.29pt>
 File: pics/slm/ov5642dtmask.jpg Graphic file (type jpg)
 
 <use pics/slm/ov5642dtmask.jpg>
 Package pdftex.def Info: pics/slm/ov5642dtmask.jpg used on input line 186.
 (pdftex.def)             Requested size: 325.2142pt x 243.91064pt.
 
-<pics/slm/lifecamdtmask.png, id=1022, 1284.8pt x 803.0pt>
+<pics/slm/lifecamdtmask.png, id=1023, 1284.8pt x 803.0pt>
 File: pics/slm/lifecamdtmask.png Graphic file (type png)
 
 <use pics/slm/lifecamdtmask.png>
@@ -1656,7 +1656,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65 <./pics/slm/ov2640dtmask.jpg>]
-<pics/slm/svd_graph_exposure.jpg, id=1038, 1445.4pt x 786.94pt>
+<pics/slm/svd_graph_exposure.jpg, id=1039, 1445.4pt x 786.94pt>
 File: pics/slm/svd_graph_exposure.jpg Graphic file (type jpg)
 
 <use pics/slm/svd_graph_exposure.jpg>
@@ -1664,7 +1664,7 @@ Package pdftex.def Info: pics/slm/svd_graph_exposure.jpg used on input line 215
 .
 (pdftex.def)             Requested size: 360.0pt x 196.00204pt.
 
-<pics/slm/svd-decomp-exp.png, id=1041, 824.07875pt x 188.705pt>
+<pics/slm/svd-decomp-exp.png, id=1042, 824.07875pt x 188.705pt>
 File: pics/slm/svd-decomp-exp.png Graphic file (type png)
 
 <use pics/slm/svd-decomp-exp.png>
@@ -1688,7 +1688,7 @@ Underfull \vbox (badness 2698) has occurred while \output is active []
 
 
 ]
-<pics/experiment_lcd.png, id=1067, 3910.61pt x 1991.44pt>
+<pics/experiment_lcd.png, id=1068, 3910.61pt x 1991.44pt>
 File: pics/experiment_lcd.png Graphic file (type png)
 
 <use pics/experiment_lcd.png>
@@ -1710,15 +1710,22 @@ File: pics/identity_left_right.png Graphic file (type png)
 Package pdftex.def Info: pics/identity_left_right.png used on input line 109.
 (pdftex.def)             Requested size: 360.0pt x 158.53201pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <pics/id_reconst.png, id=1093, 1030.60031pt x 223.58531pt>
 File: pics/id_reconst.png Graphic file (type png)
 
 <use pics/id_reconst.png>
 Package pdftex.def Info: pics/id_reconst.png used on input line 116.
 (pdftex.def)             Requested size: 360.0pt x 78.09909pt.
- [72 <./pics/system_matrix_estimation.png> <./pics/identity_left_right.png>] [7
-3 <./pics/id_reconst.png>]
-<pics/Striped_Pattern_Response.png, id=1119, 991.705pt x 262.9825pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[72 <./pics/system_matrix_estimation.png>] [73 <./pics/identity_left_right.png>
+ <./pics/id_reconst.png>]
+<pics/Striped_Pattern_Response.png, id=1118, 991.705pt x 262.9825pt>
 File: pics/Striped_Pattern_Response.png Graphic file (type png)
 
 <use pics/Striped_Pattern_Response.png>
@@ -1848,14 +1855,14 @@ Underfull \hbox (badness 5711) in paragraph at lines 196--199
 
 
 ]
-<pics/fresnel-1.PNG, id=1241, 554.82281pt x 198.7425pt>
+<pics/fresnel-1.PNG, id=1242, 554.82281pt x 198.7425pt>
 File: pics/fresnel-1.PNG Graphic file (type png)
 
 <use pics/fresnel-1.PNG>
 Package pdftex.def Info: pics/fresnel-1.PNG used on input line 7.
 (pdftex.def)             Requested size: 360.0pt x 128.95667pt.
 
-<pics/arducam_mech.PNG, id=1244, 347.04657pt x 367.3725pt>
+<pics/arducam_mech.PNG, id=1245, 347.04657pt x 367.3725pt>
 File: pics/arducam_mech.PNG Graphic file (type png)
 
 <use pics/arducam_mech.PNG>
@@ -1904,10 +1911,10 @@ ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb>
-Output written on ./work/thesis.pdf (98 pages, 21617116 bytes).
+Output written on ./work/thesis.pdf (98 pages, 21618207 bytes).
 PDF statistics:
- 1395 PDF objects out of 1440 (max. 8388607)
- 1111 compressed objects within 12 object streams
+ 1396 PDF objects out of 1440 (max. 8388607)
+ 1112 compressed objects within 12 object streams
  341 named destinations out of 1000 (max. 500000)
  827 words of extra memory for PDF output out of 10000 (max. 10000000)
 
