@@ -192,6 +192,11 @@ Wolfram Mathworld.
 \newblock Singular value decomposition.
 \newblock \url{http://mathworld.wolfram.com/SingularValueDecomposition.html}.
 
+\bibitem{MCubed}
+NASA.
+\newblock {M-Cubed/COVE-2}.
+\newblock \url{https://www.jpl.nasa.gov/cubesat/missions/mcubed.php}.
+
 \bibitem{OV2640DS}
 Omnivision Technologies.
 \newblock {\em Preliminary Data Sheet}, 2 2006.

@@ -1,7 +1,7 @@
 \chapter{Estimation of System Matrices}
-This chapter will describe the strategy for obtaining the system matrices($M_x$ and $M_y$) of the mask produced by the SLM in front of the sensor. The reader may have a question that why do we need to estimate the $M_x$ and $M_y$ when we already know the mask pattern that we project onto the SLM screen. The problem lies with the uncertainity that we have when we use a mask pattern using the SLM instead of fabricating the mask. The simulations assume that there is one-one mapping of the mask-sensor pixels and that they have the same pixel pitch. However, from the manual of the SLM\cite{LC2012MAN}  we can see that the SLM has a pixel pitch of 36 $\mu$m and the sensor OV5642 has a pixel pitch of 1.4 $\mu$m. The sensor OV2640 cannot be used as of now as we saw in the previous chapter. Due to the differences in the pixel pitch, the effects of compression(which have not been taken into account in the simulations) and ambient noise effects in real world applications, we need to manually estimate the system matrices by projecting known patterns to obtain perfect reconstructions. 
+This chapter will describe the strategy for obtaining the system matrices($M_x$ and $M_y$) of the mask produced by the SLM in front of the sensor. The reader may have a question that why do we need to estimate the $M_x$ and $M_y$ when we already know the mask pattern that we project onto the SLM screen. The problem lies with the uncertainty that we have when we use a mask pattern using the SLM instead of fabricating the mask. The simulations assume that there is a one-one mapping of the mask-sensor pixels and that they have the same pixel pitch. However, from the manual of the SLM\cite{LC2012MAN}  we can see that the SLM has a pixel pitch of 36 $\mu$m and the sensor OV5642 has a pixel pitch of 1.4 $\mu$m. The sensor OV2640 cannot be used as of now as we saw in the previous chapter. Due to the differences in the pixel pitch, the effects of compression(which have not been taken into account in the simulations) and ambient noise effects in real-world applications, we need to manually estimate the system matrices by projecting known patterns to obtain perfect reconstructions. One more reason is that the SLM pattern has been projected over the entire SLM and we cannot sure about which part of the SLM we are imaging and which points on the SLM contribute to the image on the sensor. 
 The experimental setup consists of an LCD screen placed at 20 cm from the SLM-sensor setup. The LCD will be used to project objects and patterns in front of the sensor. The experimental setup is shown in Figure \ref{fig:experiment_lcd}.
-Initially, I tried projecting a complete blank white pattern on the LCD but the sensor recorded a blank image. I expected that the sensor would give me an image that would represent the mask itself. I tried to move the mask-sensor closer to the LCD as I thought that it might be due to not enough light reaching the sensor, but it also made no difference.The reasoning behind this is due to vignetting of light by the pattern. I tried projecting an horizontal dividable pattern on the LCD to see if there is any variation in intensity across the sensor, but there was no difference in intensity across the output image. Then, I decided to project a circular pattern, to see if there is any difference in the readings from the CMOS sensor. I projected two patterns, a white circle in a black background and a black circle in a white. On seeing the outputs through the naked eye, I found that there was not much difference. To my surprise, on subtracting the two output images, there were slight patterns seen on the difference image. So, I decided to develop a strategy that would enable me to estimate the system matrices.
+Initially, I tried projecting a completely blank white pattern on the LCD but the sensor recorded a blank image. I expected that the sensor would give me an image that would represent the mask itself. I tried to move the mask-sensor closer to the LCD as I thought that it might be due to not enough light reaching the sensor, but it also made no difference.The reasoning behind this is due to vignetting of light by the pattern. I tried projecting a horizontal dividable pattern on the LCD to see if there is any variation in intensity across the sensor, but there was no difference in intensity across the output image. Then, I decided to project a circular pattern, to see if there is any difference in the readings from the CMOS sensor. I projected two patterns, a white circle in a black background and a black circle in a white. On seeing the outputs through the naked eye, I found that there was not much difference. To my surprise, on subtracting the two output images, there were slight patterns seen on the difference image. So, I decided to develop a strategy that would enable me to estimate the system matrices.
 
 \begin{figure}[h]
 \centering
@@ -13,7 +13,7 @@ Initially, I tried projecting a complete blank white pattern on the LCD but the 
 \section{Strategy}
 The following precautions are taken to make sure that we can accurately estimate the system matrices.
 \begin{itemize}
-\item Even thought the sensor is measuring only one portion of the LCD, during the initial experiments, it was observed that the entire LCD is contributing to the image on the sensor. There was a noticeable variation in intensity when I tried to block the light from the LCD portion not facing the sensor. So, I decided to block the light from the surrounding pattern using black cardboards.
+\item Even though the sensor is measuring only one portion of the LCD, during the initial experiments, it was observed that the entire LCD is contributing to the image on the sensor. There was a noticeable variation in intensity when I tried to block the light from the LCD portion not facing the sensor. So, I decided to block the light from the surrounding pattern using black cardboard.
 \item I use the same idea from \cite{Flatcam} to determine the system matrices. If the scene in front of the mask-sensor arrangement is separable, then the sensor output must also be separable. If the scene is of the form $ab^T$, then the image formed on the sensor will be of the form:
 
 \begin{equation}
@@ -31,7 +31,7 @@ M_x = u_ka^{-1}
 \item For the right system matrix, we can use patterns in the form of $1a^T$, and estimate $M_y$. In the coming sections, we would look at what kind of pattern can be projected on the screen to accurately estimate the right and left system matrices. 
 \end{itemize}
 \subsection{Identity Basis}
-In order to estimate the system matrices, we can use the idea described previously, but we need to decide what patterns need to be used and hoe we can mathematically simulate and verify our idea. We use a invertible base matrix to generate different patterns that can be projected on the LCD screen. The basis matrix pattern can any pattern that would be optically feasible and invertible.
+In order to estimate the system matrices, we can use the idea described previously, but we need to decide what patterns need to be used and how we can mathematically simulate and verify our idea. We use an invertible base matrix to generate different patterns that can be projected on the LCD screen. The basis matrix pattern can any pattern that would be optically feasible and invertible.
 \begin{equation}
 B = \begin{bmatrix} 
     b_{11} & b_{12} & \dots & b_{1n}\\
@@ -53,7 +53,7 @@ For estimating the left system matrix we need to extract the columns from the ba
 b_{i} = \begin{bmatrix} 
     b_{i1} \\
     b_{i2} \\
-	\vdots\\
+    \vdots\\
     b_{in}
     \end{bmatrix}_{n\times 1}
     \label{eq:one_row}
@@ -64,7 +64,7 @@ b_{i} = \begin{bmatrix}
 pattern_{i} = \begin{bmatrix} 
     b_{i1} \\
     b_{i2} \\
-	\vdots\\
+    \vdots\\
     b_{in}
     \end{bmatrix}_{n\times 1} *
     \begin{bmatrix} 
@@ -89,7 +89,7 @@ pattern_{j} = \begin{bmatrix}
     \end{bmatrix}_{1\times n} *
     \begin{bmatrix} 
     1\\
-	1\\
+    1\\
     \vdots\\
     1
     \end{bmatrix}_{n\times 1}
@@ -110,16 +110,16 @@ The simplest basis matrix that could be inverted is the identity matrix. The pat
 \caption{Pattern on LCD that would be generated with left and right system matrix}
 \label{fig:pattern_identity}
 \end{figure}
-This entire procedure was simulated on MATLAB like in the previous section and reconstructions obtained using the procedure is compared. The reconstructions obtained by simulating the LCD patterns and obtaining the system matrix is shown in Figure \ref{fig:rec_id}. It can be seen from the figure that the reconstruction obtained using the procedure mentioned leads to a poorer reconstruction than the one which we obtained using the known diffracted mask pattern.
+This entire procedure was simulated in MATLAB like in the previous section and reconstructions obtained using the procedure is compared. The reconstructions obtained by simulating the LCD patterns and obtaining the system matrix is shown in Figure \ref{fig:rec_id}. It can be seen from the figure that the reconstruction obtained using the procedure mentioned leads to a poorer reconstruction than the one which we obtained using the known diffracted mask pattern.
 \begin{figure}[h]
 \centering
 \includegraphics[width = \linewidth]{pics/id_reconst.png}
-\caption{This figure shows the differences in reconstruction. The figure on the left most corner is the original object, the middle image represents the inversion obtained using the known diffracted mask pattern, and the right image indicates the reconstruction obtained using simulated LCD patterns and obtaining system matrix. It can bee seen that there is an extreme loss of detail when we try to manually obtain the system matrix using the procedure stated.}
+\caption{This figure shows the differences in reconstruction. The figure on the leftmost corner is the original object, the middle image represents the inversion obtained using the known diffracted mask pattern, and the right image indicates the reconstruction obtained using simulated LCD patterns and obtaining system matrix. It can be seen that there is an extreme loss of detail when we try to manually obtain the system matrix using the procedure stated.}
 \label{fig:rec_id}
 \end{figure}
 The system matrix obtained by using the procedure explained above does not provide accurate reconstructions. This problem was traced to the accuracy of the \texttt{svd} function in MATLAB which is used for computing the left and the right vectors when analyzing the scene separability. One more issue with using the identity matrix is that this basis matrix generates a very less amount of light. Projecting these patterns on the LCD did not provide any noticeable change on the sensor in the experimental setup. So, it was decided to use some other basis matrix for estimating the system matrices. The inaccuracy in estimating the left and right vectors is resolved mathematically as explained in the next section. 
 \subsection{Hadamard Basis}
-In this section we will first discuss an alternative way of obtaining the left and the right system vectors instead of using \texttt{svd} function in MATLAB as it does not provide accurate estimation of a separable scene. Consider that a scene of the form $a1^T$ is imaged by the sensor with the mask. The image on the sensor can be written in the form given by equation \ref{eq:separ_eq}. It can be re-written as shown in equation \ref{eq:no_svd_1}.
+In this section we will first discuss an alternative way of obtaining the left and the right system vectors instead of using \texttt{svd} function in MATLAB as it does not provide an accurate estimation of a separable scene. Consider that a scene of the form $a1^T$ is imaged by the sensor with the mask. The image on the sensor can be written in the form given by equation \ref{eq:separ_eq}. It can be re-written as shown in equation \ref{eq:no_svd_1}.
 
 \begin{equation}
 Y(x,y) = \phi_1(x)\phi_2(y)
@@ -136,7 +136,7 @@ The term $\phi_1(X)$ and $\phi_2(Y)$ represent $(M_xa)$ and $(M_y)$ of equation 
 \end{equation}
 When we sum over the sensor output image in the y-direction while projecting  patterns of the  form $a1^T$, we will be only left with the left system matrix multiplied by a constant. Similarly, when we sum over the sensor output image in the x-direction while projecting  patterns of the  form $1a^T$, we will be only left with the right system matrix multiplied by a constant. This also reduces the computational load instead instead of using MATLAB function \texttt{svd} which is highly computationally intensive. Since, we solved the problem of estimating the left and right system matrices by using a simple summation, let us now focus on using a better basis matrix for estimating the system matrices. 
 
-The identity matrix provides a very less amount of light since it produces only one row of emitting light. So, I decided to test some striped separable patterns and see if we are able to receive any response on the sensor. It was observed that striped patterns are able to produce some siginificant sensor response on estimating the left and right system matrix using SVD. So, I decided to look for matrices that can produce striped patterns on the screen. 
+The identity matrix provides a very less amount of light since it produces only one row of emitting light. So, I decided to test some striped separable patterns and see if we are able to receive any response from the sensor. It was observed that striped patterns are able to produce some significant sensor response on estimating the left and right system matrix using SVD. So, I decided to look for matrices that can produce striped patterns on the screen. 
 
 \begin{figure}[h]
 \centering
@@ -146,7 +146,7 @@ The identity matrix provides a very less amount of light since it produces only 
 \end{figure}
 
 In order to accurately estimate the system matrices, we need to project multiple striped patterns. 
-We want a matrix that has binary values(1s and 0s) so that we can translate them into color and then work on reconstruction of it. One such pattern is a hadamard pattern which is widely used in compressed image sensing\cite{hadamard}\cite{Flatcam}. This basis matrix is also used in previous studies is the hadamard matrix $H$ whose inverse is of the form given by equation \ref{eq:hadamard_inverse}. The size of the hadamard matrix $n$ is always in the powers of 2.
+We want a matrix that has binary values(1s and 0s) so that we can translate them into color and then work on the reconstruction of it. One such pattern is a Hadamard pattern which is widely used in compressed image sensing\cite{hadamard}\cite{Flatcam}. This basis matrix is also used in previous studies is the Hadamard matrix $H$ whose inverse is of the form given by equation \ref{eq:hadamard_inverse}. The size of the Hadamard matrix $n$ is always in the powers of 2.
 
 \begin{equation}
 H^{-1} = \frac{1}{n} H^T
@@ -156,7 +156,7 @@ However, one disadvantage of hadamard matrix is that it has negative one values 
 \begin{equation}
 H_2 = \begin{bmatrix} 
        1 & 1 \\
-	   1 & -1 \\
+       1 & -1 \\
     \end{bmatrix}
     \label{eq:hadamard_1}
 \end{equation}
@@ -164,12 +164,12 @@ H_2 = \begin{bmatrix}
 \begin{equation}
 H_2^+ = \begin{bmatrix} 
        1 & 1 \\
-	   1 & -1 \\
+       1 & -1 \\
     \end{bmatrix}
    \hspace{1cm}
    H_2^- = \begin{bmatrix} 
        -1 & -1 \\
-	   -1 & 1 \\
+       -1 & 1 \\
     \end{bmatrix}
     \label{eq:hadamard_2}
 \end{equation}
@@ -178,12 +178,12 @@ In order to make the mask optically feasible, let us set the negative entries of
 \begin{equation}
 H_2^+ = \begin{bmatrix} 
        1 & 1 \\
-	   1 & 0 \\
+       1 & 0 \\
     \end{bmatrix}
    \hspace{1cm}
    H_2^- = \begin{bmatrix} 
        0 & 0 \\
-	   0 & 1 \\
+       0 & 1 \\
     \end{bmatrix}
     \label{eq:hadamard_3}
 \end{equation}
@@ -193,20 +193,20 @@ H_2 = H_2^+ - H_2^-1
 \label{eq:hadamard_4}
 \end{equation}
 
-By projecting binary patterns of the form given by equation \ref{eq:hadamard_3}, we can make an optically realizable hadamard pattern. However, a disadvantage is that we need to project two kinds of patterns(one for $H^+$ and one for $H^-$) and subtract the sensor images to get the reading for the original hadamard pattern. An example of vertical and horizontal hadamard patterns is shown in Figure \ref{fig:hadamrd_ex}. 
+By projecting binary patterns of the form given by equation \ref{eq:hadamard_3}, we can make an optically realizable Hadamard pattern. However, a disadvantage is that we need to project two kinds of patterns(one for $H^+$ and one for $H^-$) and subtract the sensor images to get the reading for the original Hadamard pattern. An example of vertical and horizontal Hadamard patterns is shown in Figure \ref{fig:hadamrd_ex}. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width = \linewidth]{pics/hadamard_ex.png}
-\caption{An example of vertical and horizontal hadamard pattern($H^+$) that can be used for system matrix estimation. Note that the same procedure as mentioned previously holds. Only an additional pattern needs to be incorporated to make the hadamard pattern optically feasible }
+\caption{An example of vertical and horizontal Hadamard pattern($H^+$) that can be used for system matrix estimation. Note that the same procedure as mentioned previously holds. Only an additional pattern needs to be incorporated to make the Hadamard pattern optically feasible }
 \label{fig:hadamrd_ex}
 \end{figure}
-An example of reconstruction using the hadamrd patterns is shown in Figure \ref{fig:hadamrd_rec}. It can be seen from Figure \ref{fig:hadamrd_rec} that estimating the system matrix manually provides a lot better results and preserves a lot more detail than using the known diffracted mask pattern. 
+An example of reconstruction using the Hadamard patterns is shown in Figure \ref{fig:hadamrd_rec}. It can be seen from Figure \ref{fig:hadamrd_rec} that estimating the system matrix manually provides a lot better results and preserves a lot more detail than using the known diffracted mask pattern. 
 \begin{figure}[h]
 \centering
 \includegraphics[width = \linewidth]{pics/hadamard_rec.png}
-\caption{This figure indicates the reconstructions obtained using the hadamard matrix as the basis matrix and after summing to obtain the separable scene components. The left most image indicates the original object, the middle indicates the reconstruction obtained with known system matrix and the right indicates the reconstruction with the system matrices obtained by projecting hadamard patterns. It can be seen that the effects of noise are no longer visible and the reconstruction is perfect. }
+\caption{This figure indicates the reconstructions obtained using the Hadamard matrix as the basis matrix and after summing to obtain the separable scene components. The leftmost image indicates the original object, the middle indicates the reconstruction obtained with known system matrix and the right indicates the reconstruction with the system matrices obtained by projecting Hadamard patterns. It can be seen that the effects of noise are no longer visible and the reconstruction is perfect. }
 \label{fig:hadamrd_rec}
 \end{figure}
 
-We can see that both the basis matrices need measurements from $N\times N$ calibration patterns to reconstruct a $N \times N$ resolution image. We can generate $N \times N$ hadamard patterns and estimate the accurate system matrix that can provide extremely good reconstruction results as seen in the simulation. This scheme of estimating the is also extremely resistant to noise which was simulated by adding random noise equivalent to the signal on the LCD screen. However, it is extremely sensitive to rotation angles. The LCD must be exactly parallel to the sensor in-order for this scheme to work. In the actual this can be achieved by manually aligning the screen while computing the SVD components. the perfect alignment would give us the highest value of the singular component ratio. The process must be repeated as mentioned in the previous chapter where the sensor was aligned with the SLM using singular value decomposition ratios.   
+We can see that both the basis matrices need measurements from $N\times N$ calibration patterns to reconstruct a $N \times N$ resolution image. We can generate $N \times N$ Hadamard patterns and estimate the accurate system matrix that can provide extremely good reconstruction results as seen in the simulation. This scheme of estimating the is also extremely resistant to noise which was simulated by adding random noise equivalent to the signal on the LCD screen. However, it is extremely sensitive to rotation angles. The LCD must be exactly parallel to the sensor in order for this scheme to work. In the actual, this can be achieved by manually aligning the screen while computing the SVD components. The perfect alignment would give us the highest value of the singular component ratio. The process must be repeated as mentioned in the previous chapter where the sensor was aligned with the SLM using singular value decomposition ratios. The simulations prove that the strategy mentioned above can be used to estimate the system matrices even in the presence of noise from the LCD.

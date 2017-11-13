@@ -42,19 +42,32 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Trade-off Analysis}{11}{section.2.4}}
 \newlabel{sec:tradeOff}{{2.4}{11}{Trade-off Analysis}{section.2.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Camera Sensor}{11}{subsection.2.4.1}}
+\citation{cmos}
+\citation{cmos}
+\citation{cmos}
+\newlabel{fig:cmos_ccd}{{2.7a}{12}{Readout architectures of CMOS and CCD\relax }{figure.caption.10}{}}
+\newlabel{sub@fig:cmos_ccd}{{a}{12}{Readout architectures of CMOS and CCD\relax }{figure.caption.10}{}}
+\newlabel{fig:cmos_micro}{{2.7b}{12}{Micro lens array and other components in a image sensor\relax }{figure.caption.10}{}}
+\newlabel{sub@fig:cmos_micro}{{b}{12}{Micro lens array and other components in a image sensor\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Image Sensor Architectures\cite  {cmos}\relax }}{12}{figure.caption.10}}
+\newlabel{fig:cmos_1}{{2.7}{12}{Image Sensor Architectures\cite {cmos}\relax }{figure.caption.10}{}}
 \citation{surveyCamMod}
 \citation{surveyCamMod}
+\citation{MCubed}
+\citation{surveyCamMod}
+\newlabel{eq:dr}{{2.4}{14}{Camera Sensor}{equation.2.4.4}{}}
+\citation{surveyCamMod}
+\citation{Flatcam}
 \citation{Compression2}
 \citation{Compression3}
 \citation{Compression4}
 \citation{Compression3}
 \citation{Compression3}
-\citation{tbl:TradeoffCompression}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison of Different Image Sensor Candidates\relax }}{14}{table.caption.10}}
-\newlabel{tbl:TradeoffCMOS}{{2.1}{14}{Comparison of Different Image Sensor Candidates\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Compression Algorithms}{14}{subsection.2.4.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Ranking of Different Compression Algorithms\relax }}{15}{table.caption.11}}
-\newlabel{tbl:TradeoffCompression}{{2.2}{15}{Ranking of Different Compression Algorithms\relax }{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison of Different Image Sensor Candidates\relax }}{16}{table.caption.11}}
+\newlabel{tbl:TradeoffCMOS}{{2.1}{16}{Comparison of Different Image Sensor Candidates\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Compression Algorithms}{16}{subsection.2.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Ranking of Different Compression Algorithms\relax }}{17}{table.caption.12}}
+\newlabel{tbl:TradeoffCompression}{{2.2}{17}{Ranking of Different Compression Algorithms\relax }{table.caption.12}{}}
 \citation{Jpeg}
 \citation{Jpeg}
 \citation{dct}
@@ -63,16 +76,16 @@
 \citation{lens1}
 \citation{lens2}
 \citation{lens2}
-\newlabel{eq:jpeg_coeff}{{2.4}{16}{Compression Algorithms}{equation.2.4.4}{}}
-\newlabel{eq:quant}{{2.5}{16}{Compression Algorithms}{equation.2.4.5}{}}
+\newlabel{eq:jpeg_coeff}{{2.6}{18}{Compression Algorithms}{equation.2.4.6}{}}
+\newlabel{eq:quant}{{2.7}{18}{Compression Algorithms}{equation.2.4.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Masks and Reconstruction Algorithms}{18}{subsection.2.4.3}}
 \citation{VBoomi}
 \citation{VBoomi}
 \citation{Cannon1}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Steps involved in JPEG Compression\cite  {Jpeg}\relax }}{17}{figure.caption.12}}
-\newlabel{fig:jpeg}{{2.7}{17}{Steps involved in JPEG Compression\cite {Jpeg}\relax }{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces DCT involved in JPEG\cite  {dct}\relax }}{17}{figure.caption.13}}
-\newlabel{fig:dct}{{2.8}{17}{DCT involved in JPEG\cite {dct}\relax }{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Masks and Reconstruction Algorithms}{17}{subsection.2.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Steps involved in JPEG Compression\cite  {Jpeg}\relax }}{19}{figure.caption.13}}
+\newlabel{fig:jpeg}{{2.8}{19}{Steps involved in JPEG Compression\cite {Jpeg}\relax }{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces DCT involved in JPEG\cite  {dct}\relax }}{19}{figure.caption.14}}
+\newlabel{fig:dct}{{2.9}{19}{DCT involved in JPEG\cite {dct}\relax }{figure.caption.14}{}}
 \citation{Cannon1}
 \citation{Cannon1}
 \citation{Cannon1}
@@ -82,37 +95,34 @@
 \citation{Cannon1}
 \citation{Cannon1}
 \citation{Fenimore:78}
-\newlabel{fig:lens_image}{{2.9a}{18}{Image Formation in a lens-based camera\cite {lens1}\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:lens_image}{{a}{18}{Image Formation in a lens-based camera\cite {lens1}\relax }{figure.caption.14}{}}
-\newlabel{fig:focal_length}{{2.9b}{18}{Image Distance dictated by focal length \cite {lens2}\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:focal_length}{{b}{18}{Image Distance dictated by focal length \cite {lens2}\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Lens-based Camera\relax }}{18}{figure.caption.14}}
-\newlabel{fig:lens_based}{{2.9}{18}{Lens-based Camera\relax }{figure.caption.14}{}}
-\newlabel{eq:conv}{{2.7}{18}{Masks and Reconstruction Algorithms}{equation.2.4.7}{}}
-\newlabel{fig:lensed_imaging}{{2.10a}{19}{Conventional Lensed Imaging\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:lensed_imaging}{{a}{19}{Conventional Lensed Imaging\relax }{figure.caption.15}{}}
-\newlabel{fig:lensless_imaging}{{2.10b}{19}{Lensless Imaging\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:lensless_imaging}{{b}{19}{Lensless Imaging\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Difference between lensed and lensless imaging methods\cite  {VBoomi}\relax }}{19}{figure.caption.15}}
-\newlabel{fig:lensvslensless}{{2.10}{19}{Difference between lensed and lensless imaging methods\cite {VBoomi}\relax }{figure.caption.15}{}}
-\newlabel{fig:fzp}{{2.11a}{20}{A twenty ring Fresnel Zone Plate\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:fzp}{{a}{20}{A twenty ring Fresnel Zone Plate\relax }{figure.caption.16}{}}
-\newlabel{fig:random_array}{{2.11b}{20}{A 60*60 Random Array\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:random_array}{{b}{20}{A 60*60 Random Array\relax }{figure.caption.16}{}}
-\newlabel{fig:ura}{{2.11c}{20}{A 61*59 Uniformly redundant array\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:ura}{{c}{20}{A 61*59 Uniformly redundant array\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Masks developed initally for lensless imaging\cite  {Cannon1}\relax }}{20}{figure.caption.16}}
-\newlabel{fig:lensvslensless}{{2.11}{20}{Masks developed initally for lensless imaging\cite {Cannon1}\relax }{figure.caption.16}{}}
-\newlabel{eq:ura}{{2.8}{20}{Masks and Reconstruction Algorithms}{equation.2.4.8}{}}
-\newlabel{eq:ura}{{2.9}{20}{Masks and Reconstruction Algorithms}{equation.2.4.9}{}}
+\newlabel{fig:lens_image}{{2.10a}{20}{Image Formation in a lens-based camera\cite {lens1}\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:lens_image}{{a}{20}{Image Formation in a lens-based camera\cite {lens1}\relax }{figure.caption.15}{}}
+\newlabel{fig:focal_length}{{2.10b}{20}{Image Distance dictated by focal length \cite {lens2}\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:focal_length}{{b}{20}{Image Distance dictated by focal length \cite {lens2}\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Lens-based Camera\relax }}{20}{figure.caption.15}}
+\newlabel{fig:lens_based}{{2.10}{20}{Lens-based Camera\relax }{figure.caption.15}{}}
+\newlabel{eq:conv}{{2.9}{20}{Masks and Reconstruction Algorithms}{equation.2.4.9}{}}
+\newlabel{fig:lensed_imaging}{{2.11a}{21}{Conventional Lensed Imaging\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:lensed_imaging}{{a}{21}{Conventional Lensed Imaging\relax }{figure.caption.16}{}}
+\newlabel{fig:lensless_imaging}{{2.11b}{21}{Lensless Imaging\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:lensless_imaging}{{b}{21}{Lensless Imaging\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Difference between lensed and lensless imaging methods\cite  {VBoomi}\relax }}{21}{figure.caption.16}}
+\newlabel{fig:lensvslensless}{{2.11}{21}{Difference between lensed and lensless imaging methods\cite {VBoomi}\relax }{figure.caption.16}{}}
+\newlabel{eq:ura}{{2.10}{21}{Masks and Reconstruction Algorithms}{equation.2.4.10}{}}
 \citation{Fenimore:78}
 \citation{Fenimore:78}
 \citation{Toeplitz}
 \citation{Toeplitz}
-\newlabel{eq:decura}{{2.10}{21}{Masks and Reconstruction Algorithms}{equation.2.4.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Point Spread function of different masks\cite  {Fenimore:78}\relax }}{21}{figure.caption.17}}
-\newlabel{fig:psf_old_mask}{{2.12}{21}{Point Spread function of different masks\cite {Fenimore:78}\relax }{figure.caption.17}{}}
-\newlabel{eq:separable}{{2.12}{21}{Masks and Reconstruction Algorithms}{equation.2.4.12}{}}
+\newlabel{fig:fzp}{{2.12a}{22}{A twenty ring Fresnel Zone Plate\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:fzp}{{a}{22}{A twenty ring Fresnel Zone Plate\relax }{figure.caption.17}{}}
+\newlabel{fig:random_array}{{2.12b}{22}{A 60*60 Random Array\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:random_array}{{b}{22}{A 60*60 Random Array\relax }{figure.caption.17}{}}
+\newlabel{fig:ura}{{2.12c}{22}{A 61*59 Uniformly redundant array\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:ura}{{c}{22}{A 61*59 Uniformly redundant array\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Masks developed initally for lensless imaging\cite  {Cannon1}\relax }}{22}{figure.caption.17}}
+\newlabel{fig:lensvslensless}{{2.12}{22}{Masks developed initally for lensless imaging\cite {Cannon1}\relax }{figure.caption.17}{}}
+\newlabel{eq:ura}{{2.11}{22}{Masks and Reconstruction Algorithms}{equation.2.4.11}{}}
+\newlabel{eq:decura}{{2.12}{22}{Masks and Reconstruction Algorithms}{equation.2.4.12}{}}
 \citation{Toeplitz}
 \citation{Toeplitz}
 \citation{Toeplitz}
@@ -120,12 +130,15 @@
 \citation{Flatcam}
 \citation{hexagonal}
 \citation{hexagonal2}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces An example of Doubly-Toeplitz Mask\cite  {Toeplitz}\relax }}{22}{figure.caption.18}}
-\newlabel{fig:doubly_toeplitz}{{2.13}{22}{An example of Doubly-Toeplitz Mask\cite {Toeplitz}\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Point Spread function of different masks\cite  {Fenimore:78}\relax }}{23}{figure.caption.18}}
+\newlabel{fig:psf_old_mask}{{2.13}{23}{Point Spread function of different masks\cite {Fenimore:78}\relax }{figure.caption.18}{}}
+\newlabel{eq:separable}{{2.14}{23}{Masks and Reconstruction Algorithms}{equation.2.4.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces An example of Doubly-Toeplitz Mask\cite  {Toeplitz}\relax }}{24}{figure.caption.19}}
+\newlabel{fig:doubly_toeplitz}{{2.14}{24}{An example of Doubly-Toeplitz Mask\cite {Toeplitz}\relax }{figure.caption.19}{}}
 \@setckpt{chapter_2}{
-\setcounter{page}{23}
-\setcounter{equation}{12}
-\setcounter{enumi}{10}
+\setcounter{page}{25}
+\setcounter{equation}{14}
+\setcounter{enumi}{9}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -138,7 +151,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{13}
+\setcounter{figure}{14}
 \setcounter{table}{2}
 \setcounter{parentequation}{0}
 \setcounter{nlinenum}{0}
@@ -149,7 +162,7 @@
 \setcounter{@pps}{0}
 \setcounter{@ppsavesec}{0}
 \setcounter{@ppsaveapp}{0}
-\setcounter{Item}{23}
+\setcounter{Item}{22}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{15}
 \setcounter{section@level}{2}

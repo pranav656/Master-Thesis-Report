@@ -16,22 +16,21 @@ A level-1 auxiliary file: conclusionsandfuturework.aux
 The style file: ../bib/latex8.bst
 A level-1 auxiliary file: appendix_a.aux
 Database file #1: ../bib/mycollection.bib
-Repeated entry---line 355 of file ../bib/mycollection.bib
+Repeated entry---line 369 of file ../bib/mycollection.bib
  : @misc{imfindcircles
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 360 of file ../bib/mycollection.bib
+Repeated entry---line 374 of file ../bib/mycollection.bib
  : @misc{svd
  :          ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "tbl:TradeoffCompression"
 Warning--to sort, need author or key in DelfiC3
 Warning--to sort, need author or key in ImagingGeo
 Warning--to sort, need author or key in landsat
+Warning--to sort, need author or key in Flatcam
 Warning--to sort, need author or key in Jpeg
 Warning--to sort, need author or key in lens1
 Warning--to sort, need author or key in lens2
-Warning--to sort, need author or key in Flatcam
 Warning--to sort, need author or key in MoonImage
 Warning--to sort, need author or key in RollingShutterOV2640
 Warning--to sort, need author or key in cra1
@@ -40,45 +39,45 @@ Warning--to sort, need author or key in SLMWiki
 Warning--to sort, need author or key in hadamard
 Warning--empty author in Flatcam
 Warning--empty journal in hexagonal
-You've used 41 entries,
+You've used 42 entries,
             2118 wiz_defined-function locations,
-            732 strings with 9214 characters,
-and the built_in function-call counts, 9901 in all, are:
-= -- 979
-> -- 293
+            735 strings with 9258 characters,
+and the built_in function-call counts, 10105 in all, are:
+= -- 998
+> -- 300
 < -- 5
-+ -- 132
-- -- 88
-* -- 560
-:= -- 1471
-add.period$ -- 122
-call.type$ -- 41
-change.case$ -- 166
++ -- 135
+- -- 90
+* -- 565
+:= -- 1505
+add.period$ -- 125
+call.type$ -- 42
+change.case$ -- 170
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 397
-empty$ -- 989
-format.name$ -- 88
-if$ -- 2219
+cite$ -- 57
+duplicate$ -- 404
+empty$ -- 1011
+format.name$ -- 90
+if$ -- 2264
 int.to.chr$ -- 0
-int.to.str$ -- 41
+int.to.str$ -- 42
 missing$ -- 15
-newline$ -- 207
-num.names$ -- 40
-pop$ -- 274
+newline$ -- 212
+num.names$ -- 42
+pop$ -- 282
 preamble$ -- 1
-purify$ -- 134
+purify$ -- 137
 quote$ -- 0
-skip$ -- 305
+skip$ -- 313
 stack$ -- 0
-substring$ -- 511
-swap$ -- 79
+substring$ -- 516
+swap$ -- 80
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 166
 warning$ -- 15
-while$ -- 58
-width$ -- 43
-write$ -- 405
+while$ -- 60
+width$ -- 44
+write$ -- 414
 (There were 2 error messages)

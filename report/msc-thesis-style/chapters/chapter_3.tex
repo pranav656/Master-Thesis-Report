@@ -36,13 +36,13 @@ x = F^{-1}(\frac{F(y)}{F(\phi)+k})
 \label{fig:non_sep_sim}
 \end{figure}
 
-In order to start with the mathematical modelling process and to imitate the sensor data and reconstruction, a reference image is needed. For that, it was decided to use the full moon image captured by the Apollo 11 space craft\cite{MoonImage}. Since the satellite is going to be pointing towards astronomical objects like the earth, moon, it was decided to crop out a portion of the full moon image as the main purpose of the satellite would be to image specific portions of earth. The simulation is done under the assumption that the camera is enclosed in a box-like structure and light from specific region of the earth/moon would reach it and the sensor size is finite. The image was converted to gray and scaled down form 0 to 1 and is displayed in the \texttt{bone} colormap format available on MATLAB as th colormap would display the minute variations in the reconstructed image. This is illustrated in Figure \ref{fig:moon_image}. The simulation is performed with and without diffraction and analysed. The mask used for simulation is shown in Figure \ref{fig:non_sep_sim}.
+In order to start with the mathematical modeling process and to imitate the sensor data and reconstruction, a reference image is needed. For that, it was decided to use the full moon image captured by the Apollo 11 space craft\cite{MoonImage}. Since the satellite is going to be pointing towards astronomical objects like the earth, moon, it was decided to crop out a portion of the full moon image as the main purpose of the satellite would be to image specific portions of the earth. The simulation is done under the assumption that the camera is enclosed in a box-like structure and light from a specific region of the earth/moon would reach it and the sensor size is finite. The image was converted to gray and scaled down from 0 to 1 and is displayed in the \texttt{bone} colormap format available in MATLAB as the colormap would display the minute variations in the reconstructed image. This is illustrated in Figure \ref{fig:moon_image}. The simulation is performed with and without diffraction and analyzed. The mask used for simulation is shown in Figure \ref{fig:non_sep_sim}.
 \begin{figure}[ht]
 \includegraphics[scale = 0.50]{pics/MoonImagePortion}
-\caption{The first image is the orginal image of the moon as taken by Apollo 11 spacecraft. The second image indicates the cropped region and the third image indicates the region that is used for the simulation.}
+\caption{The first image is the original image of the moon as taken by Apollo 11 spacecraft. The second image indicates the cropped region and the third image indicates the region that is used for the simulation.}
 \label{fig:moon_image}
 \end{figure}
-The simulation parameters are shown in Table \ref{tbl:sim_parameters}. The reconstruction error is given by the equation \ref{eq:psnr}. $O_{guess}$ indicates the reconstruction and $O$ represents the original object. Fresnel diffraction features are added to the mask since the distance between the mask and the sensor lies in the fresnel diffraction region and the fresnel number for the mask is less than  1. The fresnel diffraction modelling is described in the appendix section of the report.Diffraction causes the mask to become non-binary.
+The simulation parameters are shown in Table \ref{tbl:sim_parameters}. The reconstruction error is given by the equation \ref{eq:psnr}. $O_{guess}$ indicates the reconstruction and $O$ represents the original object. Fresnel diffraction features are added to the mask since the distance between the mask and the sensor lies in the Fresnel diffraction region and the Fresnel number for the mask is less than  1. The Fresnel diffraction modeling is described in the appendix section of the report.Diffraction causes the mask to become non-binary.
 \begin{equation}
 PSNR = 20log(\frac{N*max(O)}{MSE})
 \label{eq:psnr}
@@ -92,7 +92,7 @@ Mask Sensor Distance & 5 millimeters \\
 \label{fig:moon_image}
 \end{figure}
 The reconstructions obtained using equation \ref{eq:conv5} is shown in Figure \ref{fig:rec_non_sep}. It can be seen from the figure that we have successful reconstructions using equation \ref{eq:conv5}. The value of $k $ was set to 0.01.
-However, when the diffracted mask is modelled for the sensor image, the reconstruction fails. This is the reason why we need to go for the separable mask as this mask is not resistant to diffraction effects. 
+However, when the diffracted mask is modeled for the sensor image, the reconstruction fails. This is the reason why we need to go for the separable mask as this mask is not resistant to diffraction effects. 
   \begin{figure}[ht]
     \centering
     \begin{subfigure}{0.5\textwidth}
@@ -125,9 +125,10 @@ One more advantage of using the separable mask is the reduced amount of computat
 N_{operations} \propto (r_O*c_O)^3
 \label{eq:non_sep_comp}
 \end{equation}
-\begin{table}
-\label{tbl:comp_sep}
+
+\begin{table}[ht]
 \caption{Table indicating the rows and columns used for simulation}
+\label{tbl:comp_sep}
 \begin{center}
 \begin{tabular}{ |c|c|c| }
 \hline
@@ -148,14 +149,14 @@ Right Toeplitz matrix & $c_{I}$ & $c_{O}$\\
 \end{table}
 
 
-For a separable mask however, the number of computation is drastically reduced because the size of the left and right system matrices is reduced to $(R_I*R_O)$ and $(C_I*C_O)$ from multiplying the entire object matrix of size $r_O*c_O$. This would come to around $2*10^9$ operations.This can also be observed in the simulation and it takes an extremely long amount of time to complete for a non-separable matrix. The size of different matrices used in simulation is shown in Table \ref{tbl:comp_sep}.
+For a separable mask, however, the number of computation is drastically reduced because the size of the left and right system matrices is reduced to $(R_I*R_O)$ and $(C_I*C_O)$ from multiplying the entire object matrix of size $r_O*c_O$. This would come to around $2*10^9$ operations.This can also be observed in the simulation and it takes an extremely long amount of time to complete a non-separable matrix. The size of different matrices used in the simulation is shown in Table \ref{tbl:comp_sep}.
 
 \begin{equation}
 N_{operations} \propto [(r_I*r_O)^3 + (c_I*c_O)^3] 
 \label{eq:sep_comp}
 \end{equation}
 
-The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks begin generated. The shape of the mask is more simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks vary between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}. It can be seen from figure \ref{fig:sep_sim} that there as an additional step involved in the simulation process of separable masks which is the rank-1 estimation of diffracted matrices. In this step, we perform Singular Value Decomposition(SVD) on the diffracted matrices to obtain $M_x$ and $M_y$. Now let us see what is singular value decomposition. Singular value decomposition is a mathematical tool that would enable us to express any matrix of the form $M_{ \times n}$ in the form given by equation \ref{eq:svd_1}\cite{svd}. 
+The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in the simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks being generated. The shape of the mask is simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks varies between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}. It can be seen from figure \ref{fig:sep_sim} that there as an additional step involved in the simulation process of separable masks which is the rank-1 estimation of diffracted matrices. In this step, we perform Singular Value Decomposition(SVD) on the diffracted matrices to obtain $M_x$ and $M_y$. Now let us see what is singular value decomposition. Singular value decomposition is a mathematical tool that would enable us to express any matrix of the form $M_{ \times n}$ in the form given by equation \ref{eq:svd_1}\cite{svd}. 
 
 \begin{equation}
 \label{eq:svd_1}
@@ -167,7 +168,7 @@ where $r$ represents the rank of the matrix $M$ , $m$ and $n$ denote the size of
 \label{eq:svd_2}
 M_{1} = U_{1}S_1(V_{1})^T
 \end{equation}
-One of the main advantages of using a doubly toeplitz mask is that it is decomposable in to a single rank matrix with and without the effects of diffraction. The other rank-components are negligible even in the presence of diffraction. This is an important property that must be kept in mind which will be used for various experimental purposes.  In the simulation, we use SVD on the diffracted mask, take the rank-1 estimate of of the mask. The $U_1$ and $V_1$ will represent the left and right system matrix of the refracted mask. The obtained single dimensional $U_1$ and $V_1$ of the doubly toeplitz mask will be converted into toeplitz matrices and inverted using equation \ref{eq:sep_final}. The decomposition of the diffracted and non-diffracted separable mask into a 1-rank matrix(with other components negligible) was also verified in the simulations.
+One of the main advantages of using a doubly Toeplitz mask is that it is decomposable into a single rank matrix with and without the effects of diffraction. The other rank-components are negligible even in the presence of diffraction. This is an important property that must be kept in mind which will be used for various experimental purposes.  In the simulation, we use SVD on the diffracted mask, take the rank-1 estimate of the mask. The $U_1$ and $V_1$ will represent the left and right system matrix of the refracted mask. The obtained single dimensional $U_1$ and $V_1$ of the doubly Toeplitz mask will be converted into Toeplitz matrices and inverted using equation \ref{eq:sep_final}. The decomposition of the diffracted and non-diffracted separable mask into a 1-rank matrix(with other components negligible) was also verified in the simulations.
 The difference between diffracted and non-diffracted separable mask is shown in Figure \ref{fig:diff_separable}.
 \begin{figure}[ht]
 \includegraphics[width=\linewidth]{pics/sep_mask_sim_flow}
@@ -205,7 +206,7 @@ The difference between diffracted and non-diffracted separable mask is shown in 
 \label{fig:diff_separable}
 \end{figure}
 
-It can be seen from Figure \ref{fig:rec_sep} that even in the presence of diffraction it would be possible to obtain reconstructions using equation \ref{eq:sep_final} by using a separable mask unlike a non-separable mask which fails to provide any reconstruction in the presence of diffraction effects. 
+It can be seen from Figure \ref{fig:rec_sep} that even in the presence of diffraction it would be possible to obtain reconstructions using equation \ref{eq:sep_final} by using a separable mask, unlike a non-separable mask which fails to provide any reconstruction in the presence of diffraction effects. 
   \begin{figure}[ht]
     \centering
     \begin{subfigure}{0.5\textwidth}
@@ -213,7 +214,7 @@ It can be seen from Figure \ref{fig:rec_sep} that even in the presence of diffra
         \includegraphics[scale = 0.25]{pics/sep_mask_rec}
     \end{subfigure}%
     \begin{subfigure}{0.5\textwidth}
-	\hspace{4cm}    
+    \hspace{4cm}    
     \centering
         \includegraphics[scale= 0.25]{pics/sep_mask_rec_diff}
     \end{subfigure}
