@@ -2,9 +2,9 @@
 This chapter will describe how the system can be mathematically modelled and how the mask for the lensless imager was designed. As mentioned in the previous chapter the system can be modelled as 
 \begin{equation}
 \label{eq:conv2}
-y = \phi * x + e ;
+I = M * x + e ;
 \end{equation}
-Ignoring the noise and converting the equation to fourier domain, the equation \ref{eq:conv2} can be re-written as
+where $x$ refers to the object scene, $M$ represents the mask function and $I$ represents the image formed on the sensor. Ignoring the noise and converting the equation to fourier domain, the equation \ref{eq:conv2} can be re-written as
 \begin{equation}
 \label{eq:conv3}
 F(y) = F(\phi)F(x)
@@ -19,12 +19,12 @@ x = F^{-1}(\frac{F(y)}{F(\phi)})
 \end{equation}
 Equation \ref{eq:conv4} is the simplest possible computational inversion of the scene from the sensor. This method has also been used in \cite{Toeplitz}. As mentioned in the previous chapter, there are two types of masks that can be used for the purpose of encoding the scene onto the mask, namely separable and non-separable mask. MATLAB has been used for the purpose of simulating the algorithms. In this chapter, we would simulate two types of mask patterns, namely separable and non-separable mask patterns. A separable mask pattern is one in which the mask matrix $\phi$ can be expressed in-terms of two sub- matrices:
 \begin{equation}
-\phi = \phi_L * \phi_R
+M = M_A * M_B
 \end{equation}
-Both $\phi_L$ and $\phi_R$ are doubly-toeplitz mask. The mathematical model is also changed as described by the equation \ref{eq:separable}. A non-separable mask is one which does not follow this property and follows equation \ref{eq:conv2}.
+Both $M_A$ and $M_B$ are doubly-toeplitz mask. The mathematical model is also changed as described by the equation \ref{eq:separable}. A non-separable mask is one which does not follow this property.
 
 \section{Simulation of a non-separable mask}
-The non-separable mask simulation was carried out as shown in Figure \ref{fig:non_sep_sim}. Due to the inherent ill-posed mathematics involved in imaging extended scenes, a regularization term is added to the inversion process and we get equation \ref{eq:conv5}. This kind of regularization is called Tikhonov regularization and it regularizes the inversion and controls the effects of noise\cite{Toeplitz}. The same regularization is also used in previous studies\cite{Toeplitz}.
+The non-separable mask simulation was carried out as shown in Figure \ref{fig:non_sep_sim}. Due to the inherent ill-posed mathematics involved in imaging extended scenes, a regularization term is added to the inversion process and we get equation \ref{eq:conv5}. This kind of regularization is called Tikhonov regularization. It regularizes the inversion, removes the zero valued elements in the mask fourier transform and controls the effects of noise\cite{Toeplitz}. The same regularization is also used in previous studies\cite{Toeplitz}. The value of $k$ was optimally tuned to get the best possible reconstruction(See equation \ref{eq:conv5}).
 
 \begin{equation}
 \label{eq:conv5}
@@ -36,7 +36,7 @@ x = F^{-1}(\frac{F(y)}{F(\phi)+k})
 \label{fig:non_sep_sim}
 \end{figure}
 
-In order to start with the mathematical modeling process and to imitate the sensor data and reconstruction, a reference image is needed. For that, it was decided to use the full moon image captured by the Apollo 11 space craft\cite{MoonImage}. Since the satellite is going to be pointing towards astronomical objects like the earth, moon, it was decided to crop out a portion of the full moon image as the main purpose of the satellite would be to image specific portions of the earth. The simulation is done under the assumption that the camera is enclosed in a box-like structure and light from a specific region of the earth/moon would reach it and the sensor size is finite. The image was converted to gray and scaled down from 0 to 1 and is displayed in the \texttt{bone} colormap format available in MATLAB as the colormap would display the minute variations in the reconstructed image. This is illustrated in Figure \ref{fig:moon_image}. The simulation is performed with and without diffraction and analyzed. The mask used for simulation is shown in Figure \ref{fig:non_sep_sim}.
+In order to start with the mathematical modeling process and to imitate the sensor data and reconstruction, a reference image is needed. For that, it was decided to use the full moon image captured by the Apollo 11 space craft\cite{MoonImage}. Since the satellite is going to be pointing towards astronomical objects like the earth and the moon, it was decided to crop out a portion of the full moon image(See Figure \ref{fig:moon_image}). The simulation is done under the assumption that the camera is enclosed in a box-like structure and light from a specific region of the earth/moon would reach it and the sensor size is finite. The image was converted to gray and scaled down from 0 to 1 and is displayed in the \texttt{bone} colormap format available in MATLAB as the colormap would display the minute variations in the reconstructed image. This is illustrated in Figure \ref{fig:moon_image}. The simulation is performed and analyzed with and without diffraction . The mask used for simulation is shown in Figure \ref{fig:non_sep_sim}.
 \begin{figure}[ht]
 \includegraphics[scale = 0.50]{pics/MoonImagePortion}
 \caption{The first image is the original image of the moon as taken by Apollo 11 spacecraft. The second image indicates the cropped region and the third image indicates the region that is used for the simulation.}
@@ -82,7 +82,7 @@ Mask Sensor Distance & 5 millimeters \\
 \begin{figure}[ht]
 \centering
 \includegraphics[width = \textwidth]{pics/non_sep_diffracted_mask}
-\caption{The mask image on the left indicates undiffracted mask and the mask on the right indicates the diffracted non-separable mask}
+\caption{The mask on the left indicates undiffracted mask and the mask on the right indicates the diffracted non-separable mask}
 \label{fig:non_sep_sim_diff}
 \end{figure}
 
@@ -91,7 +91,7 @@ Mask Sensor Distance & 5 millimeters \\
 \caption{The first image indicates the sensor image if the sensor plane was infinite. The second image indicates the cropped sensor image that would be formed on an actual finite sensor size(cropped).}
 \label{fig:moon_image}
 \end{figure}
-The reconstructions obtained using equation \ref{eq:conv5} is shown in Figure \ref{fig:rec_non_sep}. It can be seen from the figure that we have successful reconstructions using equation \ref{eq:conv5}. The value of $k $ was set to 0.01.
+The reconstructions obtained using equation \ref{eq:conv5} is shown in Figure \ref{fig:rec_non_sep}. It can be seen from the figure that we have successful reconstructions using equation \ref{eq:conv5}. The value of $k $ was set to 0.01. This value was found out by testing the reconstruction for different possible values and the value with the best possible reconstruction was chosen.
 However, when the diffracted mask is modeled for the sensor image, the reconstruction fails. This is the reason why we need to go for the separable mask as this mask is not resistant to diffraction effects. 
   \begin{figure}[ht]
     \centering
@@ -142,7 +142,7 @@ Object Area contributing &  $r_O = r_M + r_I - 1$ & $c_O = c_M + c_I - 1$\\
 \hline
 Left Toeplitz Mask & $r_{I}$ & $r_{O}$\\
 \hline
-Right Toeplitz matrix & $c_{I}$ & $c_{O}$\\
+Right Toeplitz Mask & $c_{I}$ & $c_{O}$\\
 \hline
 \end{tabular}
 \end{center}
@@ -156,7 +156,7 @@ N_{operations} \propto [(r_I*r_O)^3 + (c_I*c_O)^3]
 \label{eq:sep_comp}
 \end{equation}
 
-The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in the simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to et the bigger mask changes. This lead to different masks being generated. The shape of the mask is simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks varies between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}. It can be seen from figure \ref{fig:sep_sim} that there as an additional step involved in the simulation process of separable masks which is the rank-1 estimation of diffracted matrices. In this step, we perform Singular Value Decomposition(SVD) on the diffracted matrices to obtain $M_x$ and $M_y$. Now let us see what is singular value decomposition. Singular value decomposition is a mathematical tool that would enable us to express any matrix of the form $M_{ \times n}$ in the form given by equation \ref{eq:svd_1}\cite{svd}. 
+The separable mask simulation was carried out as shown in Figure \ref{fig:sep_sim}. It is possible to generate different types of Toeplitz mask by simply changing the simulation variable \texttt{Nxm0}. These masks follow the same property and offer the same amount of reconstruction in the simulation. By changing \texttt{Nxm0}, the base vector that is used for interpolating to the bigger mask changes. This lead to different masks being generated. The shape of the mask is simpler when we use a smaller \texttt{Nxm0} as a very small vector is used for interpolation to get a bigger mask. The transmittance of the masks varies between 20 to 25 percent. The different masks obtained by changing \texttt{Nxm0} is shown in Figure \ref{fig:sep_mask_multi}. By changing the \texttt{Nxm0}, we can basically change the feature size of the mask. A lower \texttt{Nxm0} generates a mask where the subsequent binary value comes at a greater distance than the one with a larger \texttt{Nxm0}. It can be seen from figure \ref{fig:sep_sim} that there as an additional step involved in the simulation process of separable masks which is the rank-1 estimation of diffracted matrices. In this step, we perform Singular Value Decomposition(SVD) on the diffracted matrices to obtain $M_x$ and $M_y$. Now let us see what is singular value decomposition. Singular value decomposition is a mathematical tool that would enable us to express any matrix of the form $M_{ m \times n}$ in the form given by equation \ref{eq:svd_1}\cite{svd}. 
 
 \begin{equation}
 \label{eq:svd_1}
@@ -202,7 +202,7 @@ The difference between diffracted and non-diffracted separable mask is shown in 
 
 \begin{figure}[ht]
 \includegraphics[width=\linewidth]{pics/diffracted_mask}
-\caption{The mask image on the left indicates undiffracted mask and the mask on the right indicates the diffracted separable mask}
+\caption{The mask on the left indicates undiffracted mask and the mask on the right indicates the diffracted separable mask}
 \label{fig:diff_separable}
 \end{figure}
 

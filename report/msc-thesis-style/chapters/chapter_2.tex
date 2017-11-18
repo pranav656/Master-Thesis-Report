@@ -50,7 +50,7 @@ where $t_x$ and $t_y$ is the time at which the image is captured in the correspo
   \caption{Pushbroom Scanning}
   \label{fig:Pushbroom}
 \end{subfigure}
-\caption{Push Broom and Whisk Broom Scanning}
+\caption{Push Broom and Whisk Broom Scanning\cite{SpInst}}
 \label{fig:test}
 \end{figure}
 
@@ -115,9 +115,9 @@ The camera sensor is the core of the Delfi-PQ Imager. The performance of a camer
 
 \begin{figure}[ht]
 \centering
-\begin{subfigure}{0.75\textwidth}
+\begin{subfigure}{\textwidth}
   \centering
-  \includegraphics[width=.75\linewidth]{pics/cmos/cmosccd}
+  \includegraphics[width=\linewidth]{pics/cmos/cmosccd}
   \caption{Readout architectures of CMOS and CCD}
   \label{fig:cmos_ccd}
 \end{subfigure}
@@ -136,14 +136,14 @@ The difference in CMOS and CCD sensors mainly lie in the readout architectures. 
 These CMOS/CCD sensors can be categorized under the starring array type of imaging architectures that we mentioned previously. The following factors have been chosen to  make a trade-off between the different image sensors:
 \begin{enumerate}
 \item Resolution: When rating a camera, the first thing that comes to the mind is the resolution of the camera. The resolution of a camera is directly dependent on the number of pixels in the image sensor of the camera. 
-\item Power Consumption: In the design of the PQ-Camera, the most important factor is the power consumption of the entire imager. The majority of the power consumption by the imager is dependent on the power consumption of the CMOS sensor. 
-\item Availability: Even though there is an innumerable number of CMOS sensors in the world, availability of CMOS sensors is quite low when it comes to small-scale production. Many CMOS manufacturers require large-scale orders.
+\item Power Consumption: In the design of the PQ-Camera, the most important factor is the power consumption of the entire imager. The majority of the power consumption by the imager is dependent on the power consumption of the image sensor. 
+\item Availability: Even though there is an innumerable number of image sensors in the world, availability of image sensors is quite low when it comes to small-scale production. Many CMOS manufacturers require large-scale orders.
 \item Quantum Efficiency(QE): Quantum Efficiency is the measure of the efficiency of the camera sensor to convert incoming photons into electrons. The ratio of electrons generated during the digitization process to photons is called quantum efficiency. This factor is extremely important, however, most manufacturers do not provide this information.
 \item Pixel Size: Pixel size is the size of each pixel unit in the CMOS camera. It is also an important factor considering that the signal produced by the CMOS sensor depends on the pixel size as well. It also determines the spatial resolution of the camera.
 \begin{equation}
 Signal = Light Density * (Pixel Size)^2 * QE
 \end{equation}
-\item Electronic Interface: The electronic interface that can be used to retrieve data from the CMOS sensor also plays an important role. Since the project uses a low-power microcontroller that has limited communication capabilities, it would be wise to choose an interface that is supported by the microcontroller. Recently available chips use LVDS/MIPI interface to send data. These interfaces are not supported by the microcontroller that is being used as an onboard computer. The onboard computer uses an I2C based interface and that the electronic interface would be an important factor as it would reduce the complexity of the system and also reduce the power consumption by removing the additional circuitry necessary for interfacing with the onboard computer.
+\item Electronic Interface: The electronic interface that can be used to retrieve data from the image sensor also plays an important role. Since the project uses a low-power microcontroller that has limited communication capabilities, it would be wise to choose an interface that is supported by the microcontroller. Recently available chips use LVDS/MIPI interface to send data. These interfaces are not supported by most of the 8-bit/16-bit microcontrollers that would be used to acquire the image from the sensors. An ideal image sensor would use I2C/SPI/RS232 based electronic interfaces to transfer image data from the sensor to the microcontroller.
 
 \item Dynamic Range: Dynamic Range and Signal-to-Noise Ratio(SNR) are used interchangeably in CMOS sensors. The only difference is that dynamic range considers only the temporal dark noise while SNR includes the root mean square of the shot noise as well.  The dynamic range is given by the equation \ref{eq:dr}.
 \begin{equation}
@@ -153,11 +153,11 @@ Dynamic \ Range = 20log(\frac{Signal}{Temporal \ Dark \ Noise})
 
 \item Shutter Type: Camera sensors use different types of shutters namely, global shutter and rolling shutter. Global shutter reduces the distortions due to fast-moving artifacts while increasing the dark current. Rolling shutter has more distortions in the case of imaging moving artifacts but also has lesser dark noise compared to global shutter. 
 
-\item Voltage Level: Voltage level also has to be taken into account while choosing the sensor because if the CMOS sensor needs a voltage level higher than that of the main satellite bus voltage, then additional circuitry has to be introduced to step up the voltage level which in turn increases the overall system power.  
+\item Voltage Level: Voltage level also has to be taken into account while choosing the sensor because if the image sensor needs a voltage level higher than that of the main satellite bus voltage, then additional circuitry has to be introduced to step up the voltage level which in turn increases the overall system power.  
 
-\item Operating Temperature: Operating temperature is an important factor to take into account when choosing an imaging sensor. Since the camera is going to operate in space, it is better if the CMOS sensor has a higher operating range of temperature. 
+\item Operating Temperature: Operating temperature is an important factor to take into account when choosing an imaging sensor. Since the camera is going to operate in space, it is better if the image sensor has a higher operating range of temperature. 
 
-\item Overall Size and Weight: As the imager has to fit within specific dimensions, the overall size and weight of the CMOS sensor also needs to be taken into account.
+\item Overall Size and Weight: As the imager has to fit within specific dimensions, the overall size and weight of the image sensor also needs to be taken into account.
 
 \item Frame Rate: Even though it is not required to have a camera sensor that is capable of high frame rates, it is an added advantage and higher frame rate camera could help in imaging larger areas of the earth if required. 
 \item Price: While there are no specific cost constraints in the project, the price has also been taken into account.
@@ -220,7 +220,7 @@ Price & - & + & X & X & - - - & ++ & X & + & X\\
 Based on Table \ref{tbl:TradeoffCMOS}, OV2640 would be the best choice for development of the lensless camera. It is a medium resolution, low-power choice. The OV5642 was also bought in case of any design issues with OV2640. OV5642 is a high-power, high-resolution choice. 
 
 \subsection{Compression Algorithms}
-Data Compression plays a very important role when it comes to space missions. It is a very important aspect of the system design of a lensless camera for space application as the image that needs to be sent down to earth needs to be compressed as much as possible. Various surveys\cite{Compression2}\cite{Compression3}\cite{Compression4} have been conducted previously in-terms of which compression algorithm would best preserve the data and provide maximum compression at the same time. Compression algorithms can be divided into two types namely lossy and lossless. Lossless compression algorithms are algorithms in which we can reconstruct the original image without any loss of data. Typical examples of lossless algorithms include Portable Network Graphics Format(PNG), Bitmap Format(BMP), TIFF(Tagged Image File Format). Lossy compression algorithms are compression algorithms in which we cannot completely reconstruct the original image. However, lossy compression factors offer a very high compression ratio compared to loss-less algorithms. Lossy Compression algorithms include DCT(Discrete Cosine Transform), JPEG(Joint Photographic Experts Group), SPIHT(Set Partitioning in Hierarchical Trees)\cite{Compression3}. A survey conducted for European Student Moon Orbiter Mission\cite{Compression3} has reviewed various possible compression algorithms that could be used for lunar imaging. The compression algorithms were evaluated on the basis of Mean Square Error(MSE), Peak Signal to Noise Ratio(PSNR), Normalized Cross-Correlation(NK), Averaged Difference(AD), Structural Content(SC), Maximal Difference and Normalized Absolute Error(NAED). The reviewed compression formats were BMP, CGM, GIF, JPEG, PNG, TIFF, WebP. Loss-less compression generally does not offer a compression ratio of more than 2 due to the entropy present in real-life artifacts. Since space missions offer a limited communication link-speed, the compression ratio needs to be more than 2. This cannot be offered by lossless compression and hence we need to go for lossy compression formats. It can be seen from table \ref{tbl:TradeoffCompression} that JPEG and SPIHT perform better compared to DCT. It can be seen that JPEG offers better performance in terms of Mean Squared Error. However, SPIHT offers a higher compression ratio. 
+Data Compression plays a very important role when it comes to space missions. It is a very important aspect of the system design of a lensless camera for space application as the image that needs to be sent down to earth needs to be compressed as much as possible. Various surveys\cite{Compression2}\cite{Compression3}\cite{Compression4} have been conducted previously in-terms of which compression algorithm would best preserve the data and provide maximum compression at the same time. Compression algorithms can be divided into two types namely lossy and lossless. Lossless compression algorithms are algorithms in which we can reconstruct the original image without any loss of data. Typical examples of lossless algorithms include Portable Network Graphics Format(PNG), Bitmap Format(BMP), TIFF(Tagged Image File Format). Lossy compression algorithms are compression algorithms in which we cannot completely reconstruct the original image. However, lossy compression factors offer a very high compression ratio compared to loss-less algorithms. Lossy Compression algorithms include DCT(Discrete Cosine Transform), JPEG(Joint Photographic Experts Group), SPIHT(Set Partitioning in Hierarchical Trees)\cite{Compression3}. A survey conducted for European Student Moon Orbiter Mission\cite{Compression3} has reviewed various possible compression algorithms that could be used for lunar imaging. The compression algorithms were evaluated on the basis of Mean Square Error(MSE), Peak Signal to Noise Ratio(PSNR), Normalized Cross-Correlation(NK), Averaged Difference(AD), Structural Content(SC), Maximal Difference and Normalized Absolute Error(NAED). The reviewed compression formats were BMP, CGM, GIF, JPEG, PNG, TIFF, WebP. Loss-less compression generally does not offer a compression ratio of more than 2 due to the entropy present in real-life artifacts. Since space missions offer a limited communication link-speed, the compression ratio needs to be extremely high which cannot be offered by lossless compression. This cannot be offered by lossless compression and hence we need to go for lossy compression formats. It can be seen from table \ref{tbl:TradeoffCompression} that JPEG and SPIHT perform better compared to DCT. It can be seen that JPEG offers better performance in terms of Mean Squared Error. However, SPIHT offers a higher compression ratio. 
 
 \begin{table}[ht]
 \caption{Ranking of Different Compression Algorithms}
@@ -257,7 +257,7 @@ where $P_{x,y}$ is the pixel value at the location $x,y$ and $C_i$ and $C_j$ can
   \end{cases}
   \label{eq:jpeg_coeff}
 \end{equation}
-\item The next step is the lossy part of the JPEG compression which involves quantization of the data. In this process the the coefficients obtained are quantized using a 8*8 quantization matrix. The quantization process is illustrated by equation \ref{eq:quant}.
+\item The next step is the lossy part of the JPEG compression which involves quantization of the data. In this process the coefficients obtained are quantized using a 8*8 quantization matrix. The quantization process is illustrated by equation \ref{eq:quant}.
 \begin{equation}
 B_{j,k} = \frac{S_{i,j}}{Q_{j,k}}
 \label{eq:quant}
@@ -324,7 +324,7 @@ In the 1960s, Fernimore and Canon introduced Fresnel Zone Plates for a "large ap
 \begin{equation}
 r_n  = r_1 \sqrt{n}
 \end{equation}
-An example of Fresnel Zone plate is shown in Figure \ref{fig:fzp}. Fresnel Zone Plates can be used in the places of lenses to produce images because FZPs produce images at multiple higher order foci depending on the type of Fresnel plate used. The Fresnel zone plates have a transmission of exactly 50 percent. It is always desirable to have an optical system with ideal system point spread function(SPSF). The point spread function describes the response of an optical system to a point source. It can also be called as the impulse response of the optical system. The ideal point spread function of an optical system would be a Dirac-delta function. However, in order to obtain such response with a Fresnel zone plate, it would have to be infinite. So, different forms of coded-apertures were developed to overcome the limitations associated with Fresnel zone plates. 
+An example of Fresnel Zone plate is shown in Figure \ref{fig:fzp}. Fresnel Zone Plates can be used in the places of lenses to produce images because FZPs produce images at multiple higher order foci depending on the type of Fresnel plate used. The Fresnel zone plates have a transmittance(refers to the ratio of light that is entering versus leaving the mask) of exactly 50 percent. It is always desirable to have an optical system with ideal system point spread function(SPSF). The point spread function describes the response of an optical system to a point source. It can also be called as the impulse response of the optical system. The ideal point spread function of an optical system would be a Dirac-delta function. However, in order to obtain such response with a Fresnel zone plate, it would have to be infinite. So, different forms of coded-apertures were developed to overcome the limitations associated with Fresnel zone plates. 
 
     \begin{figure}[ht]
     \centering
@@ -350,16 +350,16 @@ An example of Fresnel Zone plate is shown in Figure \ref{fig:fzp}. Fresnel Zone 
     \end{subfigure}
 
 \caption{Masks developed initally for lensless imaging\cite{Cannon1}}
-\label{fig:lensvslensless}
+\label{fig:masks_1}
 \end{figure}
 
 Coded aperture cameras extend the pinhole camera concept replacing the single aperture with a mask containing multiple apertures. The first developed coded aperture cameras were used in imaging X-Ray sources due to the difficulty involved in focusing light from X-Ray sources\cite{Cannon1}. Since a single pinhole limits the amount of light imaged by the sensing element, it was replaced by many holes, called the aperture so that overlapping images are formed on the film. The recorded image will have no similarity with the source and a digital processing is required to reconstruct the source image or the object. The recorded image is mathematically modeled as a  collection of overlapping shadows as described by the following equation\cite{VBoomi}\cite{Cannon1} 
 \begin{equation}
-y = \phi * x + e
+I = M * x + e
 \label{eq:conv}
 \end{equation}
-where $y$ represents the image formed on the sensor, $\phi$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $x$ using the inverse of the mask function. An ideal point spread optical function would produce a Dirac-delta response $\phi * \phi^{-1}$.
-In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as am alternative coded aperture imaging method. The mask consists of randomly positioned holes in an opaque surface. An example of a random array is shown in Figure \ref{fig:random_array}. The total open area may or may not be equal to the amount of opaqueness. The image produced by random arrays are decoded digitally using auto-correlation analysis of the encoded images\cite{Cannon1}. Like Fresnel Zone Plates, the random array also exhibits an ideal response when the size of the array is infinite which is practically impossible. A new-class of apertures called uniformly redundant arrays(URAs) was developed over the disadvantages associated with random arrays. The uniformly random arrays exhibit a pattern that follows the equation \ref{eq:ura}\cite{Fenimore:78}. The URA have a dimension of $r$ by $s$ with $r - s = 2$. The equation \ref{eq:ura} takes $I  = mod_ri$ and $J  = mod_rj$($i$ and $j$ represent the array index position in x and y).
+where $I$ represents the image formed on the sensor, $M$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $x$ using the inverse of the mask function. An ideal point spread optical function would produce a Dirac-delta response $\phi * \phi^{-1}$.
+In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as an alternative coded aperture imaging method. The mask consists of randomly positioned holes in an opaque surface. An example of a random array is shown in Figure \ref{fig:random_array}. The total open area may or may not be equal to the amount of opaqueness. The image produced by random arrays are decoded digitally using auto-correlation analysis of the encoded images\cite{Cannon1}. Like Fresnel Zone Plates, the random array also exhibits an ideal response when the size of the array is infinite which is practically impossible. A new-class of apertures called uniformly redundant arrays(URAs) was developed over the disadvantages associated with random arrays. The uniformly random arrays exhibit a pattern that follows the equation \ref{eq:ura}\cite{Fenimore:78}. The URA have a dimension of $r$ by $s$ with $r - s = 2$. The equation \ref{eq:ura} takes $I  = mod_ri$ and $J  = mod_rj$($i$ and $j$ represent the array index position in x and y).
 \begin{equation}
   A(I,J) =
   \begin{cases}
@@ -370,7 +370,7 @@ In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as am alternativ
   \end{cases}
   \label{eq:ura}
 \end{equation}
-where
+where $A(I,J)$ represent the values of the mask at co-ordinates $I,J$. A value of 1 indicates that mask is open at that point and a value of 0 indicates that the mask is closed. $C_r$ is given by equation \ref{eq:ura_2}.
 \begin{equation}
   C_r(I) =
   \begin{cases}
@@ -380,10 +380,10 @@ where
     } \\
     -1 & \text{otherwise} \\
   \end{cases}
-  \label{eq:ura}
+  \label{eq:ura_2}
 \end{equation}
 
-The matrix used for deconvolution is given by the equation \ref{eq:decura}. This kind of array produces an ideal point spread function. The point spread function of different masks discussed above is shown in Figure \ref{fig:psf_old_mask}.
+The matrix used for deconvolution(given by equation \ref{eq:decura_2}) is given by the equation \ref{eq:decura}. This kind of array produces an ideal point spread function. The point spread function of different masks discussed above is shown in Figure \ref{fig:psf_old_mask}.
 \begin{equation}
   G(I,J) =
   \begin{cases}
@@ -391,6 +391,11 @@ The matrix used for deconvolution is given by the equation \ref{eq:decura}. This
     -1 & \text{if $A(i,j) = 0$} \\
   \end{cases}
   \label{eq:decura}
+\end{equation}
+
+\begin{equation}
+x = I * G
+\label{eq:decura_2}
 \end{equation}
 
 \begin{figure}[ht]

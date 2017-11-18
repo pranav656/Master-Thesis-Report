@@ -17,27 +17,27 @@
 \contentsline {chapter}{\numberline {3}Simulation of Reconstruction Algorithm}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}Simulation of a non-separable mask}{26}{section.3.1}
 \contentsline {section}{\numberline {3.2}Simulation of a separable mask}{27}{section.3.2}
-\contentsline {chapter}{\numberline {4}Implementation}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Embedded Software of Camera}{35}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Exposure Control of OV2640}{37}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Power Consumption of Sensors}{39}{section.4.2}
-\contentsline {chapter}{\numberline {5}Experiment to determine Acceptance Angle of CMOS sensor}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Testing of Acceptance Cone of Sensor}{43}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Experimental Setup}{43}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Improved experiment}{48}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Adding to Simulation}{50}{section.5.2}
-\contentsline {section}{\numberline {5.3}Actual Field of View and Spatial Resolution Calculations}{53}{section.5.3}
-\contentsline {section}{\numberline {5.4}Spatial Light Modulators}{54}{section.5.4}
-\contentsline {chapter}{\numberline {6}Experimentations with SLM}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}Initial Experiments to image mask}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}Effect of SLM brightness and contrast on CMOS sensor}{59}{section.6.2}
-\contentsline {section}{\numberline {6.3}Effect of gray levels on CMOS sensor}{60}{section.6.3}
-\contentsline {section}{\numberline {6.4}Imaging of Separable Mask using CMOS sensor}{62}{section.6.4}
-\contentsline {chapter}{\numberline {7}Estimation of System Matrices}{69}{chapter.7}
-\contentsline {section}{\numberline {7.1}Strategy}{70}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Identity Basis}{71}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Hadamard Basis}{73}{subsection.7.1.2}
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{79}{chapter.8}
-\contentsline {section}{\numberline {8.1}Goals and Research Questions revisited}{79}{section.8.1}
-\contentsline {section}{\numberline {8.2}Future Work}{81}{section.8.2}
-\contentsline {chapter}{Appendix}{87}{appendix*.86}
+\contentsline {chapter}{\numberline {4}Implementation}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Embedded Software of Camera}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Exposure Control of OV2640}{35}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Power Consumption of Sensors}{37}{section.4.2}
+\contentsline {chapter}{\numberline {5}Experiment to determine Acceptance Angle of CMOS sensor}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Testing of Acceptance Cone of Sensor}{41}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Experimental Setup}{41}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Improved experiment}{46}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Adding to Simulation}{48}{section.5.2}
+\contentsline {section}{\numberline {5.3}Actual Field of View and Spatial Resolution Calculations}{51}{section.5.3}
+\contentsline {section}{\numberline {5.4}Spatial Light Modulators}{52}{section.5.4}
+\contentsline {chapter}{\numberline {6}Experimentations with SLM}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Initial Experiments to image mask}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}Effect of SLM brightness and contrast on CMOS sensor}{57}{section.6.2}
+\contentsline {section}{\numberline {6.3}Effect of gray levels on CMOS sensor}{58}{section.6.3}
+\contentsline {section}{\numberline {6.4}Imaging of Separable Mask using CMOS sensor}{60}{section.6.4}
+\contentsline {chapter}{\numberline {7}Estimation of System Matrices}{67}{chapter.7}
+\contentsline {section}{\numberline {7.1}Strategy}{68}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Identity Basis}{69}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Hadamard Basis}{71}{subsection.7.1.2}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{77}{chapter.8}
+\contentsline {section}{\numberline {8.1}Goals and Research Questions revisited}{77}{section.8.1}
+\contentsline {section}{\numberline {8.2}Future Work}{79}{section.8.2}
+\contentsline {chapter}{Appendix}{85}{appendix*.86}
