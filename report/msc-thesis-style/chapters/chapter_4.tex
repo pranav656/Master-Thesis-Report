@@ -23,9 +23,9 @@ Frame Buffer Size & 384 KB & 8MB \\
  \hline
  Weight & 20 grams & 20 grams \\
  \hline
- Operating Temperatures & -10 to 55 degree celsius & -10 to 55 degree celsius \\
+ \makecell{Operating \\Temperatures} & -10$\degree$C to 55$\degree$C & -10$\degree$C to 55$\degree$C \\
  \hline
- Electronic Interfaces Needed & SPI, I2C & SPI, I2C\\
+ \makecell{Electronic Interfaces\\ Needed} & SPI, I2C & SPI, I2C\\
  \hline
  Dynamic Range & 50 dB & 68 dB \\
  \hline
@@ -34,16 +34,16 @@ Frame Buffer Size & 384 KB & 8MB \\
 \section{Embedded Software of Camera}
 One of the main reasons behind choosing the OV2640 and OV5642 CMOS sensors is that they already have a ready electronic interface that can be used to interface with standard 8-bit/16-bit microcontrollers. Arducam is an open source camera that comes along with open-source hardware and software that is needed to capture images using the CMOS sensor. Arducam is a platform that provides the hardware and software components necessary to interface OV2640 and OV5642 sensors with the conventional microcontroller platforms such as Arduino. One of the core components in every camera made by Arducam is that there is a component called Arduchip\cite{Arduchip}. It is a basically an Altera MAXII CPLD EPM240 processor that facilitates DMA memory transfer between the camera memory module and components such as microcontroller and thereby helping to reduce the development time for special applications such as space where the only computational resource that would be available are low power computing platforms such as microcontrollers with only synchronous serial interfaces such as I2C, SPI, etc. 
 
-However, using the camera comes with its own advantages and disadvantages. The main advantage of using this platform is that the platform has open-source libraries that could be used to interface with ATMEGA328P, an 8-bit microcontroller. In space missions, it would not be possible to send high-powered microprocessors, and a microcontroller is used as an onboard computer. Arducam has standard software libraries that can be used to interface with Arduino making the cumbersome and lengthy job of writing an interface software to a CMOS sensor way more easier.  A disadvantage of the hardware module is the onboard memory that it has to capture an image. The OV2640 Arducam mini camera module can capture up to $1600 \times 1200$ resolution images with or without any form of compression. However, due to the limitation of the onboard OV2640 FIFO memory AL422B, it would be possible to capture only compressed images and not full resolution RAW images. The AL422B on-board FIFO has only 384KB of memory and that is not enough to obtain a full-resolution RAW image. One of the other disadvantages is that custom code needs to be written to obtain various controls that we need for our camera. We have to write our own camera control software if we need to control factors such as exposure time, ISO, etc. as the default software uses automatic exposure control to enhance the image quality. The camera module architecture is shown in Figure \ref{fig:arducam_arch}. The OV5642 offers a greater flexibility in terms of memory as it has a larger FIFO Buffer(8 MB).
+However, using the camera comes with its own advantages and disadvantages. The main advantage of using this platform is that the platform has open-source libraries that could be used to interface with Arduino which contains ATMEGA328P, an 8-bit microcontroller. In space missions, it would not be possible to send high-powered microprocessors, and a microcontroller is used as the processing platform for various subsystems. Arducam has standard software libraries that can be used to interface with Arduino making the cumbersome and lengthy job of writing an interface software to a CMOS sensor way more easier.  A disadvantage of the hardware module is the onboard memory that it has to capture an image. The OV2640 Arducam mini camera module can capture up to $1600 \times 1200$ resolution images with or without any form of compression. However, due to the limitation of the onboard OV2640 FIFO memory AL422B, it would be possible to capture only compressed images and not full resolution RAW images. The AL422B on-board FIFO has only 384KB of memory and that is not enough to obtain a full-resolution RAW image. One of the other disadvantages is that custom code needs to be written to obtain various controls that we need for our camera. We have to write our own camera control software if we need to control factors such as exposure time, ISO, etc. as the default software uses automatic exposure control to enhance the image quality. The camera module architecture is shown in Figure \ref{fig:arducam_arch}. The OV5642 offers a greater flexibility in terms of memory as it has a larger FIFO Buffer(8 MB). Arducam has also provided APIs that can control the exposure of OV5642.
 
  \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=0.75]{pics/arducam_architecture}
-\caption{Camera Architecture of Arducam Mini OV2640 Camera Module}
+\includegraphics[width = \textwidth]{pics/arducam_architecture}
+\caption{Camera Architecture of Arducam Mini OV2640 Camera Module\cite{OV5642Arducam}}
 \label{fig:arducam_arch}
 \end{figure}
 
-The system for experiments is as shown in Figure \ref{fig:imp_setup}. The Arduino is connected to the camera module through an I2C interface. Using the I2c interface it possible to set registers that control the functioning of the camera such as the output format, digital signal processing, etc. SPI interface is used to transfer the image data from the camera module to the Arduino. The Arduino upon receiving the image data either writes it to an  SD card or sends it to the software on the PC through the USB connection. The software flow is shown in Figure \ref{fig:arducam_software}. We use the same software flow for both the CMOS sensors as the APIs are designed for use with many sensor models. The same set of libraries can be used for different CMOS sensors by simply adding some preprocessor directives to a \texttt{memorysaver.h} header file provided in the open-source library. To see the images on the PC, the vendor has provided a host PC software(not open source) and firmware which uses USB-UART to transfer images from the Arduino to PC. The firmware could be modified to ignore certain commands coming from the PC and using this we were able to modify the camera settings to our advantage. 
+The system for experiments is as shown in Figure \ref{fig:imp_setup}. The Arduino is connected to the sensor directly through an I2C interface. Using the I2C interface it possible to set registers that control the functioning of the camera such as the output format, digital signal processing, etc. SPI interface is used to transfer the image data from the camera module to the Arduino. The Arduino upon receiving the image data either writes it to an  SD card or sends it to the software on the PC through the USB connection. The software flow is shown in Figure \ref{fig:arducam_software}. We use the same software flow for both the CMOS sensors as the APIs are designed for use with many sensor models. The same set of libraries can be used for different CMOS sensors by simply adding some preprocessor directives to a \texttt{memorysaver.h} header file provided in the open-source library. To see the images on the PC, the vendor has provided a host PC software(not open source) and firmware which uses USB-UART to transfer images from the Arduino to PC. The firmware could be modified to ignore certain commands coming from the PC and using this we were able to modify the camera settings to our advantage. 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=0.75]{pics/implementation_setup}
@@ -60,7 +60,7 @@ One of the important factors that need to be controlled in camera is the exposur
 \end{figure}
 
 
-\begin{table}[ht]
+\begin{table}[!ht]
 \centering
 \caption{ Details of Main APIs used}
 \label{tbl:camera_apis}
@@ -89,23 +89,34 @@ API & Function \\
 \end{tabular}
 \end{table}
 \subsection{Exposure Control of OV2640}
-In order to do experiments, it was required to control the exposure of the camera. In the default driver that was provided by the vendor, the exposure was automatically set using the Automatic Exposure Control (AEC) feature in the sensor. So, a modification was needed in the driver software. Fortunately, the driver is open source and there were libraries that could assist in setting the onboard registers through the I2C interface on the Arduino. First, let us have a look at how exposure control works in an OV2640 camera. All rolling shutter image sensors including OV2640 expose the sensor one-line at a time i.e. pixels in the same line are exposed at the same time and different pixels in different lines are exposed at a different time. So, the minimum exposure time would be one line time and the maximum exposure time would be the frame time. This is illustrated in Figure \ref{fig:RollingShutterOV2640}. By default, the pixel clock is set at 36MHz. We can calculate the minimum line time using the following equation:
+In order to do experiments, it was required to control the exposure of the camera. In the default driver that was provided by the vendor, the exposure was automatically set using the Automatic Exposure Control (AEC) feature in the sensor. So, a modification was needed in the driver software. Fortunately, the driver is open source and there were libraries that could assist in setting the onboard registers through the I2C interface on the Arduino. First, let us have a look at how exposure control works in an OV2640 camera. All rolling shutter image sensors including OV2640 expose the sensor one-line at a time i.e. pixels in the same line are exposed at the same time and different pixels in different lines are exposed at a different time. 
 
-$$
-Minimum Exposure Time = 1/Pixel Clock * Pixel \ Clockes \ per \ line 
-$$
-As shown in Figure \ref{fig:ShutterTimingOV2640}, one line consists of 1922 pixel clocks(1600 for pixel data and 322 clocks of horizontal blanking). So the minimum exposure time would be 53.39$\mu$seconds and the maximum exposure time would be the frame time(multiply line time by 1200 + 44 lines of vertical blanking) which would be 66.63ms\cite{RollingShutterOV2640}. In order to control the exposure of the camera, it is necessary to modify registers of address 4, 10, 13, 45. So, these registers were modified according to the required exposure time value. The driver software on the Arduino was modified to obtain different exposure times.
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \includegraphics[width=\textwidth]{pics/rolling_shutter}
 \caption{Rolling Shutter Operation on OV2640\cite{RollingShutterOV2640}}
 \label{fig:RollingShutterOV2640}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \includegraphics[width=\textwidth]{pics/OV2640timing}
 \caption{Shutter Timing Diagram of OV2640\cite{RollingShutterOV2640}}
 \label{fig:ShutterTimingOV2640}
 \end{figure}
+
+
+So, the minimum exposure time would be one line time and the maximum exposure time would be the frame time. This is illustrated in Figure \ref{fig:RollingShutterOV2640}. By default, the pixel clock is set at 36MHz. We can calculate the minimum line time using the following equation:
+
+$$
+Minimum\ Exposure\ Time = \frac{1}{Pixel\ Clock} * Pixel \ Clockes \ per \ line 
+$$
+As shown in Figure \ref{fig:ShutterTimingOV2640}, one line consists of 1922 pixel clocks(1600 for pixel data and 322 clocks of horizontal blanking). So the minimum exposure time would be 53.39$\mu$seconds and the maximum exposure time would be the frame time(multiply line time by 1200 + 44 lines of vertical blanking) which would be 66.63ms\cite{RollingShutterOV2640}. In order to control the exposure of the camera, it is necessary to modify registers of address 4, 10, 13, 45(See Figure \ref{fig:OV2640Registers}). So, these registers were modified according to the required exposure time value. The driver software on the Arduino was modified to obtain different exposure times. The images of a laser beam captured(with lens) with different exposure times using the software developed are shown in Figure \ref{fig:exptests}.
+
+\begin{figure}[!ht]
+\includegraphics[width=\textwidth]{pics/exposure/OV2640ExposureRegisters}
+\caption{Registers to be changed to control exposure of OV2640\cite{OV2640DS}\cite{RollingShutterOV2640}}
+\label{fig:OV2640Registers}
+\end{figure}
+
 
     \begin{figure}[ht]
     \centering
@@ -153,29 +164,29 @@ As shown in Figure \ref{fig:ShutterTimingOV2640}, one line consists of 1922 pixe
     \end{figure}
     
 \section{Power Consumption of Sensors}
- One important aspect that also needs to be taken into account is the power consumption of the camera module(including the sensor, memory, voltage regulators, etc). Since, we have two camera modules, OV2640(low resolution, low power) and OV5642(high resolution, high power). The power consumption profile for OV2640 was provided by the manufacturer, however, the same is not available for OV5642. So, it was decided to perform power consumption measurements for the sensors manually. In order to find the amount of power consumed, we connect a 1 $\Omega$ resistor in series with the power line connecting the microcontroller and CMOS image sensor. The voltage measured across the resistor would be the current consumed by the camera sensors. The camera was operated in two modes: one in continuous "on" mode and the second mode was "on only when on". The second mode was activated clearing \texttt{GPIO\_PWDN\_MASK} when the camera is in use and set it once again once the camera is done taking the pictures and then saving it onto the memory card. The current consumption graph is shown in Figure \ref{fig:power}.
+ One important aspect that also needs to be taken into account is the power consumption of the camera module(including the sensor, memory, voltage regulators, etc). Since, we have two camera modules, OV2640(low resolution, low power) and OV5642(high resolution, high power). It was decided to perform power consumption measurements for the sensors manually. In order to find the amount of power consumed, we connect a 1 $\Omega$ resistor in series with the power line connecting the microcontroller and CMOS image sensor. The voltage measured across the resistor would be the current consumed by the camera sensors. The camera was operated in two modes: one in continuous ``on" mode and the second mode was ``on only when capture". The second mode was activated clearing \texttt{GPIO\_PWDN\_MASK} when the camera is in use and set it once again once the camera is done taking the pictures and then saving it onto the memory card. This turns off the power supply lines from the Arduino to the when the camera is not taking pictures. The current consumption graph is shown in Figure \ref{fig:power}.
  
    \begin{figure}[ht]
     \centering
     \begin{subfigure}{\textwidth}
     \centering
-        \includegraphics[width=1\linewidth]{pics/power_1.JPG}
+        \includegraphics[width=0.75\linewidth]{pics/power_1.JPG}
         \caption{Voltage across  resistor when continuosly on}
     \end{subfigure}%
    
     \begin{subfigure}{\textwidth}
     \centering
-        \includegraphics[width=1\linewidth]{pics/power_2.JPG}
+        \includegraphics[width=0.75\linewidth]{pics/power_2.JPG}
         \caption{Voltage across  resistor when  using \texttt{GPIO\_PWDN\_MASK}}
     \end{subfigure}
        \caption{This figure shows the difference between keeping the OV5642 sensor module continuously on and using the \texttt{GPIO\_PWDN\_MASK}}
         \label{fig:power}
    \end{figure}
- 
- It can be seen from Figure \ref{fig:power} that we can reduce power consumption by switching on the camera only when in use. The camera is operated in 5V mode. The current consumed by the camera is averaged  and the measured power consumption is shown in Table \ref{tbl:power_cons}. As expected, the higher resolution camera OV5642 consumes more power than OV2640. Since, OV2640 is consumes lower power and is also of lower resolution(which implies lesser size), we proceed to continue with the next set of experiments using OV2640.
-\begin{table}[]
+
+It can be seen from Figure \ref{fig:power} that we can reduce power consumption by switching on the camera only when in use. The camera is operated in 5V mode. The current consumed by the camera is averaged and the measured power consumption is shown in Table \ref{tbl:power_cons}. As expected, the higher resolution camera OV5642 consumes more power than OV2640. Since OV2640 consumes lower power and is also of lower resolution(which implies lesser size of images), we proceed to continue with the next set of experiments using OV2640.
+\begin{table}[ht]
 \centering
-\caption{Measured power consumption of Cameras only when "on"}
+\caption{Measured power consumption of Cameras only when ``on only when capture"}
 \label{tbl:power_cons}
 \begin{tabular}{|c|c|}
 \hline
@@ -187,3 +198,5 @@ Sensor & Power \\
  \hline
 \end{tabular}
 \end{table}
+\nopagebreak
+\nolinebreak

@@ -13,8 +13,8 @@ A level-1 auxiliary file: chapter_5.aux
 A level-1 auxiliary file: chapter_6.aux
 A level-1 auxiliary file: chapter_7.aux
 A level-1 auxiliary file: conclusionsandfuturework.aux
-The style file: ../bib/latex8.bst
 A level-1 auxiliary file: appendix_a.aux
+The style file: ../bib/latex8.bst
 Database file #1: ../bib/mycollection.bib
 Repeated entry---line 369 of file ../bib/mycollection.bib
  : @misc{imfindcircles
@@ -25,9 +25,9 @@ Repeated entry---line 374 of file ../bib/mycollection.bib
  :          ,
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in DelfiC3
+Warning--to sort, need author or key in Flatcam
 Warning--to sort, need author or key in ImagingGeo
 Warning--to sort, need author or key in landsat
-Warning--to sort, need author or key in Flatcam
 Warning--to sort, need author or key in Jpeg
 Warning--to sort, need author or key in lens1
 Warning--to sort, need author or key in lens2

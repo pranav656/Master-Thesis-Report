@@ -1,6 +1,6 @@
 \chapter{Background and selection criteria}
 \label{chp:LitSurvey}
-In this chapter, a state-of-the-art study will be presented that would assist in the design of the lensless imager with specifications mentioned in the previous chapter.
+In this chapter, a state-of-the-art study will be presented that would assist in the design of the lensless imager that can be used onboard the Delfi-PQ Satellite. This chapter also provides background information that will be useful in understanding the concepts covered in the later chapters. 
 \section{Camera Computational Pipeline}
 In order to design a lensless imaging system, we must first look at the computational imaging pipeline of existing cameras. Since the lensless camera basically uses computation to reconstruct images, it is important to understand the computational pipeline of existing camera systems and make necessary modification in the design of the existing pipeline to suit the system. The computational imaging pipeline of existing camera systems is shown figure \ref{fig:CompPipeline}\cite{CompPipeline}.
 \begin{figure}[htb]
@@ -8,10 +8,10 @@ In order to design a lensless imaging system, we must first look at the computat
 \caption{Computational Pipeline of Existing cameras}
 \label{fig:CompPipeline}
 \end{figure}
-As shown in figure \ref{fig:CompPipeline}, there are five main components that can be controlled computationally in existing systems. Illumination of the scene can be controlled to produce an enhanced picture. Optics could be controlled to limit the amount of light entering the scene and thereby controlling the image produced by the sensor. The sensor can also computationally modify the date it receives to de-noise, adjust the blackness/white in an image. Post-processing can also be done on the image produced by the sensor to improve the image produced by the sensor. Finally, a display can also be modified computationally to produce certain effects on the user. And of course, the user can control any of these components to produce the effect he desires. But in the case of the lensless imaging system, we would be modifying the optics and the processing components of the pipeline to reduce the size of the camera. The components to be modified are darkened in figure \ref{fig:CompPipeline}. 
+As shown in figure \ref{fig:CompPipeline}, there are five main components that can be controlled computationally in existing systems. Illumination of the scene can be controlled to produce an enhanced picture. Optics could be controlled to limit the amount of light entering the sensor and thereby controlling the image produced by the sensor. The sensor can also computationally modify the date it receives to de-noise, adjust the blackness/white in an image. Post-processing can also be done on the image produced by the sensor to improve the image produced by the sensor. Finally, a display can also be modified computationally to produce certain effects on the user. And of course, the user can control any of these components to produce the effect he desires. But in the case of the lensless imaging system, we would be modifying the optics and the processing components of the pipeline to reduce the size of the camera. The components to be modified are darkened in figure \ref{fig:CompPipeline}. 
 
 \section{Satellite Imaging Architectures}
-Since the camera is going to be capturing pictures of the earth, it would be required to study the existing imaging architectures currently being used in satellites and how the design of the lensless camera would fit into the existing imaging architectures. We will first look into the terminology commonly used in space instrumentation. As the imager is carried along the orbit of the earth, it images a strip on the surface of the earth. The width of the strip is called the 'swath'. The direction along which the satellite moves or images is called the 'along-track' direction and the direction perpendicular to it is called the cross-track direction\cite{ImagingGeo}. Figure \ref{fig:ImagingGeo} describes this terminology and some other terms as well.  
+Since the camera is going to be capturing pictures of the earth, it would be required to study the existing imaging architectures currently being used in satellites and how the design of the lensless camera would fit into the existing imaging architectures. We will first look into the terminology commonly used in space instrumentation. As the imager is carried along the orbit of the earth, it images a strip on the surface of the earth. The width of the strip is called the `swath'. The direction along which the satellite moves or images is called the `along-track' direction and the direction perpendicular to it is called the cross-track direction\cite{ImagingGeo}. Figure \ref{fig:ImagingGeo} describes this terminology and some other terms as well.  
 \begin{figure}[ht]
 \includegraphics[width=\textwidth]{pics/imaginggeo}
 \caption{Various Imaging Terms\cite{ImagingGeo}}
@@ -19,9 +19,9 @@ Since the camera is going to be capturing pictures of the earth, it would be req
 \end{figure}
 Three major types of scanning architectures are employed in space instruments, namely:
 \begin{itemize}
-\item Whiskbroom Line Scanner: In this type of scanning architecture, a detector element detects it's instantaneous field of view which is projected onto a pixel element. In this scanning type, the surface of the earth is scanned in lines. A scanning mirror would project a very small area of the earth onto the single pixel element. The scanning mirror would then rotate to project the next element of the line onto the next pixel. Depending on the motion of the satellite, the next line of the detector is scanned and projected on to the next line on the surface of the earth. An advantage of this type of detector is that it would be possible to obtain a very large field of view. However, it also comes with a disadvantage that a very high sampling frequency is required to get decent resolutions. Typically, an earth observation satellite would move at 6.5 km per second. In order to get a resolution of 100 meters per pixel, it would be required to sample at least 65 lines per second. For a swath of 1000 pixels, it would be required to sample at 65000 elements per second. Apart from this, there is very limited time for each detector element which would result in low spatial resolution\cite{SpInst}. Another main disadvantage is that mechanical components would be required to project different parts of the surface of the earth on to the detector element. This type of scanner is also called as the along-track scanner. Mathematically, the measurement of the detector element $(X,Y)$ can be described using 
+\item Whiskbroom Line Scanner: In this type of scanning architecture, a detector element detects it's instantaneous field of view which is projected onto a pixel element. In this scanning type, the surface of the earth is scanned in lines. A scanning mirror would project a very small area of the earth onto the single pixel element. The scanning mirror would then rotate to project the next element of the line onto the next pixel. Depending on the motion of the satellite, the next line of the detector is scanned and projected on to the next line on the surface of the earth. An advantage of this type of detector is that it would be possible to obtain a very large field of view. However, it also comes with a disadvantage that a very high sampling frequency is required to get decent resolutions. Typically, an earth observation satellite would move at 6.5 km per second. In order to get a resolution of 100 meters per pixel, it would be required to sample at least 65 lines per second. For a swath of 1000 pixels, it would be required to sample at 65000 elements per second. Apart from this, there is very limited time for each detector element which would result in low spatial resolution\cite{SpInst}. Another main disadvantage is that mechanical components would be required to project different parts of the surface of the earth on to the detector element. This type of scanner is also called as the along-track scanner. Mathematically, the measurement of the detector element $(X, Y)$ can be described using 
 $$
-(X,Y) = f(t_x, t_y)
+(X, Y) = f(t_x, t_y)
 $$
 where $t_x$ and $t_y$ is the time at which the image is captured in the corresponding location
 %\begin{figure}[ht]
@@ -38,15 +38,15 @@ where $t_x$ and $t_y$ is the time at which the image is captured in the correspo
 %\end{figure}
 \begin{figure}[ht]
 \centering
-\begin{subfigure}{0.75\textwidth}
+\begin{subfigure}{0.80\textwidth}
   \centering
-  \includegraphics[width=.5\linewidth]{pics/WhiskBroom}
+  \includegraphics[width=0.75\linewidth]{pics/WhiskBroom}
   \caption{WhiskBroom Scanning}
   \label{fig:Whiskbroom}
 \end{subfigure}
-\begin{subfigure}{0.75\textwidth}
+\begin{subfigure}{0.80\textwidth}
   \centering
-  \includegraphics[width=.65\linewidth]{pics/PushBroom}
+  \includegraphics[width=0.75\linewidth]{pics/PushBroom}
   \caption{Pushbroom Scanning}
   \label{fig:Pushbroom}
 \end{subfigure}
@@ -54,42 +54,44 @@ where $t_x$ and $t_y$ is the time at which the image is captured in the correspo
 \label{fig:test}
 \end{figure}
 
-\item Pushbroom Line Scanner: In this type of architecture, the orbital motion of the sensor is used to image the swath instead of using a mirror as in the case of whiskbroom scanner. The field of view in the cross-track direction is imaged by the corresponding line detector array. Successive lines are imaged and sampled by the multiplexer as the sensor moves across the surface. The time between sampling two successive lines can be the time it takes for the satellite to move that distance. The most commonly used detector for a push broom scanner is Charge Coupled Devices(CCD). One of the main advantages of this type of scanner is that it requires no moving parts. Due to this, it is possible to obtain very high scanning rates( $\leq 1 \mu$ second). This also leads to lower noise in the received signal\cite{SpInst}. The disadvantage is that a large number of detectors are required to image a large piece of an area of earth. In addition to this, it requires an optical arrangement that could obtain a wide field of view. Mathematically, the measurement of the detector element $(X,Y)$ can be described using 
+\item Pushbroom Line Scanner: In this type of architecture, the orbital motion of the sensor is used to image the swath instead of using a mirror as in the case of whiskbroom scanner. The field of view in the cross-track direction is imaged by the corresponding line detector array. Successive lines are imaged and sampled by the multiplexer as the sensor moves across the surface. The time between sampling two successive lines can be the time it takes for the satellite to move that distance. The most commonly used detector for a push broom scanner is Charge Coupled Devices(CCD). One of the main advantages of this type of scanner is that it requires no moving parts. Due to this, it is possible to obtain very high scanning rates( $\leq 1 \mu$ second). This also leads to lower noise in the received signal\cite{SpInst}. The disadvantage is that a large number of detectors are required to image a large piece of an area of the earth. In addition to this, it requires an optical arrangement that could obtain a wide field of view. Mathematically, the measurement of the detector element $(X, Y)$ can be described using 
 $$
-(X,Y) = f(x), f(t_y)
+(X, Y) = f(x), f(t_y)
 $$
 where $f(x)$ represents the sensor output and $f(t_y)$ represents the time at which the subsequent rows are imaged.  
-\item Staring Array: Staring arrays use 2-d CCD/CMOS detectors to capture an entire area on the surface of the earth. These are also called as framing cameras. This provides speed-up and step-and-stare mechanism is employed wherein observations are made intermittently after a certain number of steps in the cross-track direction. The advantage is that moderate field of view optics is only required in this case\cite{SpInst}. Mathematically, the measurement of the detector element $(X,Y)$ can be described using 
+\item Staring Array: Staring arrays use 2-D CCD/CMOS detectors to capture an entire area on the surface of the earth. These are also called as framing cameras. This provides speed-up and step-and-stare mechanism is employed wherein observations are made intermittently after a certain number of steps in the cross-track direction. The advantage is that moderate field of view optics is only required in this case\cite{SpInst}. Mathematically, the measurement of the detector element $(X, Y)$ can be described using 
 $$
-(X,Y) = f(x), f(y)
+(X, Y) = f(x), f(y)
 $$
 where $f(x)$ and $f(y)$ represents the sensor output.
 \end{itemize}
 
 \section{Spatial Resolution and Field of View}
-Two important factors that come into account when developing cameras for space applications are spatial resolution and field of view. These factors determine the performance of the camera and it is important to know how these cameras will perform when designed.
+Two important factors that come into account when developing cameras for space applications are the spatial resolution and field of view. These factors determine the performance of the camera and it is important to know how these cameras will perform when designed.
 
 
 \subsection{Spatial Resolution}
-Spatial resolution in remote sensing refers to the smallest area represented by the pixel element of the detector. The impact of different spatial resolutions on imaging a house object is shown in Figure \ref{fig:spatial_resolution}. For example, if a house on earth measures 30*30 m, a camera with a spatial resolution of 30 m cannot image the house completely and the pixel is going to be the average color of that particular area which is 30m. If the spatial resolution is reduced to 5m, then we can differentiate between different components of the house. An even smaller spatial resolution of 1m will enable us to see the finer details of the house components. 
+Spatial resolution in remote sensing refers to the smallest area represented by the pixel element of the detector. The impact of different spatial resolutions on imaging a house object is shown in Figure \ref{fig:spatial_resolution}. For example, if a house on earth measures $30 \ m \times 30 \ m$, a camera with a spatial resolution of $30 \  m$ cannot image the house completely and the pixel is going to be the average color of that particular area which is 30m. If the spatial resolution is reduced to $5 \ m$, then we can differentiate between different components of the house. An even smaller spatial resolution of $1 \ m$ will enable us to see the finer details of the house components. 
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{pics/spatial-resolution}
+\centering
+\includegraphics[width=0.75\textwidth]{pics/spatial-resolution}
 \caption{Picture Quality variation according to different spatial resolutions\cite{SpatialResol}}
 \label{fig:spatial_resolution}
 \end{figure}
 
-In remote sensing, a system with high spatial resolution is one which has a resolution of 0.41-4 meters per pixel, a system with low spatial resolution has a resolution ranging from 30-1000 meters per pixel\cite{SpatialResol}. The spatial resolution of a system can be determined by the equation \ref{eq:spat_res}. 
+In remote sensing, a system with high spatial resolution is one which has a resolution of $0.41-4 \  m$ per pixel, a system with low spatial resolution has a resolution ranging from $30-1000 \ m$ per pixel\cite{SpatialResol}. The spatial resolution of a system can be determined by the equation \ref{eq:spat_res}. 
 
 \begin{equation}
 \label{eq:spat_res}
-d_e = \frac{d_p}{d_t} * d_h
+d_s = \frac{d_p}{d_t} * d_h
 \end{equation}
-where $d_e$ indicates the spatial resolution, $d_p$ indicates the individual pixel size of detector element, $d_h$ indicates the height of the instrument from earth and $d_t$ indicates the thickness of the camera or the distance of the lens/mask from the sensor.
+where $d_s$ indicates the spatial resolution, $d_p$ indicates the individual pixel size of detector element, $d_h$ indicates the height of the instrument from earth and $d_t$ indicates the thickness of the camera or the distance of the lens/mask from the sensor.
 
 The equation \ref{eq:spat_res} is obtained by using the simple triangular rules and the relation can be obtained by using Figure \ref{fig:spatial_resolution_calc}.
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{pics/spatialRes}
+\centering
+\includegraphics[width=0.75\textwidth]{pics/spatialRes}
 \caption{Spatial Resolution Calculation}
 \label{fig:spatial_resolution_calc}
 \end{figure}
@@ -98,15 +100,16 @@ The equation \ref{eq:spat_res} is obtained by using the simple triangular rules 
 The field of view is the amount of area of the surface of the earth that can be imaged by the sensor. In a lens-based system, the field of view is determined by the chief ray angle of the lens in use. In a lensless system, the field of view is determined by the acceptance angle of the CMOS/CCD sensor in use. The field of view can be determined by the equation \ref{eq:fov_calc}.
 \begin{equation}
 \label{eq:fov_calc}
-d_e = 2*d_h*tan(\theta_{cra})
+d_{fov} = 2*d_h*tan(\theta_{cra})
 \end{equation}
-where $d_e$ is the area that can be imaged by the sensor, $d_h$ determined the height of the instrument from the surface of the earth and $\theta_{cra}$ determines the acceptance cone or the acceptance angle of the sensor elements. This equation can be determined by using simple triangular laws and this is shown in Figure \ref{fig:fov_calc}.
+where $d_{fov}$ is the area that can be imaged by the sensor, $d_h$ determined the height of the instrument from the surface of the earth and $\theta_{cra}$ is the acceptance cone or the acceptance angle of the sensor elements. This equation can be determined by using simple triangular laws and this is shown in Figure \ref{fig:fov_calc}.
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{pics/fov}
+\centering
+\includegraphics[width=0.75\textwidth]{pics/fov}
 \caption{Field of View Calculation}
 \label{fig:fov_calc}
 \end{figure}
-Sensors used by the Landsat program(program by NASA for earth observation satellites) have a field of view of 185*185 kilometers at a height of 705 kilometers from the surface of the earth\cite{landsat}. 
+Sensors used by the Landsat program(program by NASA for earth observation satellites) have a field of view of $185 \ km \times 185 \ km$ at a height of 705 kilometers from the surface of the earth\cite{landsat}.
 
 \section{Trade-off Analysis}
 \label{sec:tradeOff}
@@ -133,17 +136,18 @@ The camera sensor is the core of the Delfi-PQ Imager. The performance of a camer
 
 The difference in CMOS and CCD sensors mainly lie in the readout architectures. In CCDs, the electrical charge is shifted out through the horizontal and vertical detector elements and are converted to a voltage through an amplifier. In CMOS sensor image architecture, the charge is read out one row at a time similar to RAM using row-column select switches\cite{cmos}. The architecture of the CCD makes it possible to design sensors with very small pixel-sizes and also leads to lesser readout noise. The CMOS architecture enables extremely fast readout but introduces additional fixed pattern noise and temporal noise due to the introduction of circuitry in each pixel. Manufactures produce both CMOS and CCD types of sensors and we can choose an architecture depending on the type of application. 
 
-These CMOS/CCD sensors can be categorized under the starring array type of imaging architectures that we mentioned previously. The following factors have been chosen to  make a trade-off between the different image sensors:
+These CMOS/CCD sensors can be categorized under the starring array type of imaging architectures that we mentioned previously. The following factors have been chosen to  make a trade-off between the different image sensors available on the market:
 \begin{enumerate}
 \item Resolution: When rating a camera, the first thing that comes to the mind is the resolution of the camera. The resolution of a camera is directly dependent on the number of pixels in the image sensor of the camera. 
-\item Power Consumption: In the design of the PQ-Camera, the most important factor is the power consumption of the entire imager. The majority of the power consumption by the imager is dependent on the power consumption of the image sensor. 
-\item Availability: Even though there is an innumerable number of image sensors in the world, availability of image sensors is quite low when it comes to small-scale production. Many CMOS manufacturers require large-scale orders.
-\item Quantum Efficiency(QE): Quantum Efficiency is the measure of the efficiency of the camera sensor to convert incoming photons into electrons. The ratio of electrons generated during the digitization process to photons is called quantum efficiency. This factor is extremely important, however, most manufacturers do not provide this information.
-\item Pixel Size: Pixel size is the size of each pixel unit in the CMOS camera. It is also an important factor considering that the signal produced by the CMOS sensor depends on the pixel size as well. It also determines the spatial resolution of the camera.
+\item Power Consumption: In the design of the imager, the most important factor is the power consumption of the entire imager. The majority of the power consumption by the imager is dependent on the power consumption of the image sensor. 
+\item Availability: Even though there is an innumerable number of image sensors in the world, availability of image sensors is quite low when it comes to small-scale production. Many image sensor manufacturers require large-scale orders.
+\item Quantum Efficiency(QE): Quantum Efficiency is the measure of the efficiency of the camera sensor to convert incoming photons into electrons. The ratio of electrons generated during the digitization process to photons is called quantum efficiency. This factor is extremely important, however, most manufacturers do not provide this information. This factor is ignored since a majority of the cameras studied do not specify this information.
+\item Pixel Size: Pixel size is the size of each pixel unit in the CMOS camera. It is also an important factor considering that the signal produced by the CMOS sensor depends on the pixel size as well. It also determines the spatial resolution of the camera. The larger the pixel size, the better is the signal provided by the image sensor. The relationship between the signal produced by the sensor and the pixel size is shown by equation \ref{eq:sigpixel}.
 \begin{equation}
-Signal = Light Density * (Pixel Size)^2 * QE
+Signal = Light \ Density * (Pixel\ Size)^2 * QE
+\label{eq:sigpixel}
 \end{equation}
-\item Electronic Interface: The electronic interface that can be used to retrieve data from the image sensor also plays an important role. Since the project uses a low-power microcontroller that has limited communication capabilities, it would be wise to choose an interface that is supported by the microcontroller. Recently available chips use LVDS/MIPI interface to send data. These interfaces are not supported by most of the 8-bit/16-bit microcontrollers that would be used to acquire the image from the sensors. An ideal image sensor would use I2C/SPI/RS232 based electronic interfaces to transfer image data from the sensor to the microcontroller.
+\item Electronic Interface: The electronic interface that can be used to retrieve data from the image sensor also plays an important role. Since the project uses a low-power microcontroller that has limited communication capabilities, it would be wise to choose an interface that is supported by the microcontroller. Recently available image sensors use LVDS/MIPI interface to send data. These interfaces are not supported by most of the 8-bit/16-bit microcontrollers that would be used to acquire the image from the sensors. An ideal image sensor would use I2C/SPI/RS232 based electronic interfaces to transfer image data from the sensor to the microcontroller.
 
 \item Dynamic Range: Dynamic Range and Signal-to-Noise Ratio(SNR) are used interchangeably in CMOS sensors. The only difference is that dynamic range considers only the temporal dark noise while SNR includes the root mean square of the shot noise as well.  The dynamic range is given by the equation \ref{eq:dr}.
 \begin{equation}
@@ -151,9 +155,7 @@ Signal = Light Density * (Pixel Size)^2 * QE
 Dynamic \ Range = 20log(\frac{Signal}{Temporal \ Dark \ Noise})
 \end{equation}
 
-\item Shutter Type: Camera sensors use different types of shutters namely, global shutter and rolling shutter. Global shutter reduces the distortions due to fast-moving artifacts while increasing the dark current. Rolling shutter has more distortions in the case of imaging moving artifacts but also has lesser dark noise compared to global shutter. 
-
-\item Voltage Level: Voltage level also has to be taken into account while choosing the sensor because if the image sensor needs a voltage level higher than that of the main satellite bus voltage, then additional circuitry has to be introduced to step up the voltage level which in turn increases the overall system power.  
+\item Voltage Level: Voltage level also has to be taken into account while choosing the sensor because if the image sensor needs a voltage level higher than that of the main satellite bus voltage, then additional circuitry has to be introduced to step up the voltage level which in turn increases the overall system power. The ideal operating voltage of the camera must be in the range of 3-5 V.
 
 \item Operating Temperature: Operating temperature is an important factor to take into account when choosing an imaging sensor. Since the camera is going to operate in space, it is better if the image sensor has a higher operating range of temperature. 
 
@@ -185,39 +187,37 @@ In \cite{surveyCamMod}, a survey of camera modules for a CubeSat space Mission h
 {Factors}{Candidates}&
 \thead{(a)}&\thead{(b)}&\thead{(c)}&\thead{(d)}&\thead{(e)}&\thead{(f)}&\thead{(g)}&\thead{(h)}&\thead{(i)}\\
 \hline
-\textbf{Optical Parameters} & & & & & & & & &\\
+\textbf{\makecell{Optical Parameters}} & & & & & & & & &\\
 \hline
-Resolution & ++ & - & + & - & ++ & + & ++ & ++ & ++ \\
+Resolution & + & - & - & - & ++ & + & ++ & ++ & + \\
 \hline
 Pixel Size & + & ++ & X & ++ & ++ & + & ++ & + & ++ \\
-\hline
-Shutter type & - & - & X & - & - & + & + & + & - \\
 \hline
 Frame Rate & + & + & + & + & +++ & + & + & + & + \\
 \hline
 \textbf{\makecell{Electrical and \\other parameters}} & & & & & & & & & \\
 \hline
-Power Consumption & - - & - -  & - - - & ++ & - & ++ & - & - - - & - - \\
+\makecell{Power Consumption} & - - & - -  & - - - & ++ & - & ++ & - & - -  & - - \\
 \hline
-Availability & - & + & - - - & - - -& - - - & ++ & - - & ++& - - -\\
+Availability & - & + & - - - & - - -& - - - & ++ & ++ & ++& - - -\\
 \hline
-Electronic Interface & + & + & - - - & ++ & - - & ++ & - - & ++ & +\\
+\makecell{Electronic Interface} & + & + & - - - & ++ & - - -& ++ & - - -& ++ & +\\
 \hline
 DR and SNR & X & + & X & ++ & + & ++ & + & ++& +\\
 \hline
 Voltage & + & + & - - - & ++ & + & ++ & + & ++ & +\\
 \hline
-Operating Temperature & + & + & + & + & + & + & + & + & +\\
+\makecell{Operating Temperature} & + & + & + & + & + & + & + & + & +\\
 \hline
-Overall Size and Weight & + & + & + & + & + & + & + & + & + \\
+\makecell{Overall Size and Weight} & + & + & + & + & + & + & + & + & + \\
 \hline
 Price & - & + & X & X & - - - & ++ & X & + & X\\
 \hline
-\textbf{Points} & 2 & 6 & -8 & 8 & 0 & 18 & 5 & 13 & 4\\
+\textbf{Points} & 3 & 7 & -10 & 9 & 1 & 17 & 7 & 13 & 4\\
 \hline
 \end{tabular}
 \end{table}
-Based on Table \ref{tbl:TradeoffCMOS}, OV2640 would be the best choice for development of the lensless camera. It is a medium resolution, low-power choice. The OV5642 was also bought in case of any design issues with OV2640. OV5642 is a high-power, high-resolution choice. 
+The sensors are rated from +++ indicating that the sensor provides the best performance for the particular factor and - - - indicates the worst performance for the particular factor. Based on Table \ref{tbl:TradeoffCMOS}, OV2640 would be the best choice for development of the lensless camera. It is a medium resolution, low-power choice. OV5642 was also bought in case of any design issues with OV2640. OV5642 is a high-power, high-resolution choice. 
 
 \subsection{Compression Algorithms}
 Data Compression plays a very important role when it comes to space missions. It is a very important aspect of the system design of a lensless camera for space application as the image that needs to be sent down to earth needs to be compressed as much as possible. Various surveys\cite{Compression2}\cite{Compression3}\cite{Compression4} have been conducted previously in-terms of which compression algorithm would best preserve the data and provide maximum compression at the same time. Compression algorithms can be divided into two types namely lossy and lossless. Lossless compression algorithms are algorithms in which we can reconstruct the original image without any loss of data. Typical examples of lossless algorithms include Portable Network Graphics Format(PNG), Bitmap Format(BMP), TIFF(Tagged Image File Format). Lossy compression algorithms are compression algorithms in which we cannot completely reconstruct the original image. However, lossy compression factors offer a very high compression ratio compared to loss-less algorithms. Lossy Compression algorithms include DCT(Discrete Cosine Transform), JPEG(Joint Photographic Experts Group), SPIHT(Set Partitioning in Hierarchical Trees)\cite{Compression3}. A survey conducted for European Student Moon Orbiter Mission\cite{Compression3} has reviewed various possible compression algorithms that could be used for lunar imaging. The compression algorithms were evaluated on the basis of Mean Square Error(MSE), Peak Signal to Noise Ratio(PSNR), Normalized Cross-Correlation(NK), Averaged Difference(AD), Structural Content(SC), Maximal Difference and Normalized Absolute Error(NAED). The reviewed compression formats were BMP, CGM, GIF, JPEG, PNG, TIFF, WebP. Loss-less compression generally does not offer a compression ratio of more than 2 due to the entropy present in real-life artifacts. Since space missions offer a limited communication link-speed, the compression ratio needs to be extremely high which cannot be offered by lossless compression. This cannot be offered by lossless compression and hence we need to go for lossy compression formats. It can be seen from table \ref{tbl:TradeoffCompression} that JPEG and SPIHT perform better compared to DCT. It can be seen that JPEG offers better performance in terms of Mean Squared Error. However, SPIHT offers a higher compression ratio. 
@@ -243,7 +243,7 @@ JPEG algorithm is chosen for implementation since it offers equivalent performan
 The JPEG compression algorithm is comprised of the following steps.
 \begin{itemize}
 \item The first step is to prepare the image for compression. The picture in the RGB color format is converted to YCbCr colorspace. The YCbCr model has three channels namely, Luminance(indicated by Y), Chroma Blue(indicated by Cb) and Chroma Red(indicated by Cr). The reason for this is that the human eye is more receptive to luminance than chrominance. The Cb and the Cr channels are then down-sampled which results in loss of data. Since the maximum amount of data is in the luminance part, it is not downsampled and the channel data is retained without any downsampling. 
-\item The output image is then split into blocks of size 8*8.  It is divided into blocks of 8*8 because there will be less variation in this region of the image and this can be utilized to compress the image as much as possible.
+\item The output image is then split into blocks of size $8 \times 8$.  It is divided into blocks of $8 \times 8$ because there will be less variation in this region of the image and this can be utilized to compress the image as much as possible.
 \item After this, the Discreet cosine transform is applied to these blocks of data to obtain the DCT coefficients for different frequencies. The idea behind the DCT is that by knowing the coefficients of different frequency components, it would be possible to reconstruct the image block. This is illustrated in Figure \ref{fig:dct}.
 \begin{equation}
  S_{i,j} = \frac{1}{4} * C_i * C_j \sum_{x=0}^{x=7}\sum_{y=0}^{y=7}P_{x,y} *cos(\frac{(2y+1)*i*\pi}{16})*cos(\frac{(2x+1)*i*\pi}{16})
@@ -257,14 +257,14 @@ where $P_{x,y}$ is the pixel value at the location $x,y$ and $C_i$ and $C_j$ can
   \end{cases}
   \label{eq:jpeg_coeff}
 \end{equation}
-\item The next step is the lossy part of the JPEG compression which involves quantization of the data. In this process the coefficients obtained are quantized using a 8*8 quantization matrix. The quantization process is illustrated by equation \ref{eq:quant}.
+\item The next step is the lossy part of the JPEG compression which involves quantization of the data. In this process the coefficients obtained are quantized using a $8 \times 8$ quantization matrix. The quantization process is illustrated by equation \ref{eq:quant}.
 \begin{equation}
 B_{j,k} = \frac{S_{i,j}}{Q_{j,k}}
 \label{eq:quant}
 \end{equation}
 
-This quantization matrix varies from sensor to sensor depending on the manufacturer. However, the matrix is such that the DC component would be retained and the higher frequency components are rounded off to zero. This quantization factor also controls the quality of compression and higher the value of quantization table, lower the value of compression. If you multiply the quantization by a large quantization factor, you would lose the higher frequency components and would only retain the DC component(given by $S_{0,0}$) and lower frequency components. Many CMOS sensors allow the modification of quantization scaling factor.
-\item After this the coefficient data is converted from 8*8 to a 64*1 vector and the Huffman encoding scheme is used to encode the data. This does not lead to any loss of data and the process is completely lossless.
+This quantization matrix varies from sensor to sensor depending on the manufacturer. However, the matrix is such that the DC component would be retained and the higher frequency components are rounded off to zero. This quantization factor also controls the quality of compression and higher the value of elements in quantization table, lower the value of compression. If you multiply the quantization table by a large quantization factor, you would lose the higher frequency components and would only retain the DC component(given by $S_{0,0}$) and lower frequency components. Many CMOS sensors allow the modification of quantization scaling factor.
+\item After this the coefficient data is converted from $8 \times 8$ to a $64 \times 1$ vector and the Huffman encoding scheme is used to encode the data. This does not lead to any loss of data and the process is completely lossless.
 \end{itemize}
 The entire JPEG compression process is shown in Figure \ref{fig:jpeg}. The process is followed in the reverse order in order to obtain back the original RGB image and is supported by all image viewing software.
 
@@ -282,16 +282,16 @@ The entire JPEG compression process is shown in Figure \ref{fig:jpeg}. The proce
 \label{fig:dct}
 \end{figure}
 \subsection{Masks and Reconstruction Algorithms}
-The main aim of designing a lensless camera is that it would help reduce the size of the camera considerably. In a lensed camera, light emanating from multiple-points in the object would intersect to form the image of the object. This is illustrated in Figure \ref{fig:lens_image}. the focal length of the lens-involed primarily determines the thickness of the camera(See Figure \ref{fig:focal_length}). In a lensless imaging system, the lens is replaced by means of a mask(series of pinholes arranged in a periodic manner). This is illustrated in Figure \ref{fig:lensvslensless}.
+The main aim of designing a lensless camera is that it would help reduce the size of the camera considerably. In a lensed camera, light emanating from multiple-points in the object would intersect to form the image of the object. This is illustrated in Figure \ref{fig:lens_image}. The focal length of the lens involved primarily determines the thickness of the camera(See Figure \ref{fig:focal_length}). In a lensless imaging system, the lens is replaced by means of a mask(series of pinholes arranged in a periodic manner). This is illustrated in Figure \ref{fig:lensvslensless}.
 \begin{figure}[ht]
 \centering
 \begin{subfigure}{0.75\textwidth}
   \centering
-  \includegraphics[width=.5\linewidth]{pics/lensed_image_formation}
+  \includegraphics[width=\linewidth]{pics/lensed_image_formation}
   \caption{Image Formation in a lens-based camera\cite{lens1}}
   \label{fig:lens_image}
 \end{subfigure}
-\begin{subfigure}{0.75\textwidth}
+\begin{subfigure}{1\textwidth}
   \centering
   \includegraphics[width=.65\linewidth]{pics/focal_length}
   \caption{Image Distance dictated by focal length \cite{lens2}}
@@ -301,7 +301,7 @@ The main aim of designing a lensless camera is that it would help reduce the siz
 \label{fig:lens_based}
 \end{figure}
 
-The simplest lensless imaging system is the pinhole camera. However, since the quality of the image depends on the size of the pinhole, that restricts the amount of light that can enter the imaging system. Lenses were introduced to focus the light from distant objects onto a film or a sensor. In the absence of a lens, the sensor would record the average intensity of the light entering it. This is also seen in the experiments which are described in the upcoming chapters. 
+The simplest lensless imaging system is the pinhole camera. However, since the quality of the image depends on the size of the pinhole, that restricts the amount of light that can enter the imaging system. Lenses were introduced to focus the light from distant objects onto a film or a sensor. In the absence of a lens, the sensor would record the average intensity of the light entering it. This is also seen in the experiments which are described in the upcoming chapters. The difference between pinhole, lensed and a mask-based camera is shown in Figure \ref{fig:flatcam_comp}.
 \begin{figure}[ht]
 \centering
 \begin{subfigure}{\textwidth}
@@ -320,7 +320,13 @@ The simplest lensless imaging system is the pinhole camera. However, since the q
 \label{fig:lensvslensless}
 \end{figure}
 
-In the 1960s, Fernimore and Canon introduced Fresnel Zone Plates for a "large aperture, high-resolution camera with neither refracting or reflecting components"\cite{Cannon1}. The Fresnel zone plate is defined such that the radius of the $n^{th}$ zone is given by 
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{pics/flatcam_comp}
+\caption{Comparison between different types of cameras\cite{Flatcam}}
+\label{fig:flatcam_comp}
+\end{figure}
+
+In the 1960s, Fernimore and Canon introduced Fresnel Zone Plates for a ``large aperture, high-resolution camera with neither refracting or reflecting components"\cite{Cannon1}. The Fresnel zone plate is defined such that the radius of the $n^{th}$ zone is given by 
 \begin{equation}
 r_n  = r_1 \sqrt{n}
 \end{equation}
@@ -355,13 +361,13 @@ An example of Fresnel Zone plate is shown in Figure \ref{fig:fzp}. Fresnel Zone 
 
 Coded aperture cameras extend the pinhole camera concept replacing the single aperture with a mask containing multiple apertures. The first developed coded aperture cameras were used in imaging X-Ray sources due to the difficulty involved in focusing light from X-Ray sources\cite{Cannon1}. Since a single pinhole limits the amount of light imaged by the sensing element, it was replaced by many holes, called the aperture so that overlapping images are formed on the film. The recorded image will have no similarity with the source and a digital processing is required to reconstruct the source image or the object. The recorded image is mathematically modeled as a  collection of overlapping shadows as described by the following equation\cite{VBoomi}\cite{Cannon1} 
 \begin{equation}
-I = M * x + e
+I = M * O + e
 \label{eq:conv}
 \end{equation}
-where $I$ represents the image formed on the sensor, $M$ represents the mask pattern, $x$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $x$ using the inverse of the mask function. An ideal point spread optical function would produce a Dirac-delta response $\phi * \phi^{-1}$.
+where $I$ represents the image formed on the sensor, $M$ represents the mask pattern, $O$ represents the irradiance vector or the object and $e$ represents the noise. The $*$ operator represents the convolution operation between the mask an the object. The coded aperture increases the flux that falls on the detector and this leads to an increase in the SNR. The SNR can be as large $\sqrt{N}$, where N represents the number of holes in the aperture\cite{Cannon1}. The increased SNR comes at the cost of computational decoding for the image. We can obtain the actual object image $O$ using the inverse of the mask function. An ideal point spread optical function would produce a Dirac-delta response $M * M^{-1}$.
 In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as an alternative coded aperture imaging method. The mask consists of randomly positioned holes in an opaque surface. An example of a random array is shown in Figure \ref{fig:random_array}. The total open area may or may not be equal to the amount of opaqueness. The image produced by random arrays are decoded digitally using auto-correlation analysis of the encoded images\cite{Cannon1}. Like Fresnel Zone Plates, the random array also exhibits an ideal response when the size of the array is infinite which is practically impossible. A new-class of apertures called uniformly redundant arrays(URAs) was developed over the disadvantages associated with random arrays. The uniformly random arrays exhibit a pattern that follows the equation \ref{eq:ura}\cite{Fenimore:78}. The URA have a dimension of $r$ by $s$ with $r - s = 2$. The equation \ref{eq:ura} takes $I  = mod_ri$ and $J  = mod_rj$($i$ and $j$ represent the array index position in x and y).
 \begin{equation}
-  A(I,J) =
+  M(I,J) =
   \begin{cases}
     0 & \text{if $I = 0$} \\
     1 & \text{if $J = 0$ \& $I\neq 0$} \\
@@ -370,7 +376,7 @@ In 1968, Dicke and Ables\cite{Cannon1} introduced random arrays as an alternativ
   \end{cases}
   \label{eq:ura}
 \end{equation}
-where $A(I,J)$ represent the values of the mask at co-ordinates $I,J$. A value of 1 indicates that mask is open at that point and a value of 0 indicates that the mask is closed. $C_r$ is given by equation \ref{eq:ura_2}.
+where $M(I,J)$ represent the values of the mask at co-ordinates $I,J$. A value of 1 indicates that mask is open at that point and a value of 0 indicates that the mask is closed. $C_r$ is given by equation \ref{eq:ura_2}.
 \begin{equation}
   C_r(I) =
   \begin{cases}
@@ -387,14 +393,14 @@ The matrix used for deconvolution(given by equation \ref{eq:decura_2}) is given 
 \begin{equation}
   G(I,J) =
   \begin{cases}
-    1 & \text{if $A(i,j) = 1$} \\
-    -1 & \text{if $A(i,j) = 0$} \\
+    1 & \text{if $M(i,j) = 1$} \\
+    -1 & \text{if $M(i,j) = 0$} \\
   \end{cases}
   \label{eq:decura}
 \end{equation}
 
 \begin{equation}
-x = I * G
+O = I * G
 \label{eq:decura_2}
 \end{equation}
 
@@ -405,7 +411,7 @@ x = I * G
 \end{figure}
 
 It can be seen that the Uniformly redundant arrays would offer the best performance and would produce the ideal point spread function. The direct inversion by deconvolution with inverse works when the object is against a dark background with negligible diffraction effects(for example, in the X-Ray Spectrum). 
-However, in the later studies\cite{Toeplitz}, it can be seen that equation \ref{eq:conv} no longer holds in the visible light spectrum involving extended-object scenes and direct Fourier/deconvolution based reconstruction methods would fail. This is also observed in the simulation studies described in the upcoming chapter. In order to solve the problems associated with reconstructing extended object scenes in the visible light spectrum, a new class of separable Doubly Toeplitz mask was developed by Michael et.al \cite{Toeplitz}. These classes of masks retain their properties even in the presence of diffraction and extended-object scene based scenarios. The doubly Toeplitz-masks are expressed as a product of two independent vectors $A(i)$ and $B(j)$.
+However, in the later studies\cite{Toeplitz}, it can be seen that equation \ref{eq:conv} no longer holds in the visible light spectrum involving extended-object scenes and direct Fourier/deconvolution based reconstruction methods would fail. This is also observed in the simulation studies described in the upcoming chapter. In order to solve the problems associated with reconstructing extended object scenes in the visible light spectrum, a new class of separable Doubly Toeplitz mask was developed by Michael Et al. \cite{Toeplitz}. These classes of masks retain their properties even in the presence of diffraction and extended-object scene based scenarios. The doubly Toeplitz-masks are expressed as a product of two independent vectors $A$ and $B$.
 \begin{equation}
 M(i,j) = A(i)B(j)
 \end{equation}

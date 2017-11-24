@@ -3,7 +3,6 @@
 \section{Initial Experiments to image mask}
 The experimental setup consists of a coherent laser beam, two mirrors, a spatial filter, a collimator lens, LC2012 SLM and finally an OV2640 CMOS sensor. The experimental setup is shown in Figure \ref{fig:experiment_slm}. The collimator lens and the spatial filter make the beam parallel and remove unwanted random noise in the laser beam.
 
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width = 0.75\linewidth]{pics/slm_experiment}
@@ -11,11 +10,9 @@ The experimental setup consists of a coherent laser beam, two mirrors, a spatial
 \label{fig:experiment_slm}
 \end{figure}
 
+I started off the experiment with the setup shown in Figure \ref{fig:experiment_slm}. However, when trying to take an image of the mask with the CMOS sensor, I faced multiple challenges along the way. The first challenge came in the form of the memory limitations of the camera module. The OV2640 camera module has only 384KB of memory which can store compressed JPEG images when imaging with the lens. The memory limitation of the camera does not come into effect when imaging with the lens as JPEG encoding is naturally designed for reducing the size of real-life artifacts and object scenes with a very high compression ratio. However, when using the same camera module, for lensless imaging, the size of the image easily exceeds the size of the FIFO buffer and the host software provided by the vendor is unable to read out the images. In order to overcome this challenge, I thought of increasing the extent of compression(with a trade-off of loss in quality) to image the mask. This can be done by changing the \texttt{QSC} register(quantization scale factor) \cite{OV2640DS} of the CMOS sensor. The default value of the quantization scale factor is \texttt{0C}(hex value). This value was increased to \texttt{2F} by setting the registers using I2C as mentioned for the previous acceptance cone experiments. The size of the image was successfully reduced and the host software was able to read out images. After this, the sensor was placed in front of the SLM and the experiments were continued. I started experimenting with the default masks provided by the SLM vendor before continuing onto the custom mask designed using simulations. The mask that was used is a binary axicon mask and binary mask which divides the SLM into two different halves.The figure of the mask is shown in Figure \ref{fig:InitMask}. 
 
-
-I started off the experiment with the setup shown in Figure \ref{fig:experiment_slm}. However, when trying to take an image of the mask with the CMOS sensor, I faced multiple challenges along the way. The first challenge came in the form of the memory limitations of the camera module. The OV2640 camera module has only 384KB of memory which can store compressed JPEG images when imaging with the lens. The memory limitation of the camera does not come into effect when imaging with the lens as JPEG encoding is naturally designed for reducing the size of real-life artifacts and object scenes with a very high compression ratio. However, when using the same camera module, for lensless imaging, the size of the image easily exceeds the size of the FIFO buffer and the host software provided by the vendor is unable to read out the images. In order to overcome this challenge, I thought of increasing the extent of compression(with a trade-off of loss in quality) to image the mask. This can be done by changing the \texttt{QSC} register(quantization scale factor) \cite{OV2640DS} of the CMOS sensor. The default value of the quantization scale factor is \texttt{0C}(hex value). This value was increased to \texttt{2F} by setting the registers using I2C as mentioned for the previous acceptance cone experiments. The size of the image was successfully reduced and the host software was able to read out images. After this, the sensor was placed in front of the SLM and the experiments were continued. I started experimenting with the default masks provided by the SLM vendor before continuing onto the custom mask designed using simulations. The mask that was used is a binary axicon mask and binary mask which divides the SLM into two different halves.The figure of the mask is shown in Figure \ref{fig:InitMask}. The white portion of the horizontal mask is not visible.
-
-After overcoming this challenge I faced the second challenge wherein, the mask was not visible and the central part of the sensor had saturated(whited out). This can be seen in Figure \ref{fig:InitMaskCMOS}. It can be seen from Figure \ref{fig:InitMaskCMOS} that the binary axicon mask is not at all visible due to the saturation of the CMOS sensor in the central region. The horizontal mask is imaged as a vertical mask by the CMOS sensor as the SLM is oriented vertically against the CMOS sensor. Even in the horizontal mask, the central portion has saturated. 
+After overcoming this challenge I faced the second challenge wherein, the binary axicon mask was not visible and the central part of the sensor had saturated(whited out). This can be seen in Figure \ref{fig:InitMaskCMOS}. It can be seen from Figure \ref{fig:InitMaskCMOS} that the binary axicon mask is not at all visible due to the saturation of the CMOS sensor in the central region. The horizontal mask is imaged as a vertical mask by the CMOS sensor as the SLM is oriented vertically against the CMOS sensor. Even in the horizontal mask, the central portion has saturated. 
 
 \begin{figure}[h]
     \centering
@@ -52,21 +49,10 @@ After overcoming this challenge I faced the second challenge wherein, the mask w
     \caption{Binary Masks used for Test}
     \label{fig:InitMaskCMOS}
     \end{figure}
-In order to solve these problems, multiple changes were made to the way the experiment was conducted. To avoid saturation, the exposure time of the CMOS sensor was reduced to the least possible value(70 $\mu$seconds). Since this did not affect the image of the mask formed on the sensor, it was decided to change the brightness and contrast levels of the SLM itself. The transmissive SLM acts as a screen and thus it has its own brightness and contrast levels that affect the amount of light reaching the sensor. So, I decided to study the effect of the brightness and contrast of the image sensor. Also, two n.d filters were added to the setup that cut the intensity of light reaching the sensor by 75 percent. The SLM was placed approximately at a distance of 1 cm(10 mm) from the image sensor for these experiments.
+In order to solve these problems, multiple changes were made to the way the experiment was conducted. To avoid saturation, the exposure time of the CMOS sensor was reduced to the least possible value(70 $\mu$seconds). Since this did not affect the image of the mask formed on the sensor, it was decided to change the brightness and contrast levels of the SLM itself. The transmissive SLM acts as an LCD screen and thus it has its own brightness and contrast levels that affect the amount of light reaching the sensor. So, I decided to study the effect of the brightness and contrast of the image sensor. Also, two n.d filters were added to the setup that cut the intensity of light reaching the sensor by 75 percent. The SLM was placed approximately at a distance of 1 $cm$(10 $mm$) from the image sensor for these experiments. It could not be moved closer than 1 cm because the SLM is covered with polarizers to filter the light reaching the sensor and to prevent any damage to the SLM.
+
 \section{Effect of SLM brightness and contrast on CMOS sensor}
-The first set of experiments was conducted to see the effect of brightness and contrast of the SLM on the image formed by the CMOS sensor. For this, I thought of illuminating the CMOS sensor using the laser beam and then study the output image from the CMOS sensor for different gray levels on the CMOS sensor. Three gray levels(0,128,255) were chosen and the brightness/contrast levels were varied to see which brightness/contrast levels best represent the amount of light proportional to the grayness levels of the SLM. The brightness/contrast levels could be varied from 0 to 64 on the SLM. All the readings were normalized with respect to 255 to see how the intensity drops with respect to grayness levels. It can be seen from figures \ref{fig:slm_grayscale0},\ref{fig:slm_grayscale128},\ref{fig:slm_grayscale255} that there is a certain level of drop in intensity signal irrespective of the brightness levels. However, it is only in some gray levels that the drop is significant and noticeable( greater than 25 percent reduction in intensity). The attenuation factors(ratio of reduction in intensity with respect to gray level 0) is plotted in tables \ref{tbl:attenuation128},\ref{tbl:attenuation255} that brightness levels and contrast levels close to 60 provide maximum attenuation in signals for gray level 128(around 28 percent reduction) and gray level 255(around 88 percent reduction) gray levels. It was decided to set the brightness and contrast values to 63 and study how the grayness level of the SLM affects the amount of light passing through the SLM.
-\begin{figure}[h]
-\centering
-\includegraphics[width = \linewidth]{pics/slm/slmgrayscale0.jpg}
-\caption{Effect of brightness and contrast on intensity for grayscale 0}
-\label{fig:slm_grayscale0}
-\end{figure}
-\begin{figure}[h]
-\centering
-\includegraphics[width = \linewidth]{pics/slm/slmgrayscale128.jpg}
-\caption{Effect of brightness and contrast on intensity for grayscale 128}
-\label{fig:slm_grayscale128}
-\end{figure}
+The first set of experiments was conducted to see the effect of brightness and contrast of the SLM on the image formed by the CMOS sensor. For this, I thought of illuminating the CMOS sensor using the laser beam and then study the output image from the CMOS sensor for different gray levels on the CMOS sensor. The highest gray level(255) was chosen and the brightness/contrast levels were varied to see which brightness/contrast levels best represent the amount of light proportional to the grayscale levels of the SLM(i.e. maximum reduction in intensity). A gray level of 255 represents complete blocking of light and a gray level of 0 represents the complete passage of light. The binary mask should be translated to gray levels before we can put it on the SLM. So, we need to study the impact of brightness/contrast on the gray levels. The brightness/contrast levels could be varied from 0 to 64 on the SLM. All the readings were normalized with respect to 255 to see how the intensity drops with respect to grayscale levels. It can be seen from figure \ref{fig:slm_grayscale255} and table \ref{tbl:attenuation255} that there is a certain level of drop in intensity signal irrespective of the brightness levels. It can be seen from Figure \ref{fig:slm_grayscale255} that the maximum brightness and contrast levels best reflect the gray levels of the SLM. 
 
 \begin{figure}[htbp]
 \centering
@@ -75,29 +61,11 @@ The first set of experiments was conducted to see the effect of brightness and c
 \label{fig:slm_grayscale255}
 \end{figure}
 
-\begin{center}
-\begin{table}[!h]
-\begin{tabular}{|l|*{8}{c|}}\hline
-\backslashbox{B}{C}
-&\makebox[3em]{0}&\makebox[3em]{10}&\makebox[3em]{20}&\makebox[3em]{30}
-&\makebox[3em]{40}&\makebox[3em]{50}&\makebox[3em]{60}&\makebox[3em]{63}\\\hline
-\makebox[3em]{0} &0.9462&0.9669&1.2788&1.2455&0.9471&1.1301&0.8830&0.8875\\\hline
-\makebox[3em]{10}&0.9537&0.9792&1.2639&1.2326&0.9206&0.8663&    0.7717&0.6853\\\hline
-\makebox[3em]{20}& 0.9618&0.9717&1.2542&1.7043&0.9146&0.8726&0.8941&0.7327\\\hline
-\makebox[3em]{30}&0.9622&0.9712&1.2600&1.2353&0.9266&0.9862&    0.7416&0.8852\\\hline
-\makebox[3em]{40} &0.9731&0.9689&1.2625&0.9466&0.9127&0.8347&    0.7390&0.7205\\\hline
-\makebox[3em]{50} &0.9593&0.9696&1.2597&0.9499&0.9145&0.8351&0.74525&0.7149\\\hline
-\makebox[3em]{60} &0.9745&0.9634&1.2467&1.2331&0.9172&0.8288&    0.7433&0.7159\\\hline
-\makebox[3em]{63}&0.9745&1.2669&1.233&1.2286&0.9121&0.8318&0.7394&0.7221\\\hline
-\end{tabular}
-\caption{Attenuation Factors of gray level 128 with respect to gray level 0 for different brightness and contrast levels}
-\label{tbl:attenuation128}
-\end{table}
-\end{center}
-
 
 \begin{center}
 \begin{table}[!h]
+\caption{Attenuation Factors of gray level 255 with respect to gray level 0 for different brightness and contrast levels}
+\label{tbl:attenuation255}
 \begin{tabular}{|l|*{8}{c|}}\hline
 \backslashbox{B}{C}
 &\makebox[3em]{0}&\makebox[3em]{10}&\makebox[3em]{20}&\makebox[3em]{30}
@@ -111,37 +79,32 @@ The first set of experiments was conducted to see the effect of brightness and c
 \makebox[3em]{60} &0.8626&0.6265&0.3937&0.2237&0.1418&0.1345&0.1327&0.1291\\\hline
 \makebox[3em]{63}&0.8188&0.7389&0.3334&0.2104&0.1375&0.1323&0.1385&0.1293\\\hline
 \end{tabular}
-\caption{Attenuation Factors of gray level 255 with respect to gray level 0 for different brightness and contrast levels}
-\label{tbl:attenuation255}
 \end{table}
 \end{center}
 
 \section{Effect of gray levels on CMOS sensor}
-From the experimental results mentioned in the previous section, it can be seen that the maximum brightness and contrast levels of the SLM provide the maximum attenuation in signals. So, these values were chosen and the grayness levels of the SLM was varied from 0 to 255 and study how the grayness levels affect the amount of light passing through the SLM. The entire SLM screen is set to this grayness level so that the entire sensor is modulated with the same intensity of light.
+From the experimental results mentioned in the previous section, it can be seen that the maximum brightness and contrast levels of the SLM provide the maximum attenuation in signals. So, these values were chosen and the grayness levels of the SLM was varied from 0 to 255 and study how the grayscale levels affect the amount of light passing through the SLM. The entire SLM screen is set to this grayscale level so that the entire sensor is modulated with the same intensity of light.
 The mean of the entire output image of the CMOS sensor is taken for plotting the signal and it is normalized with respect to the maximum reading and the graph is plotted. This is shown in figure \ref{fig:grayscale_slm_graph}. As it can be seen in the graph, the lowest point corresponds to an intensity reduction of approximately 88 percent. One important observation is that it is not possible to create a completely binary mask which blocks light as the maximum intensity reduction is only 88 percent. This will have an effect on the image reconstruction as it is assumed that the mask is completely binary. 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width = \linewidth]{pics/slm/grayscale_slm_graph.jpg}
+\includegraphics[width = \linewidth]{pics/slm/grayscale_slm_graph}
 \caption{Grayscale vs intensity of light received by the CMOS sensor.}
 \label{fig:grayscale_slm_graph}
 \end{figure}
 
 \section{Imaging of Separable Mask using CMOS sensor}
-In the previous section, we discussed how the SLM brightness and contrast affect the mask visibility on the CMOS sensor. In this section, we keep the mask brightness and contrast at maximum possible setting and image the mask. A random separable mask is generated for the resolution of the SLM. As mentioned in the previous sections, a random mask is one in which the row and column of the matrix can be expressed in the form:
+In the previous section, we discussed how the SLM brightness and contrast affect the mask visibility on the CMOS sensor. In this section, we keep the mask brightness and contrast at maximum possible setting and image the mask. A separable doubly Toeplitz mask is generated for the resolution of the SLM. The generated mask is converted to gray level 255 for regions that block light and gray level 0 for regions that allow light.The gray level mask is then programmed onto the SLM. As mentioned in the previous sections, a doubly Toeplitz mask is one in which the row and column of the matrix can be expressed in the form:
 
 $$
-M = M_{x} * {M_{y}}^T
+M = A_{1024\times 1}{(B_{768 \times 1})}^T
 $$
 
-Like in the simulations, a linearly spaced random vector is generated for a specific length(\texttt{Nxm0}) and interpolated to the SLM screen length(1024 X 768). Two vectors are generated(keeping \texttt{Nxm0} and \texttt{Nym0} constant) and the outer product of the vectors is taken to produce a mask that is same as the resolution of the SLM.
-In order to make sure that the mask preserves the property of separability, we need to perform singular value decomposition on the output image from the CMOS sensor.
-
- Since the SLM is larger than the CMOS sensor, the sensor only images a particular portion of the mask and not the complete mask itself.
-The mask can be decomposed into a singular matrix value no matter which part of the mask is imaged by the sensor. This was also verified in the MATLAB simulations. An example of doubly Toeplitz mask generated is shown in figure \ref{fig:doubly_toepl_custom}. The region marked in red will also exhibit only one singular value on performing SVD.
+Like in the simulations, a linearly spaced random vector is generated for a specific length(\texttt{Nxm0}) and interpolated to the SLM screen length(1024 $\times$ 768). Two vectors are generated(keeping \texttt{Nxm0} and \texttt{Nym0} constant) and the outer product of the vectors is taken to produce a mask that is same as the resolution of the SLM.
+We need to perform singular value decomposition on the output image from the CMOS sensor in order to make sure that the mask preserves the property of separability. Since the SLM is larger than the CMOS sensor, the sensor only images a particular portion of the mask and not the complete mask itself. The mask can be decomposed into a singular matrix value no matter which part of the mask is imaged by the sensor. This was also verified in the MATLAB simulations by cutting out different portions of the mask and testing for separability. The doubly Toeplitz mask generated and used for the experiments is shown in figure \ref{fig:doubly_toepl_custom}. The region marked in red will also exhibit only one singular value on performing SVD.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.20]{pics/slm/mask_sub_prop.jpg}
+\includegraphics[width = 0.75\textwidth]{pics/slm/mask_sub_prop}
 \caption{Doubly Toeplitz mask}
 \label{fig:doubly_toepl_custom}
 \end{figure}
@@ -152,7 +115,7 @@ SVD forms the basis of the mask imaging experiment. We image the mask using OV26
 \caption{Doubly Toeplitz mask imaged by OV2640 after modification of Q-Table}
 \label{fig:dt_ov2640}
 \end{figure}
-As can be seen from the figure \ref{fig:dt_ov2640}, the OV2640 produces a very poor image of the mask. This can be attributed to the poor quality of compression. The quantization factor increased during the previous experiments in-order to reduce the size of the image has reduced the quality of the output image. The change in the default quantization matrix and the modified quantization matrix that has been used for compression is shown below. The default quantization matrix has been modified so that the size of the image is within 384 KB. Without modifying the quantization scale factor, it would not be possible to obtain an image using a mask-sensor setup using OV2640. From the modified Q-Table, we can see that the higher frequency components will be eliminated and the lower frequency components will be retained. The Q-tables were obtained using the \texttt{djpeg} program\cite{djpeg} on the output image sensors running on Linux. 
+As can be seen from the figure \ref{fig:dt_ov2640}, the OV2640 produces a very poor image of the mask. This can be attributed to the poor quality of compression. The quantization factor increased during the previous experiments(see the first section in this chapter) in order to reduce the size of the image has reduced the quality of the output image. The change in the default quantization matrix and the modified quantization matrix that has been used for compression is shown below. The default quantization matrix has been modified so that the size of the image is within 384 KB. Without modifying the quantization scale factor, it would not be possible to obtain an image using a mask-sensor setup using OV2640. From the modified Q-Table, we can see that the higher frequency components will be eliminated and the lower frequency components will be retained. The Q-tables were obtained using the \texttt{djpeg} program\cite{djpeg} on the output image sensors running on Linux. 
 \[
 Q-Default = 
 \begin{bmatrix}
@@ -180,7 +143,7 @@ Q-Modified =
 \end{bmatrix}
 \]
 
-Based on the mask image, we can be sure that it would be impossible to obtain proper reconstructions. So, it was decided to try whether other CMOS sensors would produce better quality pictures that would enable proper reconstruction. Based on the trade-off chosen previously, an OV5642 sensor was also bought in the case of any failure. Since OV2640 and OV5642 follow the same architecture and use the same open-source libraries, it was decided to check the image quality on OV5642. The OV5642 has an advantage that it has a bigger active sensor array(2592*1944) and comes with a larger FIFO buffer(8MB). In order to position these sensors on the stage, a script was written that would calculate the singular values in real time. The tilt of the sensor was adjusted such that the ratio of the first component to the second component is maximum. 
+Based on the mask image and the quantization tables obtained, we can be sure that it would be impossible to obtain proper reconstructions using OV2640. So, it was decided to try whether other CMOS sensors would produce better quality pictures that would enable proper reconstruction. Based on the trade-off factors discussed previously, an OV5642 sensor was also bought in the case of any failure. Since OV2640 and OV5642 follow the same architecture and use the same open-source libraries, it was easy to port the embedded software from OV2640 and OV5642. Also, APIs are provided to control the exposure level of OV5642 in 10 possible steps. The exposure was set to minimum possible level as higher levels cause saturation of sensor data. The compression quality was set to High using APIs provided by Arducam. It was then decided to check the image quality on OV5642. The OV5642 has an advantage that it has a bigger active sensor array($2592 \times 1944$) and comes with a larger FIFO buffer(8MB). The CMOS sensor needs to be perfectly aligned and the perfect alignment would be given by the maximum singular value ratio. In order to position these sensors on the stage, a script was written that would calculate the singular values in real time. The tilt of the sensor was adjusted such that the ratio of the first component to the second component is maximum. 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.125]{pics/slm/ov5642dtmask.jpg}
@@ -194,8 +157,7 @@ It can be seen in figure \ref{fig:dt_ov5642} that OV5642 produces a better image
 \caption{Doubly Toeplitz mask imaged by Microsoft LifeCam HD 3000}
 \label{fig:dt_lifecam}
 \end{figure}
-A lot of methods were tried to increase the ratio of the first to the second singular value. Firstly, I tried to capture the image without any mask and capture the noise. I subtracted the noise from the mask image. However, this did not lead to any change in the singular component values. I then tried median filtering the output to reduce the Gaussian noise effects and it increased the singular value ratio with all the CMOS sensors. This is shown in table \ref{tbl:dt_cmos_sensor_perf}. Table \ref{tbl:dt_cmos_sensor_perf} was plotted from the average of images in a particular data set using the same masks. The red channel data and the grayscale image data from the mask image are used for SVD. 
-It can be been from the table that OV2640 provides a better singular value ratio than OV5642. However, the highest singular component does not at all represent the mask that is programmed into the SLM. So, OV2640 does not perform equivalent to OV5642 despite the higher ratio of a singular component.
+A lot of methods were tried to increase the ratio of the first to the second singular value. Firstly, I tried to capture the image without any mask and capture the noise. I subtracted the noise from the mask image. However, this did not lead to any change in the singular component values. I then tried median filtering the output to reduce the Gaussian noise effects and it increased the singular value ratio with all the CMOS sensors. This is shown in table \ref{tbl:dt_cmos_sensor_perf}. Table \ref{tbl:dt_cmos_sensor_perf} was plotted from the average of images in a particular data set using the same masks. The red channel data and the grayscale image data from the mask image are used for SVD. It can be been from the table that OV2640 provides a better singular value ratio than OV5642. However, the highest singular component does not at all represent the mask that is programmed into the SLM. So, OV2640 does not perform equivalent to OV5642 despite the higher ratio of a singular component.
 \begin{center}
 \begin{table}[h]
 \centering
@@ -209,17 +171,17 @@ It can be been from the table that OV2640 provides a better singular value ratio
 \label{tbl:dt_cmos_sensor_perf}
 \end{table}
 \end{center}
-The same results as in the simulation(only one singular value) could not be replicated because the mask that is produced by the SLM is not completely binary as observed in the previous experiment with SLM. If you observe the images from the sensor closely you can see that the black regions allow some portion of the light to pass through. This results in the image matrix becoming non-binary which in-turn results in secondary SVD components. One way to solve this would be to use a threshold and make the mask image binary but this would result in loss of diffraction and object data. Apart from this factor, another reason why other SVD components are observed is due to the presence of dead-pixel regions in the output data. The values of these pixels over-ride the values of the mask. These effects do not play a major role in lens-based imaging but form a very important role in lensless imaging. Exposure plays a very important role indecomposability of the matrix. I first thought of increasing the exposure in order to make the difference between the black and white more prominent (which in-turn increases separability). This idea seems to have worked out. The ratio of singular value to the exposure time is shown in Figure \ref{fig:svd_exposure}. The mask becomes separable as the exposure time is increased. However, this comes with a disadvantage. LifeCam has a very limited controllable range of exposure time and the sensor starts quickly saturating at around 2ms. When the sensor starts saturating, it leads to loss of data which in turn will have an effect on reconstruction. The next step would be to estimate the system matrices $M_x$ and $M_y$ which is described in the next chapter. 
+The same results as in the simulation(only one singular value) could not be replicated because the mask that is produced by the SLM is not completely binary as observed in the previous experiment with SLM. If you observe the images from the sensor closely you can see that the black regions allow some portion of the light to pass through. This results in the image matrix becoming non-binary which in-turn results in secondary SVD components. One way to solve this would be to use a threshold and make the mask image binary but this would result in loss of diffraction and object data. Apart from this factor, another reason why other SVD components are observed is due to the presence of dead-pixel regions in the output data. The values of these pixels over-ride the values of the mask. These effects do not play a major role in lens-based imaging but form a very important role in lensless imaging. Exposure plays a very important role in the decomposability of the matrix. I first thought of increasing the exposure in order to make the difference between the black and white more prominent (which in-turn increases separability). This idea seems to have worked out. The ratio of singular value to the exposure time is shown in Figure \ref{fig:svd_exposure}. The mask becomes separable as the exposure time is increased. However, this comes at a disadvantage. LifeCam has a very limited controllable range of exposure time and the sensor starts quickly saturating at around 2 $ms$. When the sensor starts saturating, it leads to loss of data which in turn will have an effect on reconstruction. The next step would be to estimate the system matrices $M_x$ and $M_y$ which is described in the next chapter. 
 \begin{figure}[h]
 \centering
-\includegraphics[width = \linewidth]{pics/slm/svd_graph_exposure.jpg}
+\includegraphics[width = \linewidth]{pics/slm/svd_graph_exposure}
 \caption{Impact of Exposure Time on Singular Values}
 \label{fig:svd_exposure}
 \end{figure}
 The best decomposition that I could get was using the LifeCam HD-3000 with exposure adjusted(without saturation) based on figure \ref{fig:svd_exposure}. The decomposition of the mask into different components is shown in figure \ref{fig:svd_dec_exp}. 
 \begin{figure}[ht]
 \centering
-\includegraphics[width = \linewidth]{pics/slm/svd-decomp-exp.png}
+\includegraphics[width = \linewidth, height = 6cm]{pics/slm/svd-decomp-exp.png}
 \caption{Decomposition of best data set(Ratio of first to second component = 39.70 )}
 \label{fig:svd_dec_exp}
 \end{figure}

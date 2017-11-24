@@ -11,9 +11,11 @@
 \usepackage{amsmath,mathtools}
 % textblocks for title page
 \usepackage[absolute]{textpos}
-
+%\usepackage{epstopdf}
 % use babel for proper hyphenation
 \usepackage[british]{babel}
+\usepackage[]{caption}
+\captionsetup[table]{skip=3pt}
 
 % Graphics: different for pdflatex or dvi output, choose one
 %\usepackage[dvips]{graphicx}
@@ -31,6 +33,7 @@
 % for url's use "\url{http://www.google.com/}"
 \usepackage{url}
 \usepackage[plainpages=false]{hyperref} 
+\usepackage{gensymb}
 
 
 % Information that will be filled in at various points in the report
@@ -45,6 +48,7 @@
 Dr. ir. J.S.S.M. Wong & Chair, Computer Engineering, Delft University of Technology \\
 Dr. ir. A.J. van Genderen & Supervisor, Computer Engineering, Delft University of Technology \\
 Dr. ir. J.M. Kuiper & Supervisor, Aerospace Engineering, Delft University of Technology \\
+Yifeng Shao & Supervisor, Applied Physics, Delft University of Technology \\
 } % The order of listing the names: Graduation prof, supervisor(s), others ordered by title + alphabetical 
 %examples: 
 %prof. dr. ir. H. J. Sips (chair) & Delft University of Technology \\ 
@@ -126,14 +130,13 @@ Dr. ir. J.M. Kuiper & Supervisor, Aerospace Engineering, Delft University of Tec
 % CONCLUSIONS AND FUTURE WORK
 \include{conclusionsandfuturework}
 
+\include{appendix_a}
 % BIBLIOGRAPHY
 %#define SORTED 1
 \bibliographystyle{../bib/latex8}
 \bibliography{../bib/mycollection}
 
-\appendix
 
-\include{appendix_a}
 
 \end{document}
 
