@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.5)  23 NOV 2017 18:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.5)  10 DEC 2017 11:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1490,11 +1490,11 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 154.
 
 Package epstopdf Info: Source file: <pics/spatial_res.eps>
-(epstopdf)                    date: 2017-11-22 14:12:07
-(epstopdf)                    size: 20650 bytes
+(epstopdf)                    date: 2017-12-10 11:21:58
+(epstopdf)                    size: 20325 bytes
 (epstopdf)             Output file: <pics/spatial_res-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-22 14:12:40
-(epstopdf)                    size: 9864 bytes
+(epstopdf)                    date: 2017-12-10 11:22:26
+(epstopdf)                    size: 9718 bytes
 (epstopdf)             Command: <epstopdf --outfile=pics/spatial_res-eps-conver
 ted-to.pdf pics/spatial_res.eps>
 (epstopdf)             \includegraphics on input line 156.
@@ -1987,7 +1987,7 @@ ts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
 vr8a.pfb>
-Output written on ./work/thesis.pdf (101 pages, 21451445 bytes).
+Output written on ./work/thesis.pdf (101 pages, 21451300 bytes).
 PDF statistics:
  1509 PDF objects out of 1728 (max. 8388607)
  1202 compressed objects within 13 object streams
